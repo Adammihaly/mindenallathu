@@ -1,0 +1,24 @@
+.container-register {
+    display: flex;
+    flex-direction: column;
+    padding-block: clamp(1rem, 3vw, 3vw);
+    gap: 2rem;
+   
+}
+.register-title {
+
+    font-size: clamp(2rem, 3vw, 3vw);
+}
+form {
+    gap: 2rem;
+}
+
+.container {
+    height:fit-content;
+    
+}
+
+.container-picture {
+    height: auto;
+}
+

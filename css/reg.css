@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap');
+*
+{
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: var(--font);
+}
+body
+{
+	overflow-x: hidden;
+}
+
+a
+{
+	transition: 0.4s;
+}
+
+:root
+{
+	--font: 'Hind', sans-serif;
+	--gray: #3a3b3d;
+	--site-margin: 10%;
+	--menu-gray: #bdbbbb;
+	--green: #13910c;
+	--dark-green: #125c0e;
+}
+
+body {
+    max-width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/pexels-meszárcsek-gergely-5579979.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: clamp(16rem, 60vw, 60vw);
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--dark-green);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.container-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: clamp(1rem, 1vw, 1vw);
+    padding-inline: clamp(2rem, 2vw, 2vw);
+    color: white;
+    gap: clamp(2rem, 2vw, 2vw);
+}
+
+.container-picture {
+    background-image: url('../img/kep.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 95vh;
+}
+
+.register-title {
+    font-size: clamp(3rem, 3vw, 3vw);
+    text-align: center;
+    font-family: var(--font);
+    text-shadow: 3px 3px 10px black;
+}
+.input {
+    padding-block: clamp(.25rem, .25vw, .25vw);
+    padding-inline: clamp(1rem, 1vw, 1vw);
+    outline: none;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    font-size: clamp(.8rem, .8vw, .8vw);
+    width: 70%;
+}
+.input-title{
+    width: 30%;
+}
+.input::placeholder {
+    color: white;
+}
+
+.input:focus {
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 1vw, 1vw);
+}
+
+.input-box {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+.input-title{
+    width: 100%;
+}
+
+.input-box-link {
+    color: white;
+    width: fit-content;
+    text-align: center;
+}
+.input-aszf{
+    display: flex;
+    gap: clamp(1rem,1vw, 1vw);
+    font-size: clamp(.75rem, .75vw, .75vw);
+}
+
+.input-button button{
+    background-color: #125c0e;
+    padding-block: clamp(.5rem, .5vw, .5vw);
+    padding-inline: clamp(1rem, 1vw, 1vw);
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+    border-radius: 1em;
+    letter-spacing: 2px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.input-button button:hover {
+    background-color: #13910c;
+    border: 1px solid #125c0e;
+    transition: 0.4s;
+}
+
+.input-socials {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 1vw, 1vw);
+}
+.input-facebook {
+    display: flex;
+    gap: clamp(1rem, 1vw, 1vw);
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #2C41B5;
+    padding-block: clamp(.25rem, .25vw, .25vw);
+    cursor: pointer;
+}
+
+.input-facebook img {
+    width: 25px;
+}
+
+.input-google {
+    background-color: white;
+    color: black;
+    display: flex;
+    gap: clamp(1rem, 1vw, 1vw);
+    align-items: center;
+    justify-content: space-evenly;
+    padding-block: clamp(.25rem, .25vw, .25vw);
+    cursor: pointer;
+}
+
+.input-google img {
+    width: 25px;
+}
+
+@media (max-width: 1000px)
+{
+    :root
+    {
+        --site-margin: 1%;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: clamp(20rem, 60vw, 60vw);
+        padding-block: 2rem;
+        background-color: rgba(18, 93, 14, .8);
+    }
+
+    .container-picture {
+       display: none;
+    }
+
+    .input-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      
+    }
+    
+    .input-title {
+        width: 100%;
+    }
+}
+
