@@ -23,6 +23,25 @@ body
     background-color: lightseagreen;
 }
 
+*::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+*::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: rgba(0,0,0,0.1);
+}
+*::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2);
+}
+*::-webkit-scrollbar-thumb:hover{
+  	background: rgba(0,0,0,0.4);
+}
+*::-webkit-scrollbar-thumb:active{
+  	background: rgba(0,0,0,.9);
+}
+
 nav
 {
     position: fixed;
@@ -116,6 +135,8 @@ main
     height: 100%;
     background-color: white;
 
+    overflow-y: auto;
+
     & header
     {
         display: flex;
@@ -177,18 +198,17 @@ main
         margin-top: 0.75vw;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; 
 
         .kiemeles {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            align-items: flex-start;
-            overflow: hidden;
 
             padding: 2vw;
             width: 90%;
-            height: 40%;
+            min-height: 38.5%;
+
             color: white;
             background: linear-gradient(to bottom right, #2f584c 0%, #4d6336 75%);
             border-radius: 2vw;
@@ -202,6 +222,7 @@ main
                 color: white;
                 font-weight: bold;
                 font-size: 1.25vw;
+                font-family: var(--betustilus);
 
                 background-color: #13910C;
                 border-radius: 0.5vw;
@@ -226,7 +247,7 @@ main
             }
         }
 
-        #hirdetesSzoveg {
+        .balSzoveg {
             padding-left: 5%;
             padding-top: 2.5vh;
             position: relative;
@@ -238,17 +259,14 @@ main
 
         .hirdeteseim {
             padding-top: 2.75vh;
-            
+            width: 90%;
+
             display: flex; 
             flex-wrap: wrap;
             justify-content: space-evenly;
 
             .hirdetes {
-                flex-grow: 1;
-                flex-basis: calc(33.33% - 2vw);
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 2vw;
+                margin-bottom: 1.25vw;
                 box-sizing: border-box;
             }
 
@@ -265,19 +283,157 @@ main
 
             & p {
                 font-weight: bold;
+                font-size: 1.33vw;
+                word-wrap: break-word;
+
+                width: 14vw;
+            }
+        }
+
+        .utoljaraMegtek {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            padding-top: 2.75vh;
+            padding-bottom: 2.75vh;
+            width: 90%;
+
+            .megtekintett {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .megtekintettKep {
+                background-image: url(plusz.jpg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                width: 7vw;
+                height: 7vw;
+                border-radius: 2vw;
+            }
+
+            & p {
+                padding-left: 0.75vw;
+                font-weight: bold;
+                font-size: 1.33vw;
             }
         }
     }
-
 }
 
-section
+.jobbNav
 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
     width: 30%;
     height: 100%;
-    background-color: rgb(149, 108, 190);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    background-color: whitesmoke;
+    
+    .balSzoveg {
+        padding-top: 5vh;
+        padding-left: 7.5%;
+        position: relative;
+        margin-right: auto;
+        
+        font-weight: bold;
+        font-size: 1.5vw;
+    }
 
+    .csomag {
+        position: relative;
+
+        .elofizetes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-top: 2vh;
+            width: 17.5vw;
+            height: 20vh;
+            border-radius: 1.75vw;
+    
+            color: white;
+            font-size: 1.33vw;
+            font-weight: bold;
+            letter-spacing: 0.1vw;
+        }
+
+        .premiumElofizetes {
+            background: linear-gradient(156deg, rgba(0,200,27,1) 0%, rgba(0,185,56,1) 35%, rgba(0,212,255,1) 100%);
+            box-shadow: 1px 15px 5px -5px rgba(19, 145, 12, 0.43);
+        }
+
+        .simpleElofizetes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+            background: linear-gradient(156deg, rgba(88,247,110,1) 0%, rgba(0,171,185,1) 48%);
+            box-shadow: 1px 15px 5px -5px rgba(0,171,185,0.43);
+
+            visibility: visible;
+        }
+    }
+
+    #kontaktok {
+        padding-top: 1.5vh;
+        padding-bottom: 2vh;
+        font-size: 1vw;
+        font-weight: 300;
+    }
+
+    .megtekFelhasz {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .felhasznalo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            padding-bottom: 1.5vw;
+
+            .felhasznaloKep {
+                background-image: url(plusz.jpg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                width: 6vw;
+                height: 6vw;
+                border-radius: 1.5vw;
+            }
+
+            position: relative;
+            .fa-cog {
+                position: absolute;
+                margin-top: 0.33vw;
+                top: 0;
+                right: 0;
+                height: 0.2vw;
+                width: 0.2vw;
+            }
+
+            & p {
+                padding-left: 1.2vw;
+                font-size: 1.33vw;
+                font-weight: 600;
+            }
+        }
+        
+    }
+}

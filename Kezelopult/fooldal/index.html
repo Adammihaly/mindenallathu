@@ -6,26 +6,26 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/20993e564e.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <nav>
         <div class="logo">Mindenallat.hu</div>
         <div class="nav_item">
             <ul>
-                <li><i class="fa-solid fa-star"></i>Kezelopult</li>
-                <li><i class="fa-solid fa-star"></i>Hirdetes feladasa</li>
-                <li><i class="fa-solid fa-star"></i>Profil modositasa</li>
-                <li><i class="fa-solid fa-star"></i>Csomagvalasztas</li>
-                <li><i class="fa-solid fa-star"></i>Hirdetesek kezelese</li>
+                <li><i class="fa-solid fa-shapes"></i>Kezelopult</li>
+                <li><i class="fa-solid fa-file-circle-plus"></i>Hirdetes feladasa</li>
+                <li><i class="fa-solid fa-user"></i>Profil modositasa</li>
+                <li><i class="fa-solid fa-bag-shopping"></i>Csomagvalasztas</li>
+                <li><i class="fa-solid fa-file-signature"></i>Hirdetesek kezelese</li>
                 <li><i class="fa-solid fa-star"></i>Sugokozpont</li>
             </ul>
         </div>
-        <div class="logout"><i class="fa-solid fa-star"></i> Kijelentkezes</div>
+        <div class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Kijelentkezes</div>
     </nav>
 
     <div class="wrapper">
@@ -33,7 +33,7 @@
             <header>
                 <div class="profil">
                 <img class="profilkep"></img>
-                <p>Lorem Ispum</p>
+                <p>Lorem Ipsum</p>
                 </div>
                 <div class="notif"><i class="fa-solid fa-star"></i></div>
             </header>
@@ -45,29 +45,81 @@
                     <button>Kiemelés</button>
                 </div>
 
-                <div id="hirdetesSzoveg">
-                    <p>Hirdetéseim (?/?)</p>
+                <div class="balSzoveg">
+                    <p id="hirdeteseimSzoveg">Hirdetéseim (5/5)</p>
                 </div>
-                <div class="hirdeteseim">
+                <section class="hirdeteseim">
                     <div class="hirdetes">
                         <div class="hirdetesKep"></div>
-                        <p>Kutya neve jo</p>
+                        <p>Allat neve</p>
                     </div>
                     <div class="hirdetes">
                         <div class="hirdetesKep"></div>
-                        <p>Kutya neve jo</p>
+                        <p>Allat neve</p>
                     </div>
                     <div class="hirdetes">
                         <div class="hirdetesKep"></div>
-                        <p>Kutya neve jo</p>
+                        <p>Allat neve Allat neve Allat neve Allat neve</p>
                     </div>
-                </div>
-            </div>
+                    <div class="hirdetes">
+                        <div class="hirdetesKep"></div>
+                        <p>Allat neve</p>
+                    </div>
+                    <div class="hirdetes">
+                        <div class="hirdetesKep"></div>
+                        <p>Allat neve</p>
+                    </div>
+                </section>
 
+                <div class="balSzoveg">
+                    <p>Utoljára megtekintett</p>
+                </div>
+                <section class="utoljaraMegtek">
+                    <div class="megtekintett">
+                        <div class="megtekintettKep"></div>
+                        <p>Allat neve</p>
+                    </div>
+                    <div class="megtekintett">
+                        <div class="megtekintettKep"></div>
+                        <p>Allat nevee</p>
+                    </div>
+                    <div class="megtekintett">
+                        <div class="megtekintettKep"></div>
+                        <p>Allat neve</p>
+                    </div>
+                </section>
+            </div>
         </main>
 
-        <section>
-            JOBB NAVIGATION
+        <section class="jobbNav">
+            <p class="balSzoveg">Jelenlegi csomag</p>
+            <div class="csomag">
+                <div class="elofizetes premiumElofizetes">
+                    <p>Prémium előfizető</p>
+                </div>
+                <div class="elofizetes simpleElofizetes">
+                    <p>Simple felhasználó</p>
+                </div>
+            </div>
+            <p class="balSzoveg">Megtekintett felhasználók</p>
+            <p id="kontaktok">x kontakt</p>
+            <div class="megtekFelhasz">
+                <div class="felhasznalo">
+                    <div class="felhasznaloKep"></div>
+                    <p>Felhasználó neve</p>
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                </div>
+                <div class="felhasznalo">
+                    <div class="felhasznaloKep"></div>
+                    <p>Felhasználó neve</p>
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                </div>
+                <div class="felhasznalo">
+                    <div class="felhasznaloKep"></div>
+                    <p>Felhasználó neve</p>
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                </div>
+            </div>
         </section>
     </div>
 </body>
