@@ -1,0 +1,558 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+:root
+{
+    --betumeret : 1.2vw;
+    --field_betu_meret : 0.9vw;
+}
+
+body,html
+{
+    width: 100%;
+    height: 100%;
+
+}
+
+body
+{
+    background-color: lightseagreen;
+}
+
+input::placeholder
+{
+    font-size: 0.8vw;
+}
+
+ nav
+{
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100dvh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+    font-size: 1.25;
+
+    .logo
+    {   
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin-bottom: 10%;
+        font-weight: bold;
+        font-size: var(--betumeret);
+
+    }
+
+    .nav_item
+    {
+        width: 100%;
+        height: 80%;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: var(--betumeret);
+
+        & ul
+        {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            list-style-type: none;
+            gap:2%;
+        }
+
+        & li
+        {
+            width: 80%;
+            height: clamp(30px,3vw,150px);
+            display: flex;
+            align-items: center;
+            gap: 5%;
+            padding-left: 5%;
+            border-radius: 0.8vw;
+            transition: scale .3s ease;
+        }
+
+
+        & li:hover
+        {
+            background-color: green;
+            color: white;
+            cursor: pointer;
+            scale: 1.1;
+        }
+    }
+
+    .logout
+    {
+        display: flex;
+        width: 80%;
+        height: 5vw;
+        gap: 5%;
+        padding-left: 5%;
+        font-size: var(--betumeret);
+        color: red;
+    }
+
+   
+} 
+
+#felugroablak
+{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 0%;
+    left: 0%;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    padding-left: 5%;
+    z-index: 9999;
+}
+
+.wrapper
+{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+
+}
+
+.mobilnezet
+{
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-inline:5% ;
+    width: 100%;
+    height: 8%;
+    z-index: 10000;
+
+    .baloldal
+    {
+        display: flex;
+        gap: 10%;
+    }
+}
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(239,239,240);
+
+    & header
+    {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        position: relative;
+        align-items: center;
+        font-size: var(--betumeret);
+        justify-content: space-between;
+        padding-inline: 5%;
+        
+        
+
+        .profil
+        {
+            display: flex;
+            width: 20%;
+            align-items: center;
+        }
+
+        .profilkep
+        {
+            
+            width: 3vw;
+            height: 3vw;
+            border-radius: 50%;
+            background-image: url(profil.svg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-inline-start: 1%;
+            margin-right: 2%;
+            
+        }
+
+        .notif
+        {
+            position: relative;
+            font-size: 2vw;
+        }
+
+        /* .notif::before
+        {
+            content: '●';
+            font-size: 1rem;
+            color: red;
+            position: absolute;
+            top: -25%;
+            right: 0;
+        } */
+
+
+      
+    }
+
+    .main_content
+    {
+        width: 100%;
+        height: 90%;
+        position: relative;
+
+
+        & h1 
+        {
+            position: absolute;
+            z-index: 999;
+            top: 1vw;
+            left: 5%;
+            font-size: 2vw;
+        }
+
+        .gombok
+        {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            padding-inline: 10%;
+            width: 100%;
+            height: 5%;
+            bottom: 5%;
+            z-index: 999;
+            
+         
+          
+            & button
+            {
+                background-color: green;
+                color: white;
+                height: 120%;
+                width: 10%;
+                border:none;
+                border-radius: 0.3vw;
+                font-size: 1vw;
+            }
+
+            & button:hover
+            {
+                filter: brightness(0.9);
+                cursor: pointer;
+            }
+
+            #hatra
+            {
+                background-color: white;
+                color: red;
+            }
+
+            #submit_gomb
+            {
+                width: 20%;
+            }
+        }
+    }
+
+
+
+}
+
+
+form
+{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height:clamp(200px,80vw,100%);
+    /* height: 100%; */
+   
+
+
+    .card
+    {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(239,239,240);
+        padding: 5%;
+        
+    }
+
+    .overflow_wrap
+    {
+        width: 100%;
+        height: 95%;
+        overflow-y: scroll;
+    }
+
+   
+
+    .inputfield, .nagyobb_field
+    {
+     
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: clamp(60px,12vw,1000px);
+        margin-top: 1.9%;
+        border: 0.5px solid rgb(192, 197, 202);
+        border-radius: 0.5vw;
+        background-color: white;
+
+
+        .field_wrapper
+        {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            padding-inline: 3%;
+            padding-block: 2%;
+            gap: 10%;
+
+            .cim
+            {
+                font-weight: bold;
+                font-size: 1.4vw;
+            }
+
+            .input_wrapper
+            {
+                display: flex;
+                width: 100%;
+                height: 45%;
+                gap: 10%;
+
+                & p 
+                {
+                    text-align: center;
+                    width: 40%;
+                    color: rgba(0,0,0,0.8);
+                    font-size: var(--field_betu_meret);
+                }
+
+                & textarea
+                {
+                    resize: none;
+                    padding-left: 0.5%;
+                    padding-top: 0.5%;
+                    font-size: 1.1vw;
+                    
+                }
+
+                & textarea::placeholder
+                {
+                    padding-top: 0.5%;
+                    padding-left: 0.5%;
+                    font-size: var(--field_betu_meret);
+                }
+
+            }
+
+            .input_wrapper:has(textarea)
+            {
+                height: 65%;
+            }
+
+            .input_wrapper:has(button)
+            {
+                flex-direction: column;
+                height: 65%;
+
+                & p
+                {
+                    width: 90%;
+                }
+            }
+
+            .bevitel
+            {
+                height: clamp(20px,3vw,120px);
+                width: 50%;
+                padding-left: 2%;
+                border-radius: 0.3vw;
+                border: 1px solid black;
+                font-size: 1vw;
+            }
+
+            & input:focus
+            {
+                outline: none;
+            }
+
+            #hiba_uzenet
+            {
+                position: absolute;
+                bottom: 10%;
+                color: red;
+                font-size: 0.75vw;
+                transition: opacity 0.3s ease;
+            }
+
+            #info
+            {
+                color: green;
+                opacity: 0;
+                font-size: 1vw;
+                transition: opacity ease 0.3s;
+            }
+        }
+    }
+
+    .nagyobb_field
+    {
+        height: 15vw;
+
+        & label
+        {
+            font-size: 0.8vw;
+        }
+
+      
+    }
+
+    #kep_input
+    {
+        font-size: 0.9vw;
+    }
+
+    #kiemeles
+    {
+        border-radius: 0.3vw;
+        border: none;
+        width: 20%;
+        height: 50%;
+        background-color: green;
+        color: white;
+        font-size: 1vw;
+    }
+}
+
+
+/* TELO NEZET */
+
+@media (max-width:600px) {
+    nav
+    {
+        display: none;
+    }
+
+    .wrapper
+    {
+        margin: 0;
+        width: 100%;
+
+        & header
+        {
+            display: none;
+        }
+
+        .mobilnezet
+        {
+            display: flex;
+        }
+        
+        .main_content
+        {
+            margin-top: 15% ;
+        }
+    }
+
+    #felugroablak
+    {
+        align-items: flex-start;
+        gap: 1%;
+
+        .profil_mobil
+        {
+            margin-top: 20%;
+            height: 10%;
+            width: 100%;
+            border-bottom: 1px solid black;
+
+            .profilkep
+            {
+                background-image: url(profil.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+            }
+
+            .nev_kep
+            {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                gap: 5%;
+                width: 100%;
+            }
+        }
+
+        .nav_item
+        {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 100%;
+           
+
+            & ul
+            {
+                height: 50%;
+                width: 100%;
+                gap: 5%;
+
+                & li
+                {
+                    
+                    font-size: 2vh;
+                    width: 100%;
+                    padding: 5%;
+                    height: clamp(40px,3vw,150px);
+
+                    
+                }
+
+               
+        
+                & li:focus
+                {
+                    background-color: green;
+                    color: white;
+                    cursor: pointer;
+                    scale: 1.1;
+                }
+            }
+        }
+    }
+  
+}
