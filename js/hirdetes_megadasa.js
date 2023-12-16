@@ -41,27 +41,29 @@ function szamlalo()
     switch (true) {
         case szam === tomb.length - 1:
             elore_gomb.style.display = "none";
-            submit_gomb.style.display = "block";
+            submit_gomb.style.display = "flex";
             break;
     
         case szam < tomb.length - 1:
-            elore_gomb.style.display = "block";
+            elore_gomb.style.display = "flex";
             submit_gomb.style.display = "none";
             break;
            
     }
 
-    if(szam===tomb.length-2)
-    {
-        elore_gomb.style.width = "20%";
-        elore_gomb.innerHTML = "Hirdetés feladása";
-    }
-    else
-    {
-        elore_gomb.style.width = "10%";
-        elore_gomb.innerHTML = "Tovább";
-    }
-   
+    
+    
+    // if(szam===tomb.length-2)
+    // {
+    //     elore_gomb.style.width = "20%";
+    //     elore_gomb.innerHTML = "Hirdetés feladása";
+    // }
+    // else
+    // {
+    //     elore_gomb.style.width = "10%";
+    //     elore_gomb.innerHTML = "Tovább";
+    // }
+    
     
 }
 

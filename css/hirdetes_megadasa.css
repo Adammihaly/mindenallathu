@@ -93,18 +93,22 @@ input::placeholder
             cursor: pointer;
             scale: 1.1;
         }
+
+        & li:last-child
+        {
+            color: red;
+            margin-top: 20vh;
+
+        }
+
+        & li:last-child:hover
+        {
+            background-color: red;
+            color: white;
+        }
     }
 
-    .logout
-    {
-        display: flex;
-        width: 80%;
-        height: 5vw;
-        gap: 5%;
-        padding-left: 5%;
-        font-size: var(--betumeret);
-        color: red;
-    }
+  
 
    
 } 
@@ -189,7 +193,7 @@ main
             width: 3vw;
             height: 3vw;
             border-radius: 50%;
-            background-image: url(profil.svg);
+            background-image: url(../img/profil.svg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -256,6 +260,9 @@ main
                 border:none;
                 border-radius: 0.3vw;
                 font-size: 1vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             & button:hover
@@ -480,7 +487,125 @@ form
         
         .main_content
         {
-            margin-top: 15% ;
+            margin-top: 10vh ;
+
+            & h1 {
+                font-size: 3.5vw;
+            }
+
+            & form{
+                height: 90%;
+                margin-top: 5%;
+            
+                .inputfield
+                {
+                    border-radius: 1.3vh;
+                    height: 15vh;
+                }
+
+                .field_wrapper , .nagyobb_field
+                {
+                    padding: 5%;
+
+                    .cim
+                    {
+                        font-size: 2vh;
+                    }
+
+                    .input_wrapper
+                    {
+                        height: 60%;
+                        flex-direction: column;
+
+                        .bevitel
+                        {
+                            height: 3vh;
+                            width: 100%;
+                            font-size: 1vh;
+                        }
+
+                        .bevitel::placeholder
+                        {
+                            font-size: 1vh;
+                        }
+
+                        & p
+                        {
+                           text-align: left;
+                           width: 100%;
+                           font-size: 0.8vh;  
+                        }
+
+                       
+                    }
+
+                    #hiba_uzenet
+                    {
+                        font-size: 0.9vh;
+                    }
+                }
+
+                .nagyobb_field
+                {
+                    height: 15vh;
+                    padding: 1%;
+                    
+                    .field_wrapper
+                    {
+                        padding: 3%;
+                    }
+
+                    & label
+                    {
+                        font-size: 0.85vh;
+                    }
+                    
+                    #kep_input
+                    {
+                        font-size: 1vh;
+                    }
+
+                    & textarea
+                    {
+                        height: 100%;
+                        font-size: 1vh;
+                    }
+
+                    & textarea::placeholder
+                    {
+                        font-size: 1vh;
+                    }
+
+                    #kiemeles
+                    {
+                        font-size: 1vh;
+                        width: 30vw;
+                        padding: 1vh;
+                        border-radius: 5px;
+                        
+                        
+                    }
+
+                    #info
+                    {
+                        
+                        font-size: 1vh;
+                    }
+                }
+
+                #elore, #hatra, #submit_gomb
+                {
+                    width: 30%;
+                    font-size: 1.6vh;
+                    height: 100%;
+                }
+                
+                #submit_gomb
+                {
+                    width: 40vw;
+                    font-size: 1.6vh;
+                }
+            }
         }
     }
 
@@ -498,7 +623,7 @@ form
 
             .profilkep
             {
-                background-image: url(profil.svg);
+                background-image: url(../img/profil.svg);
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
