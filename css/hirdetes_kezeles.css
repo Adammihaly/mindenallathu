@@ -240,6 +240,7 @@ main
     }
 }
 
+/* MOBILNEZET */
 
 @media (max-width:600px) {
     nav
@@ -267,7 +268,7 @@ main
             margin-top: 10vh ;
 
             & h1 {
-                font-size: 3.5vw;
+                font-size: 2.5vh;
             }
 
             
