@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../css/fooldalStyle.css">
     <script src="https://kit.fontawesome.com/20993e564e.js" crossorigin="anonymous"></script>
-    <script defer src="script.js"></script>
+    <script defer src="../../js/fooldalScript.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,9 +23,9 @@
                 <li><i class="fa-solid fa-bag-shopping"></i>Csomagválasztás</li>
                 <li><i class="fa-solid fa-file-signature"></i>Hirdetések kezelése</li>
                 <li><i class="fa-solid fa-star"></i>Súgóközpont</li>
+                <li class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Kijelentkezés</li>
             </ul>
         </div>
-        <div class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Kijelentkezés</div>
     </nav>
 
     <nav id="felugroablak">    
@@ -59,6 +59,7 @@
                 <div class="notif"><i class="fa-solid fa-bell"></i></div>
             </div>
         </nav>
+        
         <main>
             <header>
                 <div class="profil">
@@ -101,6 +102,8 @@
                     </div>
                 </section>
 
+                <div class="csik">&nbsp</div>
+
                 <div class="balSzoveg">
                     <p>Utoljára megtekintett</p>
                 </div>
@@ -118,6 +121,42 @@
                         <p>Allat neve</p>
                     </div>
                 </section>
+
+                <div class="csik">&nbsp</div>
+
+                <section class="mobilLent">
+                    <p class="balSzoveg">Megtekintett felhasználók</p>
+                    <p id="kontaktok">x kontakt</p>
+                    <div class="megtekFelhasz">
+                        <div class="felhasznalo">
+                            <div class="felhasznaloKep"></div>
+                            <p>Felhasználó neve</p>
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </div>
+                        <div class="felhasznalo">
+                            <div class="felhasznaloKep"></div>
+                            <p>Felhasználó neve</p>
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </div>
+                        <div class="felhasznalo">
+                            <div class="felhasznaloKep"></div>
+                            <p>Felhasználó neve</p>
+                            <i class="fa fa-cog" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div class="csik">&nbsp</div>
+
+                    <p class="balSzoveg">Jelenlegi csomag</p>
+                    <div class="csomag">
+                        <div class="elofizetes premiumElofizetes">
+                            <p>Prémium előfizető</p>
+                        </div>
+                        <div class="elofizetes simpleElofizetes">
+                            <p>Simple felhasználó</p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
 
@@ -132,7 +171,7 @@
                 </div>
             </div>
             <p class="balSzoveg">Megtekintett felhasználók</p>
-            <p id="kontaktok">x kontakt</p>
+            <p id="kontaktok2">x kontakt</p>
             <div class="megtekFelhasz">
                 <div class="felhasznalo">
                     <div class="felhasznaloKep"></div>

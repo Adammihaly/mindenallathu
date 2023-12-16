@@ -9,6 +9,7 @@ var felhasznalokSzama = felhasznalokElement.children.length;
 
 hirdeteseimSzovegElement.textContent = 'Hirdetéseim (' + hirdetesekSzama + '/5)';
 felhasznalokSzovegElement.textContent = felhasznalokSzama + ' kontakt';
+document.getElementById('kontaktok2').textContent = felhasznalokSzama + ' kontakt';
 
 function  mobilnavigacio() {
     if (felugroablak.style.display === "none" || felugroablak.style.display === "") 
