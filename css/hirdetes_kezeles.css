@@ -8,7 +8,7 @@
 
 :root
 {
-    --betumeret : 1.2vw;
+    --betumeret : 1.15vw;
     --field_betu_meret : 0.9vw;
 }
 
@@ -22,6 +22,12 @@ body,html
 body
 {
     background-color: lightseagreen;
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
 }
 
 input::placeholder
@@ -227,17 +233,171 @@ main
         width: 100%;
         height: 90%;
         position: relative;
-
+        padding: 5%;
+        overflow-y: auto;
+      
 
         & h1 
         {
             position: absolute;
-            z-index: 999;
+            /* z-index: 999; */
             top: 1vw;
             left: 5%;
             font-size: 2vw;
         }
+        
+        .column_wrapper
+        {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            overflow-y: auto;
+            gap: 1.5vh;
+            margin-top: 2.5vh;
+
+            .item
+            {
+                position: relative;
+                width: 100%;
+                height: 30vh;
+                background-color: rgb(255, 255, 255);
+                border-radius: 1.2vw;
+                padding: 2%;
+                display: flex;
+                gap: 5%;
+
+                
+                
+                & img
+                {
+                    width: 20%;
+                    border-radius: 1vw;
+                    
+                }
+
+                .content_wrapper
+                {
+                    display: flex;
+                    justify-content: space-evenly;
+                    flex-direction: column;
+                    width:80%;
+                    height:100%;
+                    font-size: var(--betumeret);
+
+                    & p 
+                    {
+                        height: 3lh;
+                        overflow: hidden;
+                    }
+                    
+
+                    & ul
+                    {
+                        display: flex;
+                        list-style-type: none;
+                        width: 100%;
+                        gap: 5%;
+
+                        & li
+                        {
+                            display: flex;
+                            width: 30%;
+                            gap: 5%;
+                            transition: transform 0.2s ease;
+                            font-size: 1vw;
+                        }
+
+                        & li:hover
+                        {
+                            transform: scale(1.05);
+                            cursor: pointer;
+                        }
+
+                        & li:nth-child(1)
+                        {
+                            color: green;
+                            font-weight: bold;
+                        }
+
+                        & li:nth-child(2)
+                        {
+                            color: rgb(67, 158, 188);
+                            font-weight: bold;
+                        }
+
+                        & li:nth-child(3)
+                        {
+                            color: red;
+                            font-weight: bold;
+                        }
+                    }
+                }
+
+                #kiemelve_block
+                {
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    width: 10%;
+                    height: 20%;
+                    top: 10%;
+                    right: 2%;
+                    background-color: green;
+                    color: white;
+                    border-radius: 0.5vw;
+                  
+                }
+            }
+
+
+            .item:hover
+            {
+                border: green 1px solid;
+            }
+
+        }
+
+        
     }
+}
+
+.torles_wrapper
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: brightness(0.6);
+    
+    .torles_block
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+        background-color: rgb(255, 255, 255);
+        width: 40vw;
+        height: 35vw;
+        border-radius: 2vw;
+
+        & i
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3vw;
+            background-color: red;
+            width: 15%;
+            height: 15%;
+        }
+    }
+
 }
 
 /* MOBILNEZET */
