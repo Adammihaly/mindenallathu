@@ -219,7 +219,7 @@ main
             font-size: 1.75vw;
         }
 
-        .csomagvaltasWrapper {
+        .simpleSession {
             background-color: white;
             border: 0.5px solid rgba(0, 0, 0, 0.2);
             width: 90%;
@@ -228,7 +228,6 @@ main
 
             display: flex;
             
-
             .baloldal {
                 height: 100%;
                 width: 50%;
@@ -285,6 +284,129 @@ main
                         border-left: none;
 
                         cursor: pointer;
+                    }
+                }
+
+                .elonyokWrapper {
+                    width: 70%;
+
+                    & ul {
+                        list-style: none;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        gap: 1vw;
+                    }
+
+                    & li {
+                        border: 1px solid #D9D9D9;
+                        border-radius: 0.5vw;
+
+                        width: 100%;
+
+                        display: flex;
+                        flex-direction: row;
+
+                        .textWrapper {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+
+                            text-wrap: break-word;
+                            width: 80%;
+                            .cimek {
+                                font-size: 1.125vw;
+                                font-weight: 700;
+                            }
+
+                            .leiras {
+                                font-size: 0.75vw;
+                                color: #828282;
+                            }
+                        }
+
+                        .pipa {
+                            background-image: url(../img/pipa.png);
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+    
+                            margin-left: 0.5vw;
+                            margin-right: 0.75vw;
+                            margin-top: 0.75vw;
+                            margin-bottom: 0.75vw;
+    
+                            height: 3vw;
+                            width: 3vw;
+                        }
+                    }
+                }
+
+                .ss_valtasGomb {
+                    width: 70%;
+                    height: 8%;
+                    background-color: #13910C;
+
+                    border: none;
+                    color: white;
+                    font-family: 'Montserrat';
+                    font-weight: 700;
+                    letter-spacing: 0.2vw;
+
+                    border-radius: 0.33vw;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .premiumSession {
+            background-color: white;
+            border: 0.5px solid rgba(0, 0, 0, 0.2);
+            width: 90%;
+            height: 90%;
+            border-radius: 0.5vw;
+
+            display: none;
+
+            .baloldal {
+                height: 100%;
+                width: 50%;
+                
+                border-top-left-radius: 0.5vw;
+                border-bottom-left-radius: 0.5vw;
+
+                background-image: url(../img/plusz_inverted.jpg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .jobboldal {
+                height: 100%;
+                width: 50%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                gap: 5%;
+
+                .simplepremium {
+                    width: 70%;
+                    height: 8%;
+                    
+                    display: flex;
+                    .gomb {
+                        width: 50%;
+                        height: 100%;
+
+                        font-family: 'Montserrat';
+                        font-size: 1vw;
+                        font-weight: 700;
+                        border: none;
                     }
 
                     .pk_s {
@@ -363,7 +485,7 @@ main
                         }
 
                         &.ar {
-                            display: none;
+                            display: flex;
                             align-items: center;
                             justify-content: flex-start;
 
@@ -377,7 +499,7 @@ main
                     }
                 }
 
-                .valtasGomb {
+                .ps_valtasGomb {
                     width: 70%;
                     height: 8%;
                     background-color: #13910C;

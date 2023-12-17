@@ -1,31 +1,19 @@
-var simpleGomb = document.getElementById('simpleGomb');
-var premiumGomb = document.getElementById('premiumGomb');
-var valtasGomb = document.querySelector('.valtasGomb');
-var arElement = document.querySelector('.ar');
-var kepElement = document.querySelector('.baloldal');
+//simple session gombok
+var ss_simpleGomb = document.getElementById('ss_simpleGomb');
+var ss_premiumGomb = document.getElementById('ss_premiumGomb');
+//premium session gombok
+var ps_simpleGomb = document.getElementById('ps_simpleGomb');
+var ps_premiumGomb = document.getElementById('ps_premiumGomb');
 
-premiumGomb.addEventListener('click', () => {
-    arElement.style.display = 'flex';
-    valtasGomb.textContent = 'Csatlakozás a prémiumhoz';
+var simpleSession = document.querySelector('.simpleSession');
+var premiumSession = document.querySelector('.premiumSession');
 
-    simpleGomb.classList.remove('sk_s');
-    simpleGomb.classList.add('pk_s');
-
-    premiumGomb.classList.remove('sk_p');
-    premiumGomb.classList.add('pk_p');
-
-    kepElement.style.backgroundImage = 'url("../img/plusz_inverted.jpg")';
+ss_premiumGomb.addEventListener('click', () => {
+    premiumSession.style.display = 'flex';
+    simpleSession.style.display = 'none';
 });
 
-simpleGomb.addEventListener('click', () => {
-    arElement.style.display = 'none';
-    valtasGomb.textContent = 'Váltás prémiumra';
-
-    simpleGomb.classList.remove('pk_s');
-    simpleGomb.classList.add('sk_s');
-
-    premiumGomb.classList.remove('pk_p');
-    premiumGomb.classList.add('sk_p');
-
-    kepElement.style.backgroundImage = 'url("../img/plusz.jpg")';
+ps_simpleGomb.addEventListener('click', () => {
+    premiumSession.style.display = 'none';
+    simpleSession.style.display = 'flex';
 });
