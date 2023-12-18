@@ -8,7 +8,7 @@
 
 :root
 {
-    --betumeret : 1.15vw;
+    --betumeret : 1.2vw;
     --field_betu_meret : 0.9vw;
 }
 
@@ -48,7 +48,7 @@ input::placeholder
     flex-direction: column;
     align-items: center;
     padding-top: 2%;
-    font-size: 1.25;
+    /* font-size: 1.25; */
 
     .logo
     {   
@@ -259,12 +259,13 @@ main
             {
                 position: relative;
                 width: 100%;
-                height: 30vh;
+                height: clamp(200px,15vw,550px);
                 background-color: rgb(255, 255, 255);
                 border-radius: 1.2vw;
                 padding: 2%;
                 display: flex;
                 gap: 5%;
+
 
                 
                 
@@ -374,6 +375,7 @@ main
     width: 100%;
     height: 100%;
     backdrop-filter: brightness(0.6);
+    z-index: 99999999999999999999999999;
     
     .torles_block
     {
@@ -479,10 +481,90 @@ main
                 font-size: 2.5vh;
             }
 
+            .column_wrapper
+            {
+                .item
+                {
+                    height: clamp(50px,15vh,120px);
+
+                    & img
+                    {
+                        width: 20%;
+                        border-radius: 1vw;
+                        
+                    }
+    
+                    .content_wrapper
+                    {
+                        display: flex;
+                        justify-content: space-evenly;
+                        flex-direction: column;
+                        width:80%;
+                        height:100%;
+                        
+
+                        & h3
+                        {
+                            font-size: 1.8vh;
+                        }
+    
+                        & p 
+                        {
+                            height: 4lh;
+                            overflow: hidden;
+                            font-size: clamp(6px,0.77vh,15px);
+                        }
+                        
+    
+                        & ul
+                        {
+                            display: flex;
+                            list-style-type: none;
+                            justify-content: space-between;
+                            width: 100%;
+                            gap:5%;
+    
+                            & li
+                            {
+                                display: flex;
+                                width: 30%;
+                                gap: 5%;
+                                align-items: center;
+                                transition: transform 0.2s ease;
+                                font-size: clamp(6px,0.77vh,10px);
+                            }
+    
+                            & li:focus
+                            {
+                                transform: scale(1.05);
+                                cursor: pointer;
+                            }
+    
+                        }
+                    }
+    
+                    #kiemelve_block
+                    {
+                        
+                        width: 15%;
+                        height: 15%;
+                        border-radius: 0.5vh;
+                        font-size: 0.8vh;
+                      
+                    }
+                }
+    
+    
+            }
+        }
+
+
             
-         }
     }
+    
         
+
+   
     
 
     #felugroablak
@@ -539,6 +621,7 @@ main
                     width: 100%;
                     padding: 5%;
                     height: clamp(40px,3vw,150px);
+                  
 
                     
                 }
@@ -556,4 +639,63 @@ main
         }
     }
   
+
+
+    #torles_wrapper
+        {
+            
+            .torles_block
+            {
+             
+                gap: 5%;
+                width: 70%;
+                height: 35vh;
+                border-radius: 2vw;
+                
+
+                & i
+                {
+                    
+                    font-size: 3vh;
+                    background-color: red;
+                    color: white;
+                    width: 20%;
+                    height: 20%;
+                }
+
+                & h2
+                {
+                    font-size: 1.4vh;
+                }
+
+                & p 
+                {
+                    width: 80%;
+                    text-align: center;
+                    font-size: 1.2vh;
+                }
+
+                .buttons
+                {
+                    
+                    width: 70%;
+                    height: 10%;
+
+
+                    & button
+                    {
+                     
+                        font-size: 1.2vh;
+                
+                    }
+
+                }
+
+                
+            }
+
+        }
+        
+
+   
 }

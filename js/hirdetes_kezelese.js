@@ -2,6 +2,12 @@ const felugroablak = document.getElementById("felugroablak");
 const hirdetes_kiemelese = document.getElementById("hirdetes_kiemelese");
 const megsem_button = document.getElementById("megsem_button");
 const hirdetes_modositasa = document.getElementById("hirdetes_modositasa");
+var szam = document.getElementById("szam")
+
+var itemElements = document.querySelectorAll('.item');
+szam.innerHTML = itemElements.length;
+
+
 
 
 function  mobilnavigacio() {
