@@ -1,6 +1,8 @@
 const felugroablak = document.getElementById("felugroablak");
 const hirdetes_kiemelese = document.getElementById("hirdetes_kiemelese");
-const kiemeles_block = document.getElementById("kiemelve_block");
+const megsem_button = document.getElementById("megsem_button");
+const hirdetes_modositasa = document.getElementById("hirdetes_modositasa");
+
 
 function  mobilnavigacio() {
     
@@ -22,8 +24,45 @@ hirdetes_kiemelese.addEventListener('click',()=>{
 })
 
 
-hirdetes_kiemelese.addEventListener('click',()=>{
+megsem_button.addEventListener('click', () => {
+    torles_wrapper.style.display = (torles_wrapper.style.display === 'flex') ? 'none' : 'flex';
+});
 
-    kiemeles_block.style.display = (kiemeles_block.style.display === 'none' || kiemeles_block.style.display === '') ? 'flex' : 'none';
 
-})
+
+document.addEventListener('click', function (event) {
+    
+    var target = event.target;
+
+    if (target.id === 'hirdetes_modositasa') {
+        
+        window.location.href = 'hirdetes_megadasa.html';
+    }
+
+
+    if (target.classList.contains('torles')) {
+
+        var torles_wrapper = document.getElementById('torles_wrapper');
+
+        if (torles_wrapper) 
+        {
+            torles_wrapper.style.display = (torles_wrapper.style.display === 'flex') ? 'none' : 'flex';
+        }
+    }
+
+    if(target.id === 'hirdetes_kiemelese')
+    {
+        var item = target.closest('.item');
+
+        var kiemelesBlock = item.querySelector('#kiemelve_block');
+
+        if (kiemelesBlock) {
+            kiemelesBlock.style.display = (kiemelesBlock.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+    }
+
+    
+});
+
+
