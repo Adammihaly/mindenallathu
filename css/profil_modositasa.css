@@ -1,0 +1,510 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+:root
+{
+    --betumeret : 1.2vw;
+    --field_betu_meret : 0.9vw;
+}
+
+body,html
+{
+    width: 100%;
+    height: 100%;
+
+}
+
+body
+{
+    background-color: lightseagreen;
+}
+
+input::placeholder
+{
+    font-size: 0.8vw;
+}
+
+ nav
+{
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100dvh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+    /* font-size: 1.25; */
+
+    .logo
+    {   
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin-bottom: 10%;
+        font-weight: bold;
+        font-size: var(--betumeret);
+
+    }
+
+    .nav_item
+    {
+        width: 100%;
+        height: 80%;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: var(--betumeret);
+
+        & ul
+        {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            list-style-type: none;
+            gap:2%;
+        }
+
+        & li
+        {
+            width: 80%;
+            height: clamp(30px,3vw,150px);
+            display: flex;
+            align-items: center;
+            gap: 5%;
+            padding-left: 5%;
+            border-radius: 0.8vw;
+            transition: scale .3s ease;
+        }
+
+
+        & li:hover
+        {
+            background-color: green;
+            color: white;
+            cursor: pointer;
+            scale: 1.1;
+        }
+
+        & li:last-child
+        {
+            color: red;
+            margin-top: 20vh;
+
+        }
+
+        & li:last-child:hover
+        {
+            background-color: red;
+            color: white;
+        }
+    }
+
+  
+
+   
+} 
+
+#felugroablak
+{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 0%;
+    left: 0%;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    padding-left: 5%;
+    z-index: 9999;
+}
+
+.wrapper
+{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+
+}
+
+.mobilnezet
+{
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-inline:5% ;
+    width: 100%;
+    height: 8%;
+    z-index: 10000;
+
+    .baloldal
+    {
+        display: flex;
+        gap: 10%;
+    }
+}
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(239,239,240);
+
+    & header
+    {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        position: relative;
+        align-items: center;
+        font-size: var(--betumeret);
+        justify-content: space-between;
+        padding-inline: 5%;
+        
+        
+
+        .profil
+        {
+            display: flex;
+            width: 20%;
+            align-items: center;
+        }
+
+        .profilkep
+        {
+            
+            width: 3vw;
+            height: 3vw;
+            border-radius: 50%;
+            background-image: url(../img/profil.svg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-inline-start: 1%;
+            margin-right: 2%;
+            
+        }
+
+        .notif
+        {
+            position: relative;
+            font-size: 2vw;
+        }
+
+        /* .notif::before
+        {
+            content: '●';
+            font-size: 1rem;
+            color: red;
+            position: absolute;
+            top: -25%;
+            right: 0;
+        } */
+
+
+      
+    }
+
+    .main_content
+    {
+        width: 100%;
+        height: 90%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+
+        & h1 
+        {
+            position: absolute;
+            z-index: 999;
+            top: 1vw;
+            left: 5%;
+            font-size: 2vw;
+        }
+
+        .content_wrapper
+        {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            height: 85%;
+            gap: 2%;
+            margin-top: 2%;
+            background-color: white;
+
+            .content
+            {
+                height: 90%;
+                width: 100%;
+                border: 1px solid black;
+
+                .grid 
+                {  
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    grid-template-rows: 1fr 1fr 1fr;
+                    gap: 0px 0px;
+                    grid-auto-flow: row;
+                    grid-template-areas:
+                      "first_col first_col second_col second_col"
+                      "first_col first_col second_col second_col"
+                      "upload_image upload_image upload_image upload_image";
+                    width: 100%;
+                    height: 100%;
+
+                    & div
+                    {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        padding: 5%;
+                    }
+
+                         
+                    .first_col 
+                    {
+                        grid-area: first_col; 
+                        border: 1px solid black;
+                    }
+                    
+                    .second_col 
+                    { 
+
+                        padding: 5%;
+                        grid-area: second_col; 
+                        border: 1px solid black;
+
+                    }
+                    
+                    .upload_image 
+                    { 
+                        grid-area: upload_image;
+                        border: 1px solid black;
+                        padding-inline-start: 2%;
+                        padding-block: 0%;
+                    
+                        & h4
+                        {
+                            margin-bottom: 2%;
+                        }
+                    }
+
+                    
+
+                    & fieldset
+                    {
+                        height: 30%;
+                        background-color: white;
+                        font-size: 1vw;
+                        border: 1px solid grey;
+                        border-radius: 0.1vw;
+                        font-weight: bold;
+                        position: relative;
+                        
+                        & button
+                        {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: absolute;
+                            top: 50%;
+                            right: 5%;
+                            height: 60%;
+                            width: 5%;
+                            transform: translate(0, -70%);
+                            background-color: green;
+                            color: white;
+                            border: none;
+                            border-radius: 0.2vw;
+                        }
+
+                        & button:has(i)
+                        {
+                            background-color: red;
+                        }
+                        
+
+                        & legend
+                        {
+                            margin-left: 2%;
+                            background-color: transparent;                            
+                        }
+                        
+
+                        & input
+                        {
+                            height: 100%;
+                            width: 100%;
+                            background-color: inherit;
+                            padding-inline-start: 3%;
+                            border: none;
+                            font-size: 1vw;
+                        }
+
+                        & input:focus
+                        {
+                            border: none;
+                            outline: none;
+                        }
+
+                        & input::placeholder
+                        {
+                            font-size: 1vw;
+                        }
+                    }
+                  }
+             
+                  
+            }
+
+            .mentes
+            {
+            
+                display: flex;
+                height: 10%;
+                width: 100%;
+                background-color: rgba(239,239,240);
+                justify-content: flex-end;
+                
+                & button 
+                {
+                    background-color: green;
+                    color: white;
+                    font-size: 1.3vw;
+                    width: 20%;
+                    border: none;
+                    border-radius: 0.5vw;
+                }
+            }
+        }
+    }
+}
+
+/* TELO NEZET */
+
+@media (max-width:600px) {
+    nav
+    {
+        display: none;
+    }
+
+    .wrapper
+    {
+        margin: 0;
+        width: 100%;
+
+        & header
+        {
+            display: none;
+        }
+
+        .mobilnezet
+        {
+            display: flex;
+        }
+        
+        .main_content
+        {
+            margin-top: 10vh ;
+
+            & h1 {
+                font-size: 2.5vh;
+            }
+    
+         }
+        
+        }
+    
+
+    #felugroablak
+    {
+        align-items: flex-start;
+        gap: 1%;
+
+        .profil_mobil
+        {
+            margin-top: 20%;
+            height: 10%;
+            width: 100%;
+            border-bottom: 1px solid black;
+
+            .profilkep
+            {
+                background-image: url(../img/profil.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+            }
+
+            .nev_kep
+            {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                gap: 5%;
+                width: 100%;
+            }
+        }
+
+        .nav_item
+        {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 100%;
+           
+
+            & ul
+            {
+                height: 50%;
+                width: 100%;
+                gap: 5%;
+
+                & li
+                {
+                    
+                    font-size: 2vh;
+                    width: 100%;
+                    padding: 5%;
+                    height: clamp(40px,3vw,150px);
+
+                    
+                }
+
+               
+        
+                & li:focus
+                {
+                    background-color: green;
+                    color: white;
+                    cursor: pointer;
+                    scale: 1.1;
+                }
+            }
+        }
+    }
+  
+}

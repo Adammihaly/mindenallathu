@@ -28,3 +28,18 @@ document.addEventListener('click', function (event) {
     }
 
 })
+
+
+function  mobilnavigacio() {
+    
+    console.log("meghivva");
+
+    if (felugroablak.style.display === "none" || felugroablak.style.display === "") 
+    {
+        felugroablak.style.display = "flex";
+    } 
+    else
+    {
+        felugroablak.style.display = "none";
+    }
+}
