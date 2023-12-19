@@ -7,7 +7,7 @@
 
 :root
 {
-    --betumeret : 1.3vw;
+    --betumeret : 1.2vw;
     --betustilus: 'Montserrat', sans-serif;
 }
 
@@ -55,7 +55,6 @@ nav
     flex-direction: column;
     align-items: center;
     padding-top: 2%;
-    font-size: 1.25;
 
     .logo
     {   
@@ -119,8 +118,8 @@ nav
             background-color: red;
             color: white;
         }
-    }   
-}
+    }
+} 
 
 #felugroablak
 {
@@ -214,7 +213,10 @@ main
             min-height: 38.5%;
 
             color: white;
-            background: linear-gradient(to bottom right, #2f584c 0%, #4d6336 75%);
+            background-image: url(../img/kiemeles_hatter.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
             border-radius: 2vw;
 
             & button {
@@ -283,7 +285,7 @@ main
                 height: 14vw;
                 border-radius: 1vw;
 
-                background-image: url(../../img/plusz.jpg);
+                background-image: url(../img/plusz.jpg);
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -344,7 +346,7 @@ main
 
     width: 30%;
     height: 100%;
-    background-color: whitesmoke;
+    background-color: rgb(250, 250, 250);
     
     .balSzoveg {
         padding-top: 5vh;
@@ -376,8 +378,11 @@ main
         }
 
         .premiumElofizetes {
-            background: linear-gradient(156deg, rgba(0,200,27,1) 0%, rgba(0,185,56,1) 35%, rgba(0,212,255,1) 100%);
-            box-shadow: 1px 15px 5px -5px rgba(19, 145, 12, 0.43);
+            background-image: url(../img/premium_hatter.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: 1px 10px 5px -5px rgba(19, 145, 12, 0.43);
         }
 
         .simpleElofizetes {
@@ -387,10 +392,13 @@ main
             width: 100%;
             height: 100%;
             
-            background: linear-gradient(156deg, rgba(88,247,110,1) 0%, rgba(0,171,185,1) 48%);
-            box-shadow: 1px 15px 5px -5px rgba(0,171,185,0.43);
+            background-image: url(../img/simple_hatter_sajat.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: 1px 10px 5px -5px rgba(11, 72, 7, 0.43);
 
-            visibility: visible;
+            visibility: hidden;
         }
     }
 
@@ -652,8 +660,11 @@ main
                     }
 
                     .premiumElofizetes {
-                        background: linear-gradient(156deg, rgba(0,200,27,1) 0%, rgba(0,185,56,1) 35%, rgba(0,212,255,1) 100%);
-                        box-shadow: 1px 15px 5px -5px rgba(19, 145, 12, 0.43);
+                        background-image: url(../img/premium_hatter.png);
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        box-shadow: 1px 10px 5px -5px rgba(19, 145, 12, 0.43);
 
                         position: absolute;
                         top: 0;
@@ -665,8 +676,11 @@ main
                     }
             
                     .simpleElofizetes {
-                        background: linear-gradient(156deg, rgba(88,247,110,1) 0%, rgba(0,171,185,1) 48%);
-                        box-shadow: 1px 15px 5px -5px rgba(0,171,185,0.43);
+                        background-image: url(../img/simple_hatter_sajat.png);
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        box-shadow: 1px 10px 5px -5px rgba(11, 72, 7, 0.43);
 
                         width: 100%;
 
