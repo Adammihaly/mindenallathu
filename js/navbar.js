@@ -27,12 +27,16 @@ document.addEventListener('click', function (event) {
         window.location.href = 'hirdetes_megadasa.html'
     }
 
+    if(target.id === 'profil_modositasa_nav')
+    {
+        window.location.href = 'profil_modostiasa.html'
+    }
+
 })
 
 
 function  mobilnavigacio() {
     
-    console.log("meghivva");
 
     if (felugroablak.style.display === "none" || felugroablak.style.display === "") 
     {
