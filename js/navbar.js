@@ -29,7 +29,7 @@ document.addEventListener('click', function (event) {
 
     if(target.id === 'profil_modositasa_nav')
     {
-        window.location.href = 'profil_modostiasa.html'
+        window.location.href = 'profil_modositasa.html'
     }
 
 })
