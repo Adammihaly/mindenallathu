@@ -23,7 +23,7 @@
 
 
   // replace your website URL same as added in the developers.Facebook.com/apps e.g. if you used http instead of https and you used
-  $fb_login_url = $fb_helper->getLoginUrl('http://localhost/allat/bejelentkezes', $permissions);
+  $fb_login_url = $fb_helper->getLoginUrl('https://mindenallat.hu/bejelentkezes', $permissions);
 
 
     if (isset($_GET['error'])) {

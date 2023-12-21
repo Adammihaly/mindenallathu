@@ -8,15 +8,18 @@
 | Blog: https://ahmadlogs.wordpress.com/
  */ 
  
+error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+ 
  // Include the autoloader provided in the SDK
 require_once(__DIR__.'/Facebook/autoload.php');
 
-define('APP_ID', '341065625016250');
-define('APP_SECRET', 'c3a5c83842b70417254e9bdbaebbd1d9');
+define('APP_ID', '899225278486630');
+define('APP_SECRET', '8fc1e16e11164fe3445c855cf90aae48');
 define('API_VERSION', 'v2.5');
-define('FB_BASE_URL', 'http://localhost/allat/kezelopult');
+define('FB_BASE_URL', 'https://mindenallat.hu/kezelopult');
 
-define('BASE_URL', 'http://localhost/allat/kezelopult');
+define('BASE_URL', 'https://mindenallat.hu/kezelopult');
 
 if(!session_id()){
     session_start();

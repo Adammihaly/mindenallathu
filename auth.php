@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
 function authenticateUser($client, $conn) {
     if (!isset($_SESSION['user_token']) && isset($_GET['code'])) {
         $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
