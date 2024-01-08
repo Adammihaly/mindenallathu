@@ -4,32 +4,32 @@ document.addEventListener('click', function (event) {
 
     if (target.id === 'kezelopult_nav') {
         
-        window.location.href = 'fooldal.html';
+        window.location.href = 'fooldal';
     }
 
     if(target.id === 'hirdetes_feleadasa_nav')
     {
-        window.location.href = 'hirdetes_megadasa.html'
+        window.location.href = 'hirdetes_megadasa'
     }
 
     if(target.id === 'csomagvalasztas_nav')
     {
-        window.location.href = 'csomagvaltas.html'
+        window.location.href = 'csomagvaltas'
     }
 
     if(target.id === 'hirdetesek_kezelese_nav')
     {
-        window.location.href = 'hirdetesek_kezelese.html'
+        window.location.href = 'hirdetesek_kezelese'
     }
 
     if(target.id === 'hirdetes_feladas_nav')
     {
-        window.location.href = 'hirdetes_megadasa.html'
+        window.location.href = 'hirdetes_megadasa'
     }
 
     if(target.id === 'profil_modositasa_nav')
     {
-        window.location.href = 'profil_modositasa.html'
+        window.location.href = 'profil_modositasa'
     }
 
 })

@@ -1,0 +1,2 @@
+- Kezelőpult kezdőlap feltett hírdetések kattintahtók legyenek (a tag)
+- Kezelőpult oldalsó menü kijelentkezés gomb mindig a menü sor legalján legyen rögzítve
