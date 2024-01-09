@@ -70,7 +70,7 @@
             </header>   
             <section class="main_content">
                 <h1>Hirdetés feladása(<span id="szam">1</span>/5)</h1>
-                <form action="./asd.html" enctype="multipart/form-data" method="get" >
+                <form action="../php/post.php" enctype="multipart/form-data" method="get" >
                     <section class="card" id="elso">
                         <div class="overflow_wrap">
                             <div class="inputfield">
@@ -87,12 +87,12 @@
                                 <div class="field_wrapper">
                                     <p class="cim">Állat katergóriája<span style="color: red;"> *</span></p>
                                     <div class="input_wrapper">
-                                        <input list="kategoria" class="bevitel" id="allat_kategoriaja" name="allat_kategoriaja" placeholder="Válassza ki az állat katergóriáját" required>
-                                        <datalist id="kategoria">
-                                            <option value="Haszonállat">
-                                            <option value="Házikedvenc">
-                                            <option value="Vadállat">
-                                        </datalist>
+                                        <select id="allat_kategoriaja" name="allat_kategoriaja" class="bevitel" required>
+                                            <option value="" disabled selected hidden>Válasszon egy kategóriát</option>
+                                            <option value="Haszonállat">Haszonállat</option>
+                                            <option value="Házikedvenc">Házikedvenc</option>
+                                            <option value="Vadállat">Vadállat</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
@@ -100,14 +100,14 @@
                                 <div class="field_wrapper">
                                     <p class="cim">Állat féle<span style="color: red;"> *</span></p>
                                     <div class="input_wrapper">
-                                        <input list="fele" class="bevitel" name="allat_fele" id="allat_fele" placeholder="Válassza ki az állat félét" required>
-                                        <datalist id="fele">
-                                            <option value="Kutya">
-                                            <option value="Macska">
-                                            <option value="Csirke">
-                                            <option value="Nyúl">
-                                            <option value="Kecske">
-                                        </datalist>
+                                        <select id="allat_fele" name="allat_fele" class="bevitel" required>
+                                            <option value="" disabled selected hidden>Válasszon egy fajtát</option>
+                                            <option value="Kutya">Kutya</option>
+                                            <option value="Macska">Macska</option>
+                                            <option value="Csirke">Csirke</option>
+                                            <option value="Nyúl">Nyúl</option>
+                                            <option value="Kecske">Kecske</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>      
@@ -115,13 +115,13 @@
                                 <div class="field_wrapper">
                                     <p class="cim">Állat fajta<span style="color: red;"> *</span></p>
                                     <div class="input_wrapper">
-                                        <input list="faj" class="bevitel" name="allat_fajtaja" id="allat_fajtaja" placeholder="Válassza ki az állat fajtáját" required>
-                                        <datalist id="faj">
-                                            <option value="Nemetjuhasz">
-                                            <option value="Puli">
-                                            <option value="Csivava">
-                                            <option value="Terrier">
-                                        </datalist>
+                                        <select id="allat_fajtaja" name="allat_fajtaja" class="bevitel" required>
+                                            <option value="" disabled selected hidden>Válasszon egy fajtát</option>
+                                            <option value="Nemetjuhasz">Németjuhász</option>
+                                            <option value="Puli">Puli</option>
+                                            <option value="Csivava">Csivava</option>
+                                            <option value="Terrier">Terrier</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>  
@@ -143,11 +143,11 @@
                                 <div class="field_wrapper">
                                     <p class="cim">Állat neme<span style="color: red;"> *</span></p>
                                     <div class="input_wrapper">
-                                        <input list="nem" class="bevitel"  id="allat_neme" name="allat_neme" placeholder="Válassza ki az állat nemét" required>
-                                        <datalist id="nem">
-                                            <option value="Hím">
-                                            <option value="Nőstény">
-                                        </datalist>                                    
+                                        <select id="allat_neme" name="allat_neme" class="bevitel" required>
+                                            <option value="" disabled selected hidden>Válassza ki az állat nemét</option>
+                                            <option value="Hím">Hím</option>
+                                            <option value="Nőstény">Nőstény</option>
+                                        </select>                               
                                     </div>
                                 </div>
                             </div>
@@ -178,7 +178,7 @@
                                 <div class="field_wrapper">
                                     <p class="cim">Képek<span style="color: red;"> *</span></p>
                                     <label>A több, jó minőségű kép feltöltése növeli az eladás sikerességét, hiszen a képekkel rendelkező hírdetésekre akár 10x többen kattintanak! Figyelj, a csatolni kivánt kép mérete minimum 640 * 640, maximum 1920 * 1920 pixel lehet! <br> Kérjük, ne használj internetről  letöltött katalógusképeket!</label>
-                                    <input type="file"  name="kep_input" id="kep_input" accept="image/jpeg, image/png" multiple required>
+                                    <input type="file"  name="kep_input[]" id="kep_input" accept=".jpg, .jpeg, .png, .webp" multiple="multiple" required>
                                 </div>
                             </div>
                             <div class="nagyobb_field">
@@ -235,7 +235,7 @@
                         <div class="overflow_wrap">
                             <div class="nagyobb_field">
                                 <div class="field_wrapper">
-                                    <p class="cim">Kiemelés<span style="color: red;"> *</span></p>
+                                    <p class="cim">Kiemelés</p>
                                     <div class="input_wrapper">
                                         <label>Ön rendelkezik prémium csomaggal így lehetősége van kiemelni a hídetését, mellyel több emberhez juthat el. Állata hamarabb találhat gazdára, hiszen többen fogják megnézni az ön hírdetését. Emelje ki a hírdetését, hogy kitünjön a többi közül.</label>
                                         <button type="button" id="kiemeles">Hírdetés kiemelése</button>
@@ -247,7 +247,7 @@
 
                     <div class="gombok">
                         <button id="hatra" type="button">Vissza</button>
-                        <button type="submit" id="submit_gomb" onclick="validateForm()">Hirdetés feladása</button> 
+                        <button type="submit" name="submit_gomb" id="submit_gomb" onclick="validateForm()">Hirdetés feladása</button> 
                         <button id="elore" type="button">Tovább</button>   
                     </div>
                 </form>

@@ -1,0 +1,4 @@
+- Kezelőpult kezdőlap feltett hírdetések kattintahtók legyenek (a tag)
+- Kezelőpult oldalsó menü kijelentkezés gomb mindig a menü sor legalján legyen rögzítve
+- Poszt közzétételnél az állat neme, kategória és fajta rendes legördülő lista legyen
+- Poszt közzétételnél a folytonos szöveg Hirdetés feladása(x/4) legyen Hirdetés feladása(x/5), mivel 5 lépésünk van.

@@ -78,7 +78,7 @@ function loginUser($conn, $name, $pwd)
 		$_SESSION['user_token'] = $uidLetezik["token"];
 
 
-		header("Location: ../kezelopult");
+		header("Location: ../Kezelopult/fooldal");
 		exit();
 
 	}

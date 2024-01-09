@@ -15,16 +15,9 @@
     ini_set('display_errors', 1);
 
     require_once 'config.php';
-    require_once 'fconfig.php';
     require_once 'php/functions.inc.php';
-    require_once 'auth2.php';
     require_once 'php/conn.php';
 
-    authenticateFacebookUser($fb, $fb_helper, $accessToken, $conn);
-
-
-  // replace your website URL same as added in the developers.Facebook.com/apps e.g. if you used http instead of https and you used
-  $fb_login_url = $fb_helper->getLoginUrl('http://localhost/allat/regisztracio', $permissions);
 
     if (isset($_GET['error'])) {
         if ($_GET['error'] == "pwdnm") {
@@ -123,7 +116,7 @@
                             <img src="./img/icons8-google-50.png">
                             <p>Bejelentkezés Google fiókkal</p>
                         </a>
-                        <a href="<?php echo "$fb_login_url"; ?>" class="input-facebook" style="text-decoration: none; color: white;">
+                        <a href="#" class="input-facebook" style="text-decoration: none; color: white;">
                             <img src="./img/icons8-facebook-50.png">
                             <p>Bejelentkezés Facebookal</p>
                         </a>
