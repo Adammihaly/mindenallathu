@@ -1,0 +1,22 @@
+CREATE TABLE posts(
+	ID int not null primary key,
+    profilID int not null,
+    cim varchar(75) not null,
+    allat_kat varchar(100) not null,
+    allat_fele varchar(100) not null,
+    allat_fajta varchar(120) not null,
+    allat_kora int not null,
+    allat_neme varchar(100) not null,
+    allat_szine varchar(100) not null,
+    allat_ara int not null,
+    kepek varchar(1000) not null,
+    allat_leiras varchar(2000) not null,
+    teny_nev varchar(500) not null,
+    teny_email varchar(100) not null,
+    teny_tel varchar(20) not null,
+    teny_cim varchar(500) not null,
+    kiemelt int null,
+    torolve int null,
+    datum datetime default now(),
+    FOREIGN KEY (profilID) REFERENCES users(ID)
+)

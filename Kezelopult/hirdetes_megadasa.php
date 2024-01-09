@@ -70,7 +70,7 @@
             </header>   
             <section class="main_content">
                 <h1>Hirdetés feladása(<span id="szam">1</span>/4)</h1>
-                <form action="asd.html" enctype="multipart/form-data" method="get">
+                <form action="../php/post.php" enctype="multipart/form-data" method="POST">
                     <section class="card" id="elso">
                         <div class="overflow_wrap">
                             <div class="inputfield">
@@ -178,7 +178,7 @@
                                 <div class="field_wrapper">
                                     <p class="cim">Képek<span style="color: red;"> *</span></p>
                                     <label>A több, jó minőségű kép feltöltése növeli az eladás sikerességét, hiszen a képekkel rendelkező hírdetésekre akár 10x többen kattintanak! Figyelj, a csatolni kivánt kép mérete minimum 640 * 640, maximum 1920 * 1920 pixel lehet! <br> Kérjük, ne használj internetről  letöltött katalógusképeket!</label>
-                                    <input type="file"  name="kep_input" id="kep_input" accept="image/jpeg, image/png" multiple required>
+                                    <input type="file"  name="kep_input[]" id="kep_input" accept=".jpg, .jpeg, .png, .webp" multiple="multiple" required>
                                 </div>
                             </div>
                             <div class="nagyobb_field">
@@ -235,7 +235,7 @@
                         <div class="overflow_wrap">
                             <div class="nagyobb_field">
                                 <div class="field_wrapper">
-                                    <p class="cim">Kiemelés<span style="color: red;"> *</span></p>
+                                    <p class="cim">Kiemelés</p>
                                     <div class="input_wrapper">
                                         <label>Ön rendelkezik prémium csomaggal így lehetősége van kiemelni a hídetését, mellyel több emberhez juthat el. Állata hamarabb találhat gazdára, hiszen többen fogják megnézni az ön hírdetését. Emelje ki a hírdetését, hogy kitünjön a többi közül.</label>
                                         <button type="button" id="kiemeles">Hírdetés kiemelése</button>
@@ -247,7 +247,7 @@
 
                     <div class="gombok">
                         <button id="hatra" type="button">Vissza</button>
-                        <button type="submit" id="submit_gomb" onclick="validateForm()">Hirdetés feladása</button> 
+                        <button type="submit" name="submit_gomb" id="submit_gomb" onclick="validateForm()">Hirdetés feladása</button> 
                         <button id="elore" type="button">Tovább</button>   
                     </div>
                 </form>
