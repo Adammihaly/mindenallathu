@@ -25,11 +25,15 @@ function szamlalo()
       
         if(szam===i)
         {
-            tomb[i].style.display = "flex";
+            tomb[i].style.width = "100%";
+            tomb[i].style.height = "100%";
+            tomb[i].style.padding = "5%";
         }
         else
         {
-            tomb[i].style.display = "none";
+            tomb[i].style.width = "0";
+            tomb[i].style.height = "0";
+            tomb[i].style.padding = "0";   
         }
 
     }
