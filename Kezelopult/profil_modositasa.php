@@ -11,6 +11,21 @@
 </head>
 <body>
     
+<?php
+
+session_start();
+
+    if (isset($_SESSION['ID'])) {
+            $profilID = $_SESSION['ID'];
+        }
+        else
+        {
+            header("Location: ../bejelentkezes");
+            exit();
+        }
+
+?>
+    
     <nav>
         <div class="logo">Mindenallat.hu</div>
         <div class="nav_item">

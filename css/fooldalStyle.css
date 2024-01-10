@@ -278,6 +278,7 @@ main
             .hirdetes {
                 margin-bottom: 1.25vw;
                 box-sizing: border-box;
+                text-decoration: none;
             }
 
             .hirdetesKep {
@@ -295,7 +296,7 @@ main
                 font-weight: bold;
                 font-size: 1.33vw;
                 word-wrap: break-word;
-
+                color: black;
                 width: 14vw;
             }
         }

@@ -33,7 +33,7 @@ document.addEventListener('click', function (event) {
 
     if (target.id === 'hirdetes_modositasa') {
         
-        window.location.href = 'hirdetes_megadasa.html';
+        window.location.href = 'hirdetes_megadasa';
     }
 
 

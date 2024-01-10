@@ -32,6 +32,11 @@ document.addEventListener('click', function (event) {
         window.location.href = 'profil_modositasa'
     }
 
+    if(target.id === 'kijelentkezes_nav')
+    {
+        window.location.href = '../php/logout.php'
+    }
+
 })
 
 

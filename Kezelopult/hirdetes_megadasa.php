@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hírdetés feladás</title>
     <link rel="stylesheet" href="../css/hirdetes_megadasa.css">
     <script src="https://kit.fontawesome.com/20993e564e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
+
+
+<?php
+
+session_start();
+
+    if (isset($_SESSION['ID'])) {
+            $profilID = $_SESSION['ID'];
+        }
+        else
+        {
+            header("Location: ../bejelentkezes");
+            exit();
+        }
+
+?>
+
 
     <nav>
         <div class="logo">Mindenallat.hu</div>
@@ -70,14 +87,14 @@
             </header>   
             <section class="main_content">
                 <h1>Hirdetés feladása(<span id="szam">1</span>/5)</h1>
-                <form action="../php/post.php" enctype="multipart/form-data" method="get" >
+                <form action="../php/post.php" enctype="multipart/form-data" method="POST" >
                     <section class="card" id="elso">
                         <div class="overflow_wrap">
                             <div class="inputfield">
                                 <div class="field_wrapper">
                                     <p class="cim">Hirdetés címe<span style="color: red;"> *</span></p>
                                     <div class="input_wrapper">
-                                        <input type="text" id="hirdetes_cim" class="bevitel" name="hirdetes_cime" placeholder="Add meg a hirdetésed nevét" required minlength="12">
+                                        <input type="text" id="hirdetes_cim" class="bevitel" name="hirdetes_cime" placeholder="Add meg a hirdetésed nevét" required maxlength="70">
                                         <p>Egy jó cím növeli az eladás esélyeit. Próbáld egyértelműen megnevezni a hirdetésed tárgyát, és kerüld az "eladó", "kiadó" vagy hasonló kifejezéseket.</p>
                                     </div>
                                     <label id="hiba_uzenet">Minimum 12, maximum 70 karakter lehet.</label>
@@ -89,9 +106,9 @@
                                     <div class="input_wrapper">
                                         <select id="allat_kategoriaja" name="allat_kategoriaja" class="bevitel" required>
                                             <option value="" disabled selected hidden>Válasszon egy kategóriát</option>
-                                            <option value="Haszonállat">Haszonállat</option>
-                                            <option value="Házikedvenc">Házikedvenc</option>
-                                            <option value="Vadállat">Vadállat</option>
+                                            <option value="Haziallat">Háziállat</option>
+                                            <option value="Haszonallat">Haszonállat</option>
+                                            <option value="Diszallat">Díszállat</option>
                                         </select>
                                     </div>
                                 </div>
@@ -117,7 +134,7 @@
                                     <div class="input_wrapper">
                                         <select id="allat_fajtaja" name="allat_fajtaja" class="bevitel" required>
                                             <option value="" disabled selected hidden>Válasszon egy fajtát</option>
-                                            <option value="Nemetjuhasz">Németjuhász</option>
+                                            <option value="Németjuhász">Németjuhász</option>
                                             <option value="Puli">Puli</option>
                                             <option value="Csivava">Csivava</option>
                                             <option value="Terrier">Terrier</option>
@@ -134,7 +151,7 @@
                                 <div class="field_wrapper">
                                     <p class="cim">Állat kora<span style="color: red;"> *</span></p>
                                     <div class="input_wrapper">
-                                        <input type="number" class="bevitel" id="allat_kora" name="allat_kora" placeholder="Adja meg az állat pontos életkorát hónapokban" required min="1" max="200">
+                                        <input type="number" class="bevitel" id="allat_kora" name="allat_kora" placeholder="Adja meg az állat pontos életkorát hónapokban" required min="1" max="1000">
                                         <p>Fontos, hogy állatának életkorát hónapban adja meg. Így az összes állat életkora azonosan megtekinthető. </p>
                                     </div>
                                 </div>

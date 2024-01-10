@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(0);
+ini_set('display_errors', 0);
+
 if (isset($_POST['submit_gomb'])) {
 	
 	require_once 'conn.php';
@@ -85,15 +88,23 @@ header("Location: " . $_SERVER['HTTP_REFERER']);
 		exit();
 }
 
-
-mysqli_stmt_bind_param($stmt, "ssssssssssssssss",$ID, $profilID, $cim, $allat_kat, $allat_fele, $allat_fajtaja, $allat_kora, $allat_neme, $allat_szine, $allat_ara, $allat_kepek, $allat_leiras, $tenyeszto_nev, $tenyeszto_email, $tenyeszto_telefon, $lokacio);
+mysqli_set_charset($conn, "utf8");
+mysqli_stmt_bind_param($stmt, "ssssssssssssssss",$postID, $profilID, $cim, $allat_kat, $allat_fele, $allat_fajtaja, $allat_kora, $allat_neme, $allat_szine, $allat_ara, $allat_kepek, $allat_leiras, $tenyeszto_nev, $tenyeszto_email, $tenyeszto_telefon, $lokacio);
 mysqli_stmt_execute($stmt);
 mysqli_stmt_close($stmt);
 
 
-$egy = 1;
+$sql = "SELECT * FROM users WHERE ID = $profilID;";
+$result = $conn->query($sql);
+	while ($row = $result->fetch_assoc()) {
 
-$sqlll = "UPDATE users SET posts = '$egy' WHERE ID = $profilID";
+		$posts = $row['posts'];
+	}
+
+
+$posts = $posts + 1;
+
+$sqlll = "UPDATE users SET posts = '$posts' WHERE ID = $profilID";
 mysqli_query($conn, $sqlll);
 
 header("Location: ../Kezelopult/fooldal?error=none");

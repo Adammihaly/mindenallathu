@@ -10,6 +10,24 @@
     <title>Document</title>
 </head>
 <body>
+
+
+<?php
+
+session_start();
+
+    if (isset($_SESSION['ID'])) {
+            $profilID = $_SESSION['ID'];
+        }
+        else
+        {
+            header("Location: ../bejelentkezes");
+            exit();
+        }
+
+?>
+
+
     <div class="wrapper">
         <span>Gratulálunk! Ön innentől prémium felhasználó!</span>
         <div class="elofizetes">
