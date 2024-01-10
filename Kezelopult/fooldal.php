@@ -167,8 +167,8 @@ $result = $conn->query($sql);
                 <div class="csik">&nbsp</div>
 
                 <section class="mobilLent">
-                    <p class="balSzoveg">Megtekintett felhasználók</p>
-                    <p id="kontaktok">x kontakt</p>
+                    <p class="balSzoveg">Legnépszerűbb hírdetések</p>
+                    <p>x kontakt</p>
                     <div class="megtekFelhasz">
                         <div class="felhasznalo">
                             <div class="felhasznaloKep"></div>
@@ -206,23 +206,20 @@ $result = $conn->query($sql);
                     <p><?php echo $csomag_szoveg; ?></p>
                 </div>
             </div>
-            <p class="balSzoveg">Megtekintett felhasználók</p>
+            <p class="balSzoveg">Legnépszerűbb hírdetések</p>
             <p id="kontaktok2">x kontakt</p>
             <div class="megtekFelhasz">
                 <div class="felhasznalo">
                     <div class="felhasznaloKep"></div>
                     <p>Felhasználó neve</p>
-                    <i class="fa fa-cog" aria-hidden="true"></i>
                 </div>
                 <div class="felhasznalo">
                     <div class="felhasznaloKep"></div>
                     <p>Felhasználó neve</p>
-                    <i class="fa fa-cog" aria-hidden="true"></i>
                 </div>
                 <div class="felhasznalo">
                     <div class="felhasznaloKep"></div>
                     <p>Felhasználó neve</p>
-                    <i class="fa fa-cog" aria-hidden="true"></i>
                 </div>
             </div>
         </section>
