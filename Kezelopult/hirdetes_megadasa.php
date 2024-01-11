@@ -14,7 +14,11 @@
 
 <?php
 
+error_reporting(0);
+ini_set('display_errors', 0);
+
 session_start();
+require_once '../php/conn.php';
 
     if (isset($_SESSION['ID'])) {
             $profilID = $_SESSION['ID'];
@@ -24,6 +28,18 @@ session_start();
             header("Location: ../bejelentkezes");
             exit();
         }
+
+
+        $sql = "SELECT * FROM users WHERE ID = $profilID;";
+$result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+
+        $posts = $row['posts'];
+        if ($posts == null) {
+            $posts = 0;
+        }
+        $fnev = $row['username'];
+    }
 
 ?>
 
@@ -48,7 +64,7 @@ session_start();
         <div class="profil_mobil">
             <div class="nev_kep">
                 <img class="profilkep">
-                Lorem Ipsum
+                <?php echo $fnev; ?>
             </div>
         </div>
         <hr>
@@ -81,7 +97,7 @@ session_start();
             <header>
                 <div class="profil">
                     <img class="profilkep"></img>
-                    <p>Lorem Ispum</p>
+                    <p><?php echo $fnev; ?></p>
                 </div>
                 <div class="notif"><i class="fa-solid fa-bell"></i></div>
             </header>   

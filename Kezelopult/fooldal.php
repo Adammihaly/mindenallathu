@@ -18,8 +18,8 @@
 
 <?php
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+error_reporting(0);
+ini_set('display_errors', 0);
 
 session_start();
 require_once '../php/conn.php';
@@ -31,6 +31,17 @@ require_once '../php/conn.php';
         {
             header("Location: ../bejelentkezes");
             exit();
+        }
+
+        if (isset($_GET['error'])) {
+            if ($_GET['error']  == 'none') {
+                echo "           
+                    <script type='text/javascript'>
+                        if(confirm('Az hirdetés sikeresen közzé lett téve!')) document.location = 'fooldal';
+                        else(document.location = 'fooldal')
+                    </script> 
+                ";
+            }
         }
 
         $sql = "SELECT * FROM users WHERE ID = $profilID;";
@@ -137,6 +148,7 @@ $result = $conn->query($sql);
                         <p>" . $row['cim'] . "</p>
                     </a>";
 
+
                             }
 
                     ?>
@@ -146,7 +158,7 @@ $result = $conn->query($sql);
 
                 <div class="csik">&nbsp</div>
 
-                <div class="balSzoveg">
+               <!-- <div class="balSzoveg">
                     <p>Utoljára megtekintett</p>
                 </div>
                 <section class="utoljaraMegtek">
@@ -162,7 +174,7 @@ $result = $conn->query($sql);
                         <div class="megtekintettKep"></div>
                         <p>Allat neve</p>
                     </div>
-                </section>
+                </section> -->
 
                 <div class="csik">&nbsp</div>
 
@@ -195,7 +207,7 @@ $result = $conn->query($sql);
                             <p><?php echo $csomag_szoveg; ?></p>
                         </div>
                     </div>
-                </section>
+                </section> 
             </div>
         </main>
 
