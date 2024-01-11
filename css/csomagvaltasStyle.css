@@ -95,10 +95,8 @@ nav
         & li:last-child
         {
             color: red;
-            
-            position: absolute;
-            bottom: 0;
-            margin-bottom: 2vh;
+            margin-top: 20vh;
+
         }
 
         & li:last-child:hover
@@ -122,10 +120,6 @@ nav
     background-color: white;
     padding-left: 5%;
     z-index: 9999;
-
-    & #kijelentkezes_nav {
-        width: 75%;
-    }
 }
 
 .wrapper
