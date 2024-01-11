@@ -319,7 +319,7 @@ main
             }
 
             .megtekintettKep {
-                background-image: url(../../img/plusz.jpg);
+                background-image: url(../img/plusz.jpg);
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;

@@ -168,7 +168,7 @@ $result = $conn->query($sql);
 
                 <section class="mobilLent">
                     <p class="balSzoveg">Legnépszerűbb hírdetések</p>
-                    <p>x kontakt</p>
+                    <p>x megtekintés</p>
                     <div class="megtekFelhasz">
                         <div class="felhasznalo">
                             <div class="felhasznaloKep"></div>
@@ -207,7 +207,7 @@ $result = $conn->query($sql);
                 </div>
             </div>
             <p class="balSzoveg">Legnépszerűbb hírdetések</p>
-            <p id="kontaktok2">x kontakt</p>
+            <p id="kontaktok2">x megtekintés</p>
             <div class="megtekFelhasz">
                 <div class="felhasznalo">
                     <div class="felhasznaloKep"></div>
