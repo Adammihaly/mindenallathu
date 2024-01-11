@@ -109,7 +109,9 @@ nav
         & li:last-child
         {
             color: red;
-            margin-top: 20vh;
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 2vh;
 
         }
 
@@ -134,6 +136,10 @@ nav
     background-color: white;
     padding-left: 5%;
     z-index: 9999;
+
+    & #kijelentkezes_nav {
+        width: 75%;
+    }
 }
 
 .wrapper
@@ -150,7 +156,7 @@ main
     flex-direction: column;
     width: 70%;
     height: 100%;
-    background-color: white;
+    background-color: rgba(239,239,240);
 
     overflow-y: auto;
 
@@ -164,6 +170,7 @@ main
         justify-content: space-between;
         font-size: var(--betumeret);
         padding-inline: 5%; 
+        background-color: rgba(239,239,240);
 
         .profil
         {
