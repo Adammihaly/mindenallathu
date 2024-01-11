@@ -109,8 +109,10 @@ nav
         & li:last-child
         {
             color: red;
-            margin-top: 20vh;
-
+            
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 2vh;
         }
 
         & li:last-child:hover
@@ -134,6 +136,10 @@ nav
     background-color: white;
     padding-left: 5%;
     z-index: 9999;
+
+    & #kijelentkezes_nav {
+        width: 75%;
+    }
 }
 
 .wrapper
@@ -278,7 +284,6 @@ main
             .hirdetes {
                 margin-bottom: 1.25vw;
                 box-sizing: border-box;
-                text-decoration: none;
             }
 
             .hirdetesKep {
@@ -296,7 +301,7 @@ main
                 font-weight: bold;
                 font-size: 1.33vw;
                 word-wrap: break-word;
-                color: black;
+
                 width: 14vw;
             }
         }
@@ -319,7 +324,7 @@ main
             }
 
             .megtekintettKep {
-                background-image: url(../img/plusz.jpg);
+                background-image: url(../../img/plusz.jpg);
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -426,7 +431,7 @@ main
             position: relative;
 
             .felhasznaloKep {
-                background-image: url(../img/plusz.jpg);
+                background-image: url(../../img/plusz.jpg);
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
