@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/20993e564e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Document</title>
+    <title>Profil módosítása</title>
 </head>
 <body>
     
@@ -28,7 +28,7 @@ require_once '../php/conn.php';
             exit();
         }
 
-
+        mysqli_set_charset($conn, "utf8");
         $sql = "SELECT * FROM users WHERE ID = $profilID;";
 $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {

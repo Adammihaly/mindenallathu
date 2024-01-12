@@ -7,13 +7,17 @@
     <script src="https://kit.fontawesome.com/20993e564e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Document</title>
+    <title>Hirdetések kezelése</title>
 </head>
 <body>
     
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 session_start();
+require_once '../php/conn.php';
 
     if (isset($_SESSION['ID'])) {
             $profilID = $_SESSION['ID'];
@@ -23,6 +27,38 @@ session_start();
             header("Location: ../bejelentkezes");
             exit();
         }
+
+
+        if (isset($_GET['error'])) {
+            if ($_GET['error']  == 'noned') {
+                echo "           
+                    <script type='text/javascript'>
+                        if(confirm('Az hirdetés sikeresen törölve lett!')) document.location = 'hirdetes_kezeles';
+                        else(document.location = 'hirdetes_kezeles')
+                    </script> 
+                ";
+            }
+        }
+
+
+        mysqli_set_charset($conn, "utf8");
+        $sql = "SELECT * FROM users WHERE ID = $profilID;";
+$result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+
+        $posts = $row['posts'];
+        if ($posts == null) {
+            $posts = 0;
+        }
+        $fnev = $row['username'];
+        $csomag = $row['csomag'];
+        if ($csomag == null) {
+            $csomag_szoveg = 'Simple felhasználó';
+        }
+        else if($csomag == 1) {
+            $csomag_szoveg = 'Prémium előfizető';
+        }
+    }
 
 ?>
     
@@ -46,7 +82,7 @@ session_start();
         <div class="profil_mobil">
             <div class="nev_kep">
                 <img class="profilkep">
-                Lorem Ipsum
+                <?php echo $fnev; ?>
             </div>
         </div>
         <hr>
@@ -79,92 +115,79 @@ session_start();
             <header>
                 <div class="profil">
                     <img class="profilkep"></img>
-                    <p>Lorem Ispum</p>
+                    <p><?php echo $fnev; ?></p>
                 </div>
                 <div class="notif"><i class="fa-solid fa-bell"></i></div>
             </header>
             <section class="main_content">
                 <h1>Hirdetések kezelése(<span id="szam">5</span>/5)</h1>
                 <div class="column_wrapper">
-                    <article class="item">
-                        <img src="../img/gugya.png">
-                        <div class="content_wrapper">
-                            <h3>Hirdetés neve</h3>
-                            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, corrupti! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex non veniam eum iste praesentium saepe quos architecto aut repellendus ducimus!</p>
-                            <div class="funkciok">
-                                <ul>
-                                    <li id="hirdetes_kiemelese"><i class="fa-solid fa-star"></i>Hirdetés kiemelése</li>
-                                    <li id="hirdetes_modositasa"><i class="fa-solid fa-file-signature"></i>Hirdetés módosítása</li>
-                                    <li class="torles"><i class="fa-solid fa-trash"></i>Hirdetés törlése</li>
-                                </ul>
-                            </div>
-                            <div id="kiemelve_block">Kiemelve</div>
-                        </div>
-                    </article>
 
-                    <article class="item">
-                        <img src="../img/gugya.png">
-                        <div class="content_wrapper">
-                            <h3>Hirdetés neve</h3>
-                            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, corrupti! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex non veniam eum iste praesentium saepe quos architecto aut repellendus ducimus!</p>
-                            <div class="funkciok">
-                                <ul>
-                                    <li id="hirdetes_kiemelese"><i class="fa-solid fa-star"></i>Hirdetés kiemelése</li>
-                                    <li id="hirdetes_modositasa"><i class="fa-solid fa-file-signature"></i>Hirdetés módosítása</li>
-                                    <li class="torles"><i class="fa-solid fa-trash"></i>Hirdetés törlése</li>
-                                </ul>
-                            </div>
-                            <div id="kiemelve_block">Kiemelve</div>
-                        </div>
-                    </article>
 
-                    <article class="item">
-                        <img src="../img/gugya.png">
-                        <div class="content_wrapper">
-                            <h3>Hirdetés neve</h3>
-                            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, corrupti! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex non veniam eum iste praesentium saepe quos architecto aut repellendus ducimus!</p>
-                            <div class="funkciok">
-                                <ul>
-                                    <li id="hirdetes_kiemelese"><i class="fa-solid fa-star"></i>Hirdetés kiemelése</li>
-                                    <li id="hirdetes_modositasa"><i class="fa-solid fa-file-signature"></i>Hirdetés módosítása</li>
-                                    <li class="torles"><i class="fa-solid fa-trash"></i>Hirdetés törlése</li>
-                                </ul>
-                            </div>
-                            <div id="kiemelve_block">Kiemelve</div>
-                        </div>
-                    </article>
+                    <?php 
+                        mysqli_set_charset($conn, "utf8");
+                       $sql = "SELECT * FROM posts WHERE torolve IS NULL AND profilID = $profilID;";
+                        $result = $conn->query($sql);
+                            while ($row = $result->fetch_assoc()) {
 
-                    <article class="item">
-                        <img src="../img/gugya.png">
-                        <div class="content_wrapper">
-                            <h3>Hirdetés neve</h3>
-                            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, corrupti! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex non veniam eum iste praesentium saepe quos architecto aut repellendus ducimus!</p>
-                            <div class="funkciok">
-                                <ul>
-                                    <li id="hirdetes_kiemelese"><i class="fa-solid fa-star"></i>Hirdetés kiemelése</li>
-                                    <li id="hirdetes_modositasa"><i class="fa-solid fa-file-signature"></i>Hirdetés módosítása</li>
-                                    <li class="torles"><i class="fa-solid fa-trash"></i>Hirdetés törlése</li>
-                                </ul>
-                            </div>
-                            <div id="kiemelve_block">Kiemelve</div>
-                        </div>
-                    </article>
+                                $cim = $row['cim'];
+                                $kepek = $row['kepek'];
+                                $kep = explode(",", $kepek);
+                                $leiras = $row['allat_leiras'];
+                                $postID = $row['ID'];
 
-                    <article class="item">
-                        <img src="../img/gugya.png">
-                        <div class="content_wrapper">
-                            <h3>Hirdetés neve</h3>
-                            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, corrupti! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex non veniam eum iste praesentium saepe quos architecto aut repellendus ducimus!</p>
-                            <div class="funkciok">
-                                <ul>
-                                    <li id="hirdetes_kiemelese"><i class="fa-solid fa-star"></i>Hirdetés kiemelése</li>
-                                    <li id="hirdetes_modositasa"><i class="fa-solid fa-file-signature"></i>Hirdetés módosítása</li>
-                                    <li class="torles"><i class="fa-solid fa-trash"></i>Hirdetés törlése</li>
-                                </ul>
-                            </div>
-                            <div id="kiemelve_block">Kiemelve</div>
-                        </div>
-                    </article>
+                                echo "
+                                    <article class='item'>
+                                        <img src='../files/$kep[0]'>
+                                        <div class='content_wrapper'>
+                                            <h3>$cim</h3>
+                                            <p>$leiras</p>
+                                            <div class='funkciok'>
+                                                <ul>
+                                                ";
+                                                if ($csomag_szoveg == 'Prémium előfizető') {
+                                                    echo "<li id='hirdetes_kiemelese'><i class='fa-solid fa-star'></i>Hirdetés kiemelése</li>";
+                                                }
+                                                 echo "   
+                                                    <li id='hirdetes_modositasa'><i class='fa-solid fa-file-signature'></i>Hirdetés módosítása</li>
+                                                    <li class='torles' onClick='torles$postID()'><i class='fa-solid fa-trash'></i>Hirdetés törlése</li>
+                                                </ul>
+                                            </div>
+                                            <div id='kiemelve_block'>Kiemelve</div>
+                                        </div>
+                                    </article>  
+                        <script type='text/javascript'>
+                            function torles$postID () {
+
+                                var torles_wrapper = document.getElementById('torlesw$postID');
+
+                                if (torles_wrapper) 
+                                {
+                                    torles_wrapper.style.display = (torles_wrapper.style.display === 'flex') ? 'none' : 'flex';
+                                }
+                            }
+                        </script>
+                        <div class='torles_wrapper' id='torlesw$postID'>
+                            <form action='../php/torles.php' method='POST'>
+                                <div class='torles_block'>
+                                    <i class='fa-solid fa-trash'></i>
+                                    <h2>Biztos benne, hogy törli a hirdetést?</h2>
+                                    <p>'$cim' hirdetés véglegesen törlésre kerül. A hirdetés letörlése visszavonhatatlan művelet. Biztosan szeretné törölni?</p>
+                                    <div class='buttons'><button id='megsem_button'>Mégsem</button>
+                                        <input type='hidden' name='postid' value='$postID'>
+                                        <button id='torles_button' name='del'>Törlés</button>             
+                                    </div>
+                                </div>
+                            </form>
+                        </div>"  ;
+                                
+
+                            } 
+
+                    ?>
+
+
+                    
 
                 </div>
             </section>
@@ -173,14 +196,7 @@ session_start();
     </div>
 
 
-    <div id="torles_wrapper">
-        <div class="torles_block">
-            <i class="fa-solid fa-trash"></i>
-            <h2>Biztos benne, hogy törli a hirdetést?</h2>
-            <p>"<label id="hirdetes_cime_torles">Hirdetes cime</label>" hirdetés véglegesen törlésre kerül. A hirdetés letörlése visszavonhatatlan művelet. Biztosan szeretné törölni?</p>
-            <div class="buttons"><button id="megsem_button">Mégsem</button><button id="torles_button">Törlés</button></div>
-        </div>
-    </div>
+
 
     <script src="../js/hirdetes_kezelese.js"></script>
     <script src="../js/navbar.js"></script>

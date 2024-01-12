@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kezelőpult</title>
     <link rel="stylesheet" href="../css/fooldalStyle.css">
     <script src="https://kit.fontawesome.com/20993e564e.js" crossorigin="anonymous"></script>
     <script defer src="../js/fooldalScript.js"></script>
@@ -43,7 +43,7 @@ require_once '../php/conn.php';
                 ";
             }
         }
-
+        mysqli_set_charset($conn, "utf8");
         $sql = "SELECT * FROM users WHERE ID = $profilID;";
 $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
@@ -135,7 +135,7 @@ $result = $conn->query($sql);
                     
                     <?php 
                     mysqli_set_charset($conn, "utf8");
-                    $sql = "SELECT * FROM posts WHERE profilID = $profilID;";
+                    $sql = "SELECT * FROM posts WHERE torolve IS NULL AND profilID = $profilID;";
                         $result = $conn->query($sql);
                             while ($row = $result->fetch_assoc()) {
 

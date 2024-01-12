@@ -42,19 +42,11 @@ document.addEventListener('click', function (event) {
 
     if (target.id === 'hirdetes_modositasa') {
         
-        window.location.href = 'hirdetes_megadasa.html';
+        window.location.href = 'hirdetes_megadasa';
     }
 
 
-    if (target.classList.contains('torles')) {
-
-        var torles_wrapper = document.getElementById('torles_wrapper');
-
-        if (torles_wrapper) 
-        {
-            torles_wrapper.style.display = (torles_wrapper.style.display === 'flex') ? 'none' : 'flex';
-        }
-    }
+    
 
     if(target.id === 'hirdetes_kiemelese')
     {
