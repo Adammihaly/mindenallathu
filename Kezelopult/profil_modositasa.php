@@ -28,6 +28,39 @@ require_once '../php/conn.php';
             exit();
         }
 
+        if (isset($_GET['error'])) {
+            if ($_GET['error']  == 'none') {
+                echo "           
+                    <script type='text/javascript'>
+                        if(confirm('A módosítás sikeres volt!')) document.location = 'profil_modositasa';
+                        else(document.location = 'profil_modositasa')
+                    </script> 
+                ";
+            }
+        }
+
+        if (isset($_GET['error'])) {
+            if ($_GET['error']  == 'uidExists') {
+                echo "           
+                    <script type='text/javascript'>
+                        if(confirm('A módosítás sikertelen volt, mivel a felhasználónév már foglalt!')) document.location = 'profil_modositasa';
+                        else(document.location = 'profil_modositasa')
+                    </script> 
+                ";
+            }
+        }
+
+        if (isset($_GET['error'])) {
+            if ($_GET['error']  == 'set') {
+                echo "           
+                    <script type='text/javascript'>
+                        if(confirm('Hiba lépett fel a rendszerben.')) document.location = 'profil_modositasa';
+                        else(document.location = 'profil_modositasa')
+                    </script> 
+                ";
+            }
+        }
+
         mysqli_set_charset($conn, "utf8");
         $sql = "SELECT * FROM users WHERE ID = $profilID;";
 $result = $conn->query($sql);
@@ -100,7 +133,7 @@ $result = $conn->query($sql);
         </nav>
         
         <main>
-            <form action="action.php" method="POST">
+            <form action="../php/profedit.php" method="POST">
             <header>
                 <div class="profil">
                     <img class="profilkep"></img>
@@ -116,16 +149,16 @@ $result = $conn->query($sql);
                             
                             <fieldset>
                                 <legend>Új felhasználónév</legend>
-                                <input id="teljesnev_input" type="text" placeholder="PL: <?php echo $fnev; ?>" value="<?php echo $fnev; ?>">
+                                <input id="teljesnev_input" type="text" name="name" placeholder="PL: <?php echo $fnev; ?>" value="<?php echo $fnev; ?>" required>
                             </fieldset>
                             <fieldset>
                                 <legend>Új jelszó</legend>
-                                <input id="jelszo_input" type="password" placeholder="***************">
+                                <input id="jelszo_input" type="password" name="pwd" placeholder="***************" required>
                             </fieldset>
-                            <fieldset>
+                            <!-- <fieldset>
                                 <legend>Új email cím</legend>
-                                <input id="email_input" type="email" placeholder="PL: <?php echo $email; ?>" value="<?php echo $email; ?>">
-                            </fieldset>
+                                <input id="email_input" type="email" placeholder="PL: <?php //echo $email; ?>" value="<?php //echo $email; ?>">
+                            </fieldset> -->
                             <fieldset>
                                 <legend>Csomagok</legend>
                                 <input id="csomagok_input" type="text" readonly placeholder="<?php echo $csomag_szoveg; ?>">

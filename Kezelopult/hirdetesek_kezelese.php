@@ -33,8 +33,19 @@ require_once '../php/conn.php';
             if ($_GET['error']  == 'noned') {
                 echo "           
                     <script type='text/javascript'>
-                        if(confirm('Az hirdetés sikeresen törölve lett!')) document.location = 'hirdetes_kezeles';
-                        else(document.location = 'hirdetes_kezeles')
+                        if(confirm('Az hirdetés sikeresen törölve lett!')) document.location = 'hirdetesek_kezelese';
+                        else(document.location = 'hirdetesek_kezelese')
+                    </script> 
+                ";
+            }
+        }
+
+        if (isset($_GET['error'])) {
+            if ($_GET['error']  == 'nonee') {
+                echo "           
+                    <script type='text/javascript'>
+                        if(confirm('Az hirdetés sikeresen módosítva lett!')) document.location = 'hirdetesek_kezelese';
+                        else(document.location = 'hirdetesek_kezelese')
                     </script> 
                 ";
             }
@@ -149,7 +160,9 @@ $result = $conn->query($sql);
                                                     echo "<li id='hirdetes_kiemelese'><i class='fa-solid fa-star'></i>Hirdetés kiemelése</li>";
                                                 }
                                                  echo "   
-                                                    <li id='hirdetes_modositasa'><i class='fa-solid fa-file-signature'></i>Hirdetés módosítása</li>
+                                                    <li id='hirdetes_modositasa'><i class='fa-solid fa-file-signature'></i><form action='hirdetes_modositasa' method='GET'>
+                                                    <input type='hidden' name='id' value='$postID'>
+                                                    <button style='background-color: unset; border: none; cursor: pointer; font-size: 100%; color: rgb(67, 158, 188);'>Hirdetés módosítása</button></form></li> 
                                                     <li class='torles' onClick='torles$postID()'><i class='fa-solid fa-trash'></i>Hirdetés törlése</li>
                                                 </ul>
                                             </div>
