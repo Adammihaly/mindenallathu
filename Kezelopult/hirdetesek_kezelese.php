@@ -156,9 +156,9 @@ $result = $conn->query($sql);
                                             <div class='funkciok'>
                                                 <ul>
                                                 ";
-                                                if ($csomag_szoveg == 'Prémium előfizető') {
+                                                
                                                     echo "<li id='hirdetes_kiemelese'><i class='fa-solid fa-star'></i>Hirdetés kiemelése</li>";
-                                                }
+
                                                  echo "   
                                                     <li id='hirdetes_modositasa'><i class='fa-solid fa-file-signature'></i><form action='hirdetes_modositasa' method='GET'>
                                                     <input type='hidden' name='id' value='$postID'>
@@ -186,7 +186,7 @@ $result = $conn->query($sql);
                                     <i class='fa-solid fa-trash'></i>
                                     <h2>Biztos benne, hogy törli a hirdetést?</h2>
                                     <p>'$cim' hirdetés véglegesen törlésre kerül. A hirdetés letörlése visszavonhatatlan művelet. Biztosan szeretné törölni?</p>
-                                    <div class='buttons'><button id='megsem_button'>Mégsem</button>
+                                    <div class='buttons'><a href='./hirdetesek_kezelese' id='megsem_button'>Mégsem</a>
                                         <input type='hidden' name='postid' value='$postID'>
                                         <button id='torles_button' name='del'>Törlés</button>             
                                     </div>

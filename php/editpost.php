@@ -118,12 +118,12 @@ mysqli_stmt_bind_param($update_stmt, "sssssssssssssss", $cim, $allat_kat, $allat
 mysqli_stmt_execute($update_stmt);
 mysqli_stmt_close($update_stmt);
 
-	header("Location: ../kezelopult/hirdetesek_kezelese?error=nonee");
+	header("Location: ../Kezelopult/hirdetesek_kezelese?error=nonee");
 	exit();
 
 }
 else
 {
-	header("Location: ../kezelopult/hirdetesek_kezelese?error=error");
+	header("Location: ../Kezelopult/hirdetesek_kezelese?error=error");
 	exit();
 }

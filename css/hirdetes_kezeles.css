@@ -429,8 +429,11 @@ main
             height: 10%;
 
 
-            & button
+            & a, button
             {
+                display:flex;
+                justify-content:center;
+                align-items:center;
                 width: 30%;
                 border-radius: 0.5vw;
                 border: 1px solid grey;
@@ -439,7 +442,7 @@ main
             
             }
 
-            & button:hover
+            & a:hover, button:hover
             {
                 cursor: pointer;
             }
@@ -688,7 +691,7 @@ main
                     height: 10%;
 
 
-                    & button
+                    & button, a
                     {
                      
                         font-size: 1.2vh;

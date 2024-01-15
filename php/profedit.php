@@ -25,7 +25,7 @@ if (isset($_POST['sub'])) {
 		if ($felhasznalonev != $name) {
 			if (uidLetezikk($conn, $name) !== false) {
 
-			header("Location: ../kezelopult/profil_modositasa?error=uidExists");
+			header("Location: ../Kezelopult/profil_modositasa?error=uidExists");
 			exit();
 
 			}
@@ -37,13 +37,13 @@ if (isset($_POST['sub'])) {
 			$sql = "UPDATE users SET username = '$name', pwd = '$pwdsecound' WHERE ID = '$profilID';";
 			$result = $conn->query($sql);
 
-			header("location: ../kezelopult/profil_modositasa?error=none") ;
+			header("location: ../Kezelopult/profil_modositasa?error=none") ;
 			exit();
 
 
 }
 else
 {
-	header("Location: ../kezelopult/profil_modositasa?error=set");
+	header("Location: ../Kezelopult/profil_modositasa?error=set");
 	exit();
 }

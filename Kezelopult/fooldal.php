@@ -143,7 +143,7 @@ $result = $conn->query($sql);
                                 $kepek = $row['kepek'];
                                 $kep = explode(",", $kepek);
 
-                                echo "<a href='' class='hirdetes'>
+                                echo "<a href='' class='hirdetesssss'>
                         <div class='hirdetesKep' style='background-image: url(../files/" . $kep[0] . ");'></div>
                         <p>" . $row['cim'] . "</p>
                     </a>";
@@ -203,7 +203,7 @@ $result = $conn->query($sql);
 
                     <p class="balSzoveg">Jelenlegi csomag</p>
                     <div class="csomag">
-                        <div class="elofizetes premiumElofizetes">
+                        <div class="elofizetes simpleElofizetes">
                             <p><?php echo $csomag_szoveg; ?></p>
                         </div>
                     </div>
