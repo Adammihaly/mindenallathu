@@ -7,9 +7,81 @@
     <script src="https://kit.fontawesome.com/20993e564e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Document</title>
+    <title>Profil módosítása</title>
 </head>
 <body>
+    
+<?php
+
+error_reporting(0);
+ini_set('display_errors', 0);
+
+session_start();
+require_once '../php/conn.php';
+
+    if (isset($_SESSION['ID'])) {
+            $profilID = $_SESSION['ID'];
+        }
+        else
+        {
+            header("Location: ../bejelentkezes");
+            exit();
+        }
+
+        if (isset($_GET['error'])) {
+            if ($_GET['error']  == 'none') {
+                echo "           
+                    <script type='text/javascript'>
+                        if(confirm('A módosítás sikeres volt!')) document.location = 'profil_modositasa';
+                        else(document.location = 'profil_modositasa')
+                    </script> 
+                ";
+            }
+        }
+
+        if (isset($_GET['error'])) {
+            if ($_GET['error']  == 'uidExists') {
+                echo "           
+                    <script type='text/javascript'>
+                        if(confirm('A módosítás sikertelen volt, mivel a felhasználónév már foglalt!')) document.location = 'profil_modositasa';
+                        else(document.location = 'profil_modositasa')
+                    </script> 
+                ";
+            }
+        }
+
+        if (isset($_GET['error'])) {
+            if ($_GET['error']  == 'set') {
+                echo "           
+                    <script type='text/javascript'>
+                        if(confirm('Hiba lépett fel a rendszerben.')) document.location = 'profil_modositasa';
+                        else(document.location = 'profil_modositasa')
+                    </script> 
+                ";
+            }
+        }
+
+        mysqli_set_charset($conn, "utf8");
+        $sql = "SELECT * FROM users WHERE ID = $profilID;";
+$result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+
+        $posts = $row['posts'];
+        if ($posts == null) {
+            $posts = 0;
+        }
+        $fnev = $row['username'];
+        $email = $row['email'];
+        $csomag = $row['csomag'];
+        if ($csomag == null) {
+            $csomag_szoveg = 'Simple felhasználó';
+        }
+        else if($csomag == 1) {
+            $csomag_szoveg = 'Prémium előfizető';
+        }
+    }
+
+?>
     
     <nav>
         <div class="logo">Mindenallat.hu</div>
@@ -31,7 +103,7 @@
         <div class="profil_mobil">
             <div class="nev_kep">
                 <img class="profilkep">
-                Lorem Ipsum
+                <?php echo $fnev; ?>
             </div>
         </div>
         <hr>
@@ -61,10 +133,11 @@
         </nav>
         
         <main>
+            <form action="../php/profedit.php" method="POST">
             <header>
                 <div class="profil">
                     <img class="profilkep"></img>
-                    <p>Lorem Ispum</p>
+                    <p><?php echo $fnev; ?></p>
                 </div>
                 <div class="notif"><i class="fa-solid fa-bell"></i></div>
             </header>
@@ -73,22 +146,30 @@
                 <div class="content_wrapper">
                     <div class="content">
                         <div class="grid">
+                            
                             <fieldset>
-                                <legend>Teljes név</legend>
-                                <input id="teljesnev_input" type="text" placeholder="Farkas Bertalan">
+                                <legend>Új felhasználónév</legend>
+                                <input id="teljesnev_input" type="text" name="name" placeholder="PL: <?php echo $fnev; ?>" value="<?php echo $fnev; ?>" required>
                             </fieldset>
                             <fieldset>
-                                <legend>Jelszó</legend>
-                                <input id="jelszo_input" type="password" placeholder="***************">
+                                <legend>Új jelszó</legend>
+                                <input id="jelszo_input" type="password" name="pwd" placeholder="***************" required>
                             </fieldset>
-                            <fieldset>
-                                <legend>Email cím</legend>
-                                <input id="email_input" type="email" placeholder="valami@gmail.com">
-                            </fieldset>
+                            <!-- <fieldset>
+                                <legend>Új email cím</legend>
+                                <input id="email_input" type="email" placeholder="PL: <?php //echo $email; ?>" value="<?php //echo $email; ?>">
+                            </fieldset> -->
                             <fieldset>
                                 <legend>Csomagok</legend>
-                                <input id="csomagok_input" type="text" readonly placeholder="Simple felhasználó">
-                                <button id="csomagvaltas_gomb">+</button>  
+                                <input id="csomagok_input" type="text" readonly placeholder="<?php echo $csomag_szoveg; ?>">
+                                <?php 
+
+                                if ($csomag_szoveg != 'Prémium előfizető') {
+                                   echo "<button id='csomagvaltas_gomb'>+</button>";
+                                }
+
+                                ?>
+                                
                             </fieldset>
                         </div>
                         <!-- Csak ha van minden ami figmaba -->
@@ -137,10 +218,12 @@
                             </div>
                         </div> -->
                     </div>
-                    <div class="mentes"><button>Mentés</button></div>
+                    <div class="mentes"><button name="sub">Mentés</button>
+                    </div>
                 </div>
                     
             </section>
+            </form>
         </main>
 
     </div>

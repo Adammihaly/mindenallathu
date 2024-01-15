@@ -10,9 +10,47 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>Document</title>
+    <title>Csomagváltás</title>
 </head>
 <body>
+
+<?php
+
+error_reporting(0);
+ini_set('display_errors', 0);
+
+session_start();
+require_once '../php/conn.php';
+
+    if (isset($_SESSION['ID'])) {
+            $profilID = $_SESSION['ID'];
+        }
+        else
+        {
+            header("Location: ../bejelentkezes");
+            exit();
+        }
+        mysqli_set_charset($conn, "utf8");
+        $sql = "SELECT * FROM users WHERE ID = $profilID;";
+$result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+
+        $posts = $row['posts'];
+        if ($posts == null) {
+            $posts = 0;
+        }
+        $fnev = $row['username'];
+        $csomag = $row['csomag'];
+        if ($csomag == null) {
+            $csomag_szoveg = 'Simple felhasználó';
+        }
+        else if($csomag == 1) {
+            $csomag_szoveg = 'Prémium előfizető';
+        }
+    }
+
+?>
+    
     <nav>
         <div class="logo">Mindenallat.hu</div>
         <div class="nav_item">
@@ -32,7 +70,7 @@
         <div class="profil_mobil">
             <div class="nev_kep">
                 <img class="profilkep">
-                Lorem Ipsum
+                <?php echo $fnev; ?>
             </div>
         </div>
         <hr>
@@ -64,7 +102,7 @@
             <header>
                 <div class="profil">
                     <img class="profilkep"></img>
-                    <p>Lorem Ipsum</p>
+                    <p><?php echo $fnev; ?></p>
                 </div>
                 <div class="notif"><i class="fa-solid fa-bell"></i></div>
             </header>

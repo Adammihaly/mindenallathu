@@ -97,10 +97,10 @@ input::placeholder
         & li:last-child
         {
             color: red;
-            
             position: absolute;
             bottom: 0;
             margin-bottom: 2vh;
+
         }
 
         & li:last-child:hover
