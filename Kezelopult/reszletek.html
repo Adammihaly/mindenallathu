@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reszletek.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/20993e564e.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        <h1>Mindenallat.hu</h1>
+        <ul>
+            <a>Kategóriák</a>
+            <a>Hirdetés feladása</a>
+        </ul>
+        <ol>
+            <a>Keresés</a>
+            <a>Bejelentkezés</a>
+        </ol>
+    </header>
+
+    <header class="mobil_nav">
+        <i id="hamburger" class="fa-solid fa-bars" onclick="showPopUp()"></i>
+        <h1>Mindenallat.hu</h1>
+
+        <div id="popup">
+            <div class="linkek">
+                <a>Kategóriák</a>
+                <a>Hirdetés feladása</a>
+                <a>Keresés</a>
+                <a>Bejelentkezés</a>
+            </div>
+        </div>
+
+        <i id="notification" class="fa-solid fa-bell"></i>
+
+    </header>
+
+
+    <main>
+        <aside>
+            <img src="../img/cica.png" alt="hirdetes kepe" onclick="changeImage(this)">
+            <img src="../img/diszno.png" alt="hirdetes kepe" onclick="changeImage(this)">
+            <img src="../img/boci.png" alt="hirdetes kepe" onclick="changeImage(this)">
+            <img src="../img/nyul.png" alt="hirdetes kepe" onclick="changeImage(this)">
+            <img src="../img/gugya.png" alt="hirdetes kepe" onclick="changeImage(this)">
+        </aside>
+        <img id="nagykep" class="nagykep" alt="">
+        <article>
+            <h1>Fajtiszta tacskó</h1>
+            <label>150000 Ft</label>
+            <h4>Leírás</h4>
+            <p class="leiras">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maxime omnis vitae fugit minima voluptate rerum quibusdam vero dicta blanditiis maiores.</p>
+            <h4>Tulajdonsagok</h4>
+            <div class="adatok">
+                <div>
+                    <p>Állat faja: <strong>Törpe tacskó</strong></p>
+                    <p>Állat neme: <strong>Hím</strong></p>
+                    <p>Állat kategóriája: <strong>Tacskó</strong></p>
+                </div>
+                <div>
+                    <p>Állat kora: <strong>18 hónap</strong></p>
+                    <p>Állat féle: <strong>Kutya</strong></p>
+                    <p>Állat színe: <strong>Zsömle</strong></p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <section>
+            <h1>Tenyésztő adatai</h1>
+            <p>Név: <strong>Kiss Pista</strong></p>
+            <p>Email cím: <strong>kisspista@gmail.com</strong></p>
+            <p>Telefonszám: <strong>0643393289</strong></p>
+            <p>Lokáció: <strong>Budapest, Petőfi tér 12.</strong></p>
+            <a>Kapcsolat</a>
+        </section>
+    </footer>
+    
+    <script src="../js/reszletek.js"></script>
+
+</body>
+</html>
