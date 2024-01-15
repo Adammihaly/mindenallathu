@@ -1,0 +1,940 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root
+{
+    --betumeret : 1.2vw;
+    --field_betu_meret : 0.9vw;
+}
+
+body,html
+{
+    width: 100%;
+    height: 100%;
+    font-family: 'Montserrat';
+}
+
+body
+{
+    background-color: lightseagreen;
+}
+
+input::placeholder
+{
+    font-size: 0.8vw;
+}
+
+nav
+{
+    user-select: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100dvh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2%;
+
+    .logo
+    {   
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin-bottom: 10%;
+        font-weight: bold;
+        font-size: var(--betumeret);
+
+    }
+
+    .nav_item
+    {
+        width: 100%;
+        height: 80%;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: var(--betumeret);
+
+        & ul
+        {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            list-style-type: none;
+            gap:2%;
+        }
+
+        & li
+        {
+            width: 80%;
+            height: clamp(30px,3vw,150px);
+            display: flex;
+            align-items: center;
+            gap: 5%;
+            padding-left: 5%;
+            border-radius: 0.8vw;
+            transition: scale .3s ease;
+        }
+
+
+        & li:hover
+        {
+            background-color: green;
+            color: white;
+            cursor: pointer;
+            scale: 1.1;
+        }
+
+        & li:last-child
+        {
+            color: red;
+
+            position: absolute;
+            bottom: 0;
+            margin-bottom: 2vh;
+        }
+
+        & li:last-child:hover
+        {
+            background-color: red;
+            color: white;
+        }
+    }
+} 
+
+#felugroablak
+{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
+    top: 0%;
+    left: 0%;
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    padding-left: 5%;
+    z-index: 9999;
+
+    & #kijelentkezes_nav {
+        width: 75%;
+    }
+}
+
+.wrapper
+{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    margin-left: 20%;
+}
+
+.mobilnezet
+{
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-inline: 5%;
+    width: 100%;
+    height: 8%;
+    z-index: 10000;
+
+    .baloldal
+    {
+        display: flex;
+        gap: 10%;
+    }
+}
+
+main
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(239,239,240);
+
+    & header
+    {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        position: relative;
+        align-items: center;
+        font-size: var(--betumeret);
+        justify-content: space-between;
+        padding-inline: 5%;
+        
+        .profil
+        {
+            display: flex;
+            width: 20%;
+            align-items: center;
+        }
+
+        .profilkep
+        {
+            
+            width: 3vw;
+            height: 3vw;
+            border-radius: 50%;
+            background-image: url(../img/profil.svg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-inline-start: 1%;
+            margin-right: 2%;
+        }
+
+        .notif
+        {
+            position: relative;
+            font-size: 2vw;
+        }
+    }
+
+    .mobilSimple {
+        display: none;
+    }
+
+    .mobilPremium {
+        display: none;
+    }
+
+    .main_content
+    {
+        width: 100%;
+        height: 90%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .cim {
+            padding-left: 5%;
+            margin-right: auto;
+
+            font-weight: bold;
+            font-size: 1.75vw;
+        }
+
+        .simpleSession {
+            background-color: white;
+            border: 0.5px solid rgba(0, 0, 0, 0.2);
+            width: 90%;
+            height: 85%;
+            border-radius: 0.5vw;
+
+            display: flex;
+            
+            .baloldal {
+                height: 100%;
+                width: 50%;
+                
+                border-top-left-radius: 0.5vw;
+                border-bottom-left-radius: 0.5vw;
+
+                background-image: url(../img/kep.jpg);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .jobboldal {
+                height: 100%;
+                width: 50%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                gap: 5%;
+
+                .simplepremium {
+                    width: 70%;
+                    height: 8%;
+                    
+                    display: flex;
+                    .gomb {
+                        width: 50%;
+                        height: 100%;
+
+                        font-family: 'Montserrat';
+                        font-size: 1vw;
+                        font-weight: 700;
+                        border: none;
+                    }
+
+                    .sk_s {
+                        border-top-left-radius: 0.5vw;
+                        border-bottom-left-radius: 0.5vw;
+
+                        background-color: #D9D9D9;
+                    }
+
+                    .sk_p {
+                        border-top-right-radius: 0.5vw;
+                        border-bottom-right-radius: 0.5vw;
+
+                        color: #828282;
+                        background-color: white;
+                        border: 1px solid #D9D9D9;
+                        border-left: none;
+
+                        cursor: pointer;
+                    }
+                }
+
+                .elonyokWrapper {
+                    width: 70%;
+
+                    & ul {
+                        list-style: none;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        gap: 1vw;
+                    }
+
+                    & li {
+                        border: 1px solid #D9D9D9;
+                        border-radius: 0.5vw;
+
+                        width: 100%;
+
+                        display: flex;
+                        flex-direction: row;
+
+                        .textWrapper {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+
+                            text-wrap: break-word;
+                            width: 80%;
+                            .cimek {
+                                font-size: 1.125vw;
+                                font-weight: 700;
+                            }
+
+                            .leiras {
+                                font-size: 0.75vw;
+                                color: #828282;
+                            }
+                        }
+
+                        .pipa {
+                            background-image: url(../img/pipa.png);
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+    
+                            margin-left: 0.5vw;
+                            margin-right: 0.75vw;
+                            margin-top: 0.75vw;
+                            margin-bottom: 0.75vw;
+    
+                            height: 3vw;
+                            width: 3vw;
+                        }
+                    }
+                }
+
+                .ss_valtasGomb {
+                    width: 70%;
+                    height: 8%;
+                    background-color: #13910C;
+
+                    border: none;
+                    color: white;
+                    font-family: 'Montserrat';
+                    font-weight: 700;
+                    letter-spacing: 0.2vw;
+
+                    border-radius: 0.33vw;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .premiumSession {
+            background-color: white;
+            border: 0.5px solid rgba(0, 0, 0, 0.2);
+            width: 90%;
+            height: 85%;
+            border-radius: 0.5vw;
+
+            display: none;
+
+            .baloldal {
+                height: 100%;
+                width: 50%;
+                
+                border-top-left-radius: 0.5vw;
+                border-bottom-left-radius: 0.5vw;
+
+                background-image: url(../img/bg2.webp);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            .jobboldal {
+                height: 100%;
+                width: 50%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                gap: 5%;
+
+                .simplepremium {
+                    width: 70%;
+                    height: 8%;
+                    
+                    display: flex;
+                    .gomb {
+                        width: 50%;
+                        height: 100%;
+
+                        font-family: 'Montserrat';
+                        font-size: 1vw;
+                        font-weight: 700;
+                        border: none;
+                    }
+
+                    .pk_s {
+                        border-top-left-radius: 0.5vw;
+                        border-bottom-left-radius: 0.5vw;
+
+                        color: #828282;
+                        background-color: white;
+                        border: 1px solid #D9D9D9;
+
+                        cursor: pointer;
+                    }
+
+                    .pk_p {
+                        border-top-right-radius: 0.5vw;
+                        border-bottom-right-radius: 0.5vw;
+
+                        color: white;
+                        background-color: #13910C;
+                    }
+                }
+
+                .elonyokWrapper {
+                    width: 70%;
+
+                    & ul {
+                        list-style: none;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        gap: 1vw;
+                    }
+
+                    & li {
+                        border: 1px solid #D9D9D9;
+                        border-radius: 0.5vw;
+
+                        width: 100%;
+
+                        display: flex;
+                        flex-direction: row;
+
+                        .textWrapper {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+
+                            text-wrap: break-word;
+                            width: 80%;
+                            .cimek {
+                                font-size: 1.125vw;
+                                font-weight: 700;
+                            }
+
+                            .leiras {
+                                font-size: 0.75vw;
+                                color: #828282;
+                            }
+                        }
+
+                        .pipa {
+                            background-image: url(../img/pipa.png);
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+    
+                            margin-left: 0.5vw;
+                            margin-right: 0.75vw;
+                            margin-top: 0.75vw;
+                            margin-bottom: 0.75vw;
+    
+                            height: 3vw;
+                            width: 3vw;
+                        }
+
+                        &.ar {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-start;
+
+                            padding-left: 0.5vw;
+
+                            & span {
+                                margin: 0.33vw;
+                                font-size: 2vw;
+                            }
+                        }
+                    }
+                }
+
+                .ps_valtasGomb {
+                    width: 70%;
+                    height: 8%;
+                    background-color: #13910C;
+
+                    border: none;
+                    color: white;
+                    font-family: 'Montserrat';
+                    font-weight: 700;
+                    letter-spacing: 0.2vw;
+
+                    border-radius: 0.33vw;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/* MOBILNEZET */
+
+@media (max-width:600px) {
+    nav
+    {
+        display: none;
+    }
+
+    .wrapper
+    {
+        margin: 0;
+        width: 100%;
+        
+        & header
+        {
+            display: none;
+        }
+
+        .mobilnezet
+        {
+            display: flex;
+        }
+        
+        .main_content
+        {
+            margin-top: 14.5%;
+            background-color: white;
+            & h1 {
+                font-size: 2.5vh;
+            }
+
+            .cim {
+                display: none;
+            }
+
+            .simpleSession {
+                display: none;
+            }
+
+            .premiumSession {
+                display: none;
+            }
+
+            .mobilSimple {
+                display: flex;
+                flex-direction: column;
+
+                width: 100%;
+                height: 100%;
+
+                .mobilSimpleKep {
+                    background-image: url(../img/kep.jpg);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+
+                    width: 100%;
+                    height: 40%;
+                }
+
+                .valasztasWrapper {
+                    height: 100%;
+                    width: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    
+                    margin-top: 7.5%;
+                    gap: 5%;
+
+                    .simplepremium {
+                        width: 70%;
+                        height: 10%;
+                        
+                        display: flex;
+                        .gomb {
+                            width: 50%;
+                            height: 100%;
+    
+                            font-family: 'Montserrat';
+                            font-size: 3.5vw;
+                            font-weight: 700;
+                            border: none;
+                        }
+    
+                        .sk_s {
+                            border-top-left-radius: 3vw;
+                            border-bottom-left-radius: 3vw;
+    
+                            background-color: #D9D9D9;
+                        }
+    
+                        .sk_p {
+                            border-top-right-radius: 3vw;
+                            border-bottom-right-radius: 3vw;
+    
+                            color: #828282;
+                            background-color: white;
+                            border: 1px solid #D9D9D9;
+                            border-left: none;
+    
+                            cursor: pointer;
+                        }
+                    }
+    
+                    .elonyokWrapper {
+                        width: 90%;
+    
+                        & ul {
+                            list-style: none;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            align-items: center;
+    
+                            gap: 2.5vw;
+                        }
+    
+                        & li {
+                            border: 1px solid #D9D9D9;
+                            border-radius: 2.5vw;
+    
+                            width: 100%;
+    
+                            display: flex;
+                            flex-direction: row;
+    
+                            .textWrapper {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+    
+                                text-wrap: break-word;
+
+                                gap: 5%;
+                                width: 80%;
+                                .cimek {
+                                    font-size: 3vw;
+                                    font-weight: 700;
+                                }
+    
+                                .leiras {
+                                    font-size: 2vw;
+                                    color: #828282;
+                                }
+                            }
+    
+                            .pipa {
+                                background-image: url(../img/pipa.png);
+                                background-size: cover;
+                                background-position: center;
+                                background-repeat: no-repeat;
+        
+                                margin-left: 3vw;
+                                margin-right: 3vw;
+                                margin-top: 2.5vw;
+                                margin-bottom: 2.5vw;
+        
+                                height: 8.5vw;
+                                width: 8.5vw;
+                            }
+                        }
+                    }
+    
+                    .ss_valtasGomb_mobil {
+                        width: 50%;
+                        height: 8%;
+                        background-color: #13910C;
+    
+                        border: none;
+                        color: white;
+                        font-family: 'Montserrat';
+                        font-weight: 700;
+                        letter-spacing: 0.2vw;
+    
+                        border-radius: 3vw;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .mobilPremium {
+                background-color: white;
+                border: 0.5px solid rgba(0, 0, 0, 0.2);
+                border-radius: 0.5vw;
+                
+                display: none;
+                flex-direction: column;
+
+                width: 100%;
+                height: 100%;
+    
+                .mobilPremiumKep {
+                    background-image: url(../img/bg2.webp);
+                    background-position: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+
+                    width: 100%;
+                    height: 40%;
+                }
+    
+                .valasztasWrapper {
+                    height: 100%;
+                    width: 100%;
+    
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    
+                    margin-top: 7.5%;
+                    gap: 5%;
+    
+                    .simplepremium {
+                        width: 70%;
+                        height: 10%;
+                        
+                        display: flex;
+                        .gomb {
+                            width: 50%;
+                            height: 100%;
+    
+                            font-family: 'Montserrat';
+                            font-size: 3.5vw;
+                            font-weight: 700;
+                            border: none;
+                        }
+    
+                        .pk_s {
+                            border-top-left-radius: 3vw;
+                            border-bottom-left-radius: 3vw;
+    
+                            color: #828282;
+                            background-color: white;
+                            border: 1px solid #D9D9D9;
+    
+                            cursor: pointer;
+                        }
+    
+                        .pk_p {
+                            border-top-right-radius: 3vw;
+                            border-bottom-right-radius: 3vw;
+    
+                            color: white;
+                            background-color: #13910C;
+                        }
+                    }
+    
+                    .elonyokWrapper {
+                        width: 90%;
+    
+                        & ul {
+                            list-style: none;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            align-items: center;
+    
+                            gap: 2.5vw;
+                        }
+    
+                        & li {
+                            border: 1px solid #D9D9D9;
+                            border-radius: 2.5vw;
+    
+                            width: 100%;
+    
+                            display: flex;
+                            flex-direction: row;
+    
+                            .textWrapper {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+    
+                                text-wrap: break-word;
+
+                                gap: 5%;
+                                width: 80%;
+                                .cimek {
+                                    font-size: 3vw;
+                                    font-weight: 700;
+                                }
+    
+                                .leiras {
+                                    font-size: 2vw;
+                                    color: #828282;
+                                }
+                            }
+    
+                            .pipa {
+                                background-image: url(../img/pipa.png);
+                                background-size: cover;
+                                background-position: center;
+                                background-repeat: no-repeat;
+        
+                                margin-left: 3vw;
+                                margin-right: 3vw;
+                                margin-top: 2.5vw;
+                                margin-bottom: 2.5vw;
+        
+                                height: 8.5vw;
+                                width: 8.5vw;
+                            }
+    
+                            &.ar {
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+    
+                                padding-left: 0.5vw;
+    
+                                & span {
+                                    margin: 1vw;
+                                    font-size: 5vw;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                    }
+    
+                    .ps_valtasGomb_mobil {
+                        width: 50%;
+                        height: 8%;
+                        background-color: #13910C;
+    
+                        border: none;
+                        color: white;
+                        font-family: 'Montserrat';
+                        font-weight: 700;
+                        letter-spacing: 0.2vw;
+    
+                        border-radius: 3vw;
+                        cursor: pointer;
+                    }
+                
+                }
+            }
+        }
+    }
+
+    #felugroablak
+    {
+        align-items: flex-start;
+        gap: 1%;
+
+        .profil_mobil
+        {
+            margin-top: 20%;
+            height: 10%;
+            width: 100%;
+            border-bottom: 1px solid black;
+
+            .profilkep
+            {
+                background-image: url(../img/profil.svg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+            }
+
+            .nev_kep
+            {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                gap: 5%;
+                width: 100%;
+            }
+        }
+
+        .nav_item
+        {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            height: 100%;
+           
+            & ul
+            {
+                height: 50%;
+                width: 100%;
+                gap: 5%;
+
+                & li
+                {
+                    
+                    font-size: 2vh;
+                    width: 100%;
+                    padding: 5%;
+                    height: clamp(40px,3vw,150px);
+                }
+        
+                & li:focus
+                {
+                    background-color: green;
+                    color: white;
+                    cursor: pointer;
+                    scale: 1.1;
+                }
+            }
+        }
+    } 
+}
