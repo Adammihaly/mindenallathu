@@ -48,6 +48,7 @@ $result = $conn->query($sql);
         <div class="logo">Mindenallat.hu</div>
         <div class="nav_item">
             <ul>
+                <li id="kezdolap"><i class="fa-solid fa-house"></i>Kezdőlap</li>
                 <li id="kezelopult_nav"><i class="fa-solid fa-shapes"></i>Kezelőpult</li>
                 <li id="hirdetes_feleadasa_nav"><i class="fa-solid fa-file-circle-plus"></i>Hirdetés feladása</li>
                 <li id="profil_modositasa_nav"><i class="fa-solid fa-user"></i>Profil módosítása</li>
@@ -70,6 +71,7 @@ $result = $conn->query($sql);
         <hr>
         <div class="nav_item">
             <ul>
+                <li id="kezdolap"><i class="fa-solid fa-house"></i>Kezdőlap</li>
                 <li id="kezelopult_nav"><i class="fa-solid fa-shapes"></i>Kezelőpult</li>
                 <li id="hirdetes_feleadasa_nav"><i class="fa-solid fa-file-circle-plus"></i>Hirdetés feladása</li>
                 <li id="profil_modositasa_nav"><i class="fa-solid fa-user"></i>Profil módosítása</li>
@@ -230,7 +232,7 @@ $result = $conn->query($sql);
                         <div class="overflow_wrap">
                             <div class="inputfield">
                                 <div class="field_wrapper">
-                                    <p class="cim">Tenyesztő teljes neve<span style="color: red;"> *</span></p>
+                                    <p class="cim">Hirdető teljes neve<span style="color: red;"> *</span></p>
                                     <div class="input_wrapper">
                                         <input type="text" id="tenyeszto_nev" class="bevitel" name="tenyeszto_nev" placeholder="Adja meg a teljes nevét!" required>
                                     </div>
@@ -238,7 +240,7 @@ $result = $conn->query($sql);
                             </div>
                             <div class="inputfield">
                                 <div class="field_wrapper">
-                                    <p class="cim">Tenyesztő email címe<span style="color: red;"> *</span></p>
+                                    <p class="cim">Hirdető email címe<span style="color: red;"> *</span></p>
                                     <div class="input_wrapper">
                                         <input type="email" id="tenyeszto_email" class="bevitel" name="tenyeszto_email" placeholder="Adja meg email címet!" required>
                                     </div>
@@ -246,7 +248,7 @@ $result = $conn->query($sql);
                             </div>
                             <div class="inputfield">
                                 <div class="field_wrapper">
-                                    <p class="cim">Tenyésztő telefonszáma<span style="color: red;"> *</span></p>
+                                    <p class="cim">Hirdető telefonszáma<span style="color: red;"> *</span></p>
                                     <div class="input_wrapper">
                                         <input type="tel" id="tenyeszto_telefon" class="bevitel" name="tenyeszto_telefon" placeholder="+36" required>
                                     </div>
@@ -254,7 +256,7 @@ $result = $conn->query($sql);
                             </div>      
                             <div class="inputfield">
                                 <div class="field_wrapper">
-                                    <p class="cim">Lokáció<span style="color: red;"> *</span></p>
+                                    <p class="cim">Hirdetés helyszíne<span style="color: red;"> *</span></p>
                                     <div class="input_wrapper">
                                         <input type="text" id="lokacio" class="bevitel" name="lokacio" placeholder="5400, Szolnok, Radnóti utca 42." required>
                                     </div>

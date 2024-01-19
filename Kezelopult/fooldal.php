@@ -69,6 +69,7 @@ $result = $conn->query($sql);
         <div class="logo">Mindenallat.hu</div>
         <div class="nav_item">
             <ul>
+                <li id="kezdolap"><i class="fa-solid fa-house"></i>Kezdőlap</li>
                 <li id="kezelopult_nav"><i class="fa-solid fa-shapes"></i>Kezelőpult</li>
                 <li id="hirdetes_feleadasa_nav"><i class="fa-solid fa-file-circle-plus"></i>Hirdetés feladása</li>
                 <li id="profil_modositasa_nav"><i class="fa-solid fa-user"></i>Profil módosítása</li>
@@ -90,6 +91,7 @@ $result = $conn->query($sql);
         <hr>
         <div class="nav_item">
             <ul>
+                <li id="kezdolap"><i class="fa-solid fa-house"></i>Kezdőlap</li>
                 <li id="kezelopult_nav"><i class="fa-solid fa-shapes"></i>Kezelőpult</li>
                 <li id="hirdetes_feleadasa_nav"><i class="fa-solid fa-file-circle-plus"></i>Hirdetés feladása</li>
                 <li id="profil_modositasa_nav"><i class="fa-solid fa-user"></i>Profil módosítása</li>

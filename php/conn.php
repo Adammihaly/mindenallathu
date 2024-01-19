@@ -1,9 +1,9 @@
 <?php
 
-$serverName = 'mysql.omega:3306 ';
-$dBUsername = 'mindenallathu';
-$dBPassword = 'MindenAllatHu15';
-$dBName = 'mindenallathu';
+$serverName = 'localhost';
+$dBUsername = 'root';
+$dBPassword = '';
+$dBName = 'mindenallat';
 
 	$conn = mysqli_connect($serverName, $dBUsername, $dBPassword, $dBName);
 

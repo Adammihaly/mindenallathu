@@ -7,6 +7,11 @@ document.addEventListener('click', function (event) {
         window.location.href = 'fooldal';
     }
 
+    if (target.id === 'kezdolap') {
+        
+        window.location.href = 'https://mindenallat.hu';
+    }
+
     if(target.id === 'hirdetes_feleadasa_nav')
     {
         window.location.href = 'hirdetes_megadasa'
@@ -30,6 +35,11 @@ document.addEventListener('click', function (event) {
     if(target.id === 'profil_modositasa_nav')
     {
         window.location.href = 'profil_modositasa'
+    }
+
+    if(target.id === 'sugokozpont_nav')
+    {
+        window.location.href = 'sugokozpont.pdf'
     }
 
     if(target.id === 'kijelentkezes_nav')
