@@ -65,7 +65,7 @@ amely még hatékonyabban segíti az eladásban!</p>
 	 	<div class="con">
 	 		<h3>Kiemelt hirdetések</h3>
 	 		<div class="flex_kiemelt">
-	 			<a href="#">
+	 			<!-- <a href="#">
 	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
 	 				<p>Állat: Kutya<br>
 	 				   Fajta: Németjuhász<br>
@@ -94,7 +94,93 @@ amely még hatékonyabban segíti az eladásban!</p>
 	 				   Színe: Fekete és Krém<br>
 	 				   Ár: 50 000 Ft
 	 				</p>
-	 			</a>
+	 			</a> -->
+
+				<a>
+					<img src="./img/nyul.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Sárhegyi nyúl</h1>
+						<h3>14000 Ft</h3>
+					</div>
+				</a>
+
+				<a>
+					<img src="./img/diszno.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Díszmalac</h1>
+						<h3>1200 Ft</h3>
+					</div>
+				</a>
+
+				<a>
+					<img src="./img/boci.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Törzskönyvezett tehén</h1>
+						<h3>3900 Ft</h3>
+					</div>
+				</a>
+
+				
+				<a>
+					<img src="./img/nyul.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Sárhegyi nyúl</h1>
+						<h3>14000 Ft</h3>
+					</div>
+				</a>
+
+				<a>
+					<img src="./img/diszno.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Díszmalac</h1>
+						<h3>1200 Ft</h3>
+					</div>
+				</a>
+
+				<a>
+					<img src="./img/boci.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Törzskönyvezett tehén</h1>
+						<h3>3900 Ft</h3>
+					</div>
+				</a>
+
+				
+				<a>
+					<img src="./img/nyul.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Sárhegyi nyúl</h1>
+						<h3>14000 Ft</h3>
+					</div>
+				</a>
+
+				<a>
+					<img src="./img/diszno.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Díszmalac</h1>
+						<h3>1200 Ft</h3>
+					</div>
+				</a>
+
+				<a>
+					<img src="./img/boci.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Törzskönyvezett tehén</h1>
+						<h3>3900 Ft</h3>
+					</div>
+				</a>
+
+
+
 	 		</div>
 	 	</div>
 	 </section>

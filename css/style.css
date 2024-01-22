@@ -150,7 +150,7 @@ a
 .fejlec_con a 
 {
 	padding: 1% 2% 0.5% 2%;
-	background-color: ;
+	/* background-color: ; */
 	color: white !important;
 	border: solid 2px white;
 	text-decoration: none;
@@ -202,55 +202,71 @@ a
 	overflow: hidden;
 	text-align: center;
 	justify-content: center;
-	padding-bottom: 4%;
+	flex-wrap: wrap;
+
+	& a
+	{
+
+		width: 30%;
+		aspect-ratio: 1;
+		overflow: hidden;
+		position: relative;
+		cursor: pointer;
+		border: 1px solid black;
+		margin-bottom: 3%;
+
+		& img
+		{
+			width: 100%;
+			aspect-ratio: 1;
+			object-fit: cover;
+			transition: scale .1s linear;
+		}
+
+		.layer
+		{
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 75%;
+			background:linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0))
+		}
+
+		.details
+		{
+			position: absolute;
+			bottom: 0;
+			transform: translateY(50%);
+			transition: transform 0.3s ease;
+			padding-inline-start: 1vw;
+
+			& h1, h3
+			{	
+				color: white;
+				text-align: start;
+				font-size: 2vw;
+			}
+		}
+	}
+
+	& a:hover .details
+	{
+		transform: translateY(0%);
+	}
+
+	& a:hover img
+	{
+		scale: 1.05;
+	}
+
+
 }
 
-.flex_kiemelt a
+.flex_kiemelt:hover > a:not(:hover)
 {
-	width: 30%;
-	border: solid 2px var(--gray);
-	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-	transition: 0.4s;
-	text-decoration: none;
-	overflow-y: hidden;
-	max-height: 390px;
+	filter: blur(0.3vw);
 }
 
-.flex_kiemelt a:hover .kepkeret
-{
-	height: 100px;
-	box-shadow: 5px 5px 40px rgba(0, 0, 0, 0.9);
-	transition: 0.7s;
-	background-color: rgba(0, 0, 0, 0.5);
-}
-
-.kepkeret
-{
-	width: auto;
-	overflow: hidden;
-	height: 300px;
-	transition: 0.4s;
-}
-
-.flex_kiemelt img
-{
-	width: 100%;
-	overflow: hidden;
-	position: relative;
-	z-index: -10;
-}
-
-.flex_kiemelt p
-{
-	background-color: white;
-	z-index: 7;
-	color: black;
-	min-height: 100px;
-	text-align: left;
-	text-decoration: none;
-	font-size: 140%;
-	padding: 3%;
-}
 
 
 
@@ -390,28 +406,25 @@ a
 .flex_kiemelt a
 {
 	width: 50%;
-	max-height: 290px;
+	max-height: 450px;
 	margin-bottom: 4%;
 
+	.details
+	{
+		padding: 2vw;
+
+		& h1,h3
+		{
+			font-size:4vw;
+		}
+	}
+	
 }
 
-.flex_kiemelt a:hover .kepkeret
-{
-	height: 50px;
-}
 
-.kepkeret
-{
-	height: 200px;
-}
 
-.flex_kiemelt p
-{
-	z-index: 7;
-	min-height: 212px;
-	font-size: 110%;
-	padding: 6%;
-}
+
+
 
 .con_rek h2
 {
@@ -576,6 +589,16 @@ a
 	width: 90%;
 	max-height: 290px;
 	margin-bottom: 4%;
+
+	.details
+	{
+		padding: 2vw;
+
+		& h1,h3
+		{
+			font-size:6vw;
+		}
+	}
 
 }
 
