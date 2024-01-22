@@ -245,6 +245,10 @@ a
 				color: white;
 				text-align: start;
 				font-size: 2vw;
+				white-space: nowrap;      
+				overflow: hidden;       
+				text-overflow: ellipsis;
+				max-width: 20ch;
 			}
 		}
 	}
