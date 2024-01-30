@@ -164,7 +164,7 @@ main
             width: 10vw;
             aspect-ratio: 1;
             cursor: pointer;
-        
+            object-fit: cover;
         }
     }
 
@@ -173,6 +173,7 @@ main
         width: 30vw;
         aspect-ratio: 1;
         border-radius: 1.5rem;
+        object-fit: cover;
     
     }
 
