@@ -277,7 +277,8 @@ main
                 
                 & img
                 {
-                    width: 20%;
+                    object-fit: cover;
+                    aspect-ratio: 1;
                     border-radius: 1vw;
                     
                 }
@@ -308,11 +309,12 @@ main
                         & li
                         {
                             display: flex;
-                            width: 25%;
+                            flex-grow: 1;
                             gap: 5%;
                             align-items: center;
                             transition: transform 0.2s ease;
-                            font-size: 1vw;
+                            font-size: 1.2vw;
+                            
                         }
 
                         & li:hover
@@ -496,12 +498,6 @@ main
                 {
                     height: clamp(50px,15vh,120px);
 
-                    & img
-                    {
-                        width: 20%;
-                        border-radius: 1vw;
-                        
-                    }
     
                     .content_wrapper
                     {
@@ -521,7 +517,7 @@ main
                         {
                             height: 4lh;
                             overflow: hidden;
-                            font-size: clamp(6px,0.77vh,15px);
+                            font-size: 1vh;
                         }
                         
     
@@ -540,7 +536,7 @@ main
                                 gap: 5%;
                                 align-items: center;
                                 transition: transform 0.2s ease;
-                                font-size: clamp(6px,0.77vh,10px);
+                                font-size: 1vh;
                             }
     
                             & li:focus

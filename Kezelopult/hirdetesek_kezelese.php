@@ -159,13 +159,13 @@ $result = $conn->query($sql);
                                                 <ul>
                                                 ";
                                                 
-                                                    echo "<li id='hirdetes_kiemelese'><i class='fa-solid fa-star'></i>Hirdetés kiemelése</li>";
+                                                    echo "<li id='hirdetes_kiemelese'><i class='fa-solid fa-star'></i>Kiemelés</li>";
 
                                                  echo "   
                                                     <li id='hirdetes_modositasa'><i class='fa-solid fa-file-signature'></i><form action='hirdetes_modositasa' method='GET'>
                                                     <input type='hidden' name='id' value='$postID'>
-                                                    <button style='background-color: unset; border: none; cursor: pointer; font-size: 100%; color: rgb(67, 158, 188);'>Hirdetés módosítása</button></form></li> 
-                                                    <li class='torles' onClick='torles$postID()'><i class='fa-solid fa-trash'></i>Hirdetés törlése</li>
+                                                    <button style='background-color: unset; border: none; cursor: pointer; font-size: 100%; color: rgb(67, 158, 188); font-weight:bold;'>Módosítás</button></form></li> 
+                                                    <li class='torles' onClick='torles$postID()'><i class='fa-solid fa-trash'></i>Törlés</li>
                                                 </ul>
                                             </div>
                                             <div id='kiemelve_block'>Kiemelve</div>
