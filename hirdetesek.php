@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Mindenállat.hu | Hirdetések</title>
 	<link rel="stylesheet" type="text/css" href="css/hirdetesek.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css ">
 	<script type="text/javascript" src="js/hirdetesek.js" defer></script>
 
@@ -93,86 +94,63 @@
 	 		</section>
 
 	 		<div class="flex_kiemelt">
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a>
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/ketto.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a>
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a> 
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a>
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a>		
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a>	
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a>	
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a>		
+
+	 			<a>
+					<img src="./img/nyul.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
+						<h3>14000 Ft</h3>
+					</div>
+				</a>
+				<a>
+					<img src="./img/nyul.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
+						<h3>14000 Ft</h3>
+					</div>
+				</a>
+				<a>
+					<img src="./img/nyul.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
+						<h3>14000 Ft</h3>
+					</div>
+				</a>
+				<a>
+					<img src="./img/nyul.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
+						<h3>14000 Ft</h3>
+					</div>
+				</a>
+				<a>
+					<img src="./img/nyul.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
+						<h3>14000 Ft</h3>
+					</div>
+				</a>
+				<a>
+					<img src="./img/nyul.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
+						<h3>14000 Ft</h3>
+					</div>
+				</a>
+				<a>
+					<img src="./img/nyul.png">
+					<div class="layer"></div>
+					<div class="details">
+						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
+						<h3>14000 Ft</h3>
+					</div>
+				</a>		
 	 		</div>
 	 	</div>
 	 </section>
