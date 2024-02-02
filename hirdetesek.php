@@ -113,10 +113,11 @@
 		        	$cim = $row['cim'];
 		        	$ar = $row['allat_ara'];
 		        	$kepek = $row['kepek'];
+		        	$postid = $row['ID'];
 		        	$kep = explode(",", $kepek);
 
 		        	echo "
-		        	<a>
+		        	<a href='./hirdetes?id=$postid'>
 					<img src='./files/$kep[0]'>
 					<div class='layer'></div>
 					<div class='details'>

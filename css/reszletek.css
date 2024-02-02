@@ -235,7 +235,7 @@ footer
         flex-direction: column;
         gap: 2vh;
         position: relative;
-        font-size: 1.7vw;
+        font-size: 1.4vw;
 
         & a
         {
@@ -246,8 +246,8 @@ footer
             right: 10%;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 2vw;
-            width: 25vw;
+            font-size: 1.5vw;
+            width: 20vw;
             height: 10vh;
             border-radius: 1rem;
             border: none;
