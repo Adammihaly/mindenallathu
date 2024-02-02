@@ -56,6 +56,14 @@
 	 	<div class="con">
 
 
+	 		<?php 
+
+	 		require_once 'php/conn.php';
+
+	 		?>
+
+
+
 	 		<section class="szurok">
 	 			<div class="">
 
@@ -95,62 +103,32 @@
 
 	 		<div class="flex_kiemelt">
 
-	 			<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
-						<h3>14000 Ft</h3>
+	 			<?php 
+
+	 				mysqli_set_charset($conn, "utf8");
+        $sql = "SELECT * FROM posts";
+					$result = $conn->query($sql);
+		    		while ($row = $result->fetch_assoc()) {
+
+		        	$cim = $row['cim'];
+		        	$ar = $row['allat_ara'];
+		        	$kepek = $row['kepek'];
+		        	$kep = explode(",", $kepek);
+
+		        	echo "
+		        	<a>
+					<img src='./files/$kep[0]'>
+					<div class='layer'></div>
+					<div class='details'>
+						<h1>$cim</h1>
+						<h3>$ar Ft</h3>
 					</div>
 				</a>
-				<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
-						<h3>14000 Ft</h3>
-					</div>
-				</a>
-				<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
-						<h3>14000 Ft</h3>
-					</div>
-				</a>
-				<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
-						<h3>14000 Ft</h3>
-					</div>
-				</a>
-				<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
-						<h3>14000 Ft</h3>
-					</div>
-				</a>
-				<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
-						<h3>14000 Ft</h3>
-					</div>
-				</a>
-				<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
-						<h3>14000 Ft</h3>
-					</div>
-				</a>		
+		        	";
+		        
+		    		}
+
+	 			?>
 	 		</div>
 	 	</div>
 	 </section>
