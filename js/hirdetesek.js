@@ -125,22 +125,6 @@ const Animal =
 			'Törpe kecskék',
 			'Egyéb'
 		],
-		Hal:
-		[
-			'Összes',
-			'Nap hal',
-			'Ponty',
-			'Harcsa',
-			'Csuka',
-			'Süllő',
-			'Keszeg félék',
-			'Kárász félék',
-			'Koi ponty',
-			'Fürge cselle',
-			'Szivárványos ökle',
-			'Aranyhal',
-			'Kurta paing'
-		],
 		Ló:
 		[
 			'Összes',

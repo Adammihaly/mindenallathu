@@ -19,8 +19,23 @@
 	 			<div class="pc">
 	 			<a href="#" class="">Kezdőlap</a>
 	 			<a href="hirdetesek" class="">Hirdetések</a>
-	 			<a href="bejelentkezes" class="">Bejelentkezés</a>
-	 			<a href="regisztracio" class="cta">+ HIRDETÉSFELADÁS</a>
+
+	 			<?php 
+
+	 			session_start();
+
+	 			if (isset($_SESSION['ID'])) {
+	 				echo "<a href='Kezelopult/fooldal' class='cta'>Kezelőpult</a>";
+	 			}
+	 			else
+	 			{
+	 				echo "<a href='bejelentkezes' class=''>Bejelentkezés</a>
+	 			<a href='regisztracio' class='cta'>+ HIRDETÉSFELADÁS</a>";
+	 			}
+
+	 			?>
+
+	 			
 	 			</div>
 	 			<div class="mobile">
   <button class="hamburger-button" id="mobile"><i class="bi bi-list"></i></button>
@@ -35,8 +50,18 @@
 	 	
 	 			<a href="#" class="">Kezdőlap</a><br><br>
 	 			<a href="hirdetesek" class="">Hirdetések</a><br><br>
-	 			<a href="bejelentkezes" class="">Bejelentkezés</a><br><br>
-	 			<a href="regisztracio" class="">+ HIRDETÉSFELADÁS</a><br><br>
+	 			<?php 
+
+	 			if (isset($_SESSION['ID'])) {
+	 				echo "<a href='Kezelopult/fooldal' class=''>Kezelőpult</a><br><br>";
+	 			}
+	 			else
+	 			{
+	 				echo "<a href='bejelentkezes' class=''>Bejelentkezés</a></a><br><br>
+	 			<a href='regisztracio' class=''>+ HIRDETÉSFELADÁS</a></a><br><br>";
+	 			}
+
+	 			?>
 	 			<a href="#" class="" id="close">Bezárás</a>
 
 	 </section>
@@ -96,32 +121,7 @@ amely még hatékonyabban segíti az eladásban!</p>
 	 				</p>
 	 			</a> -->
 
-				<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúlcccccccccccccccccc</h1>
-						<h3>14000 Ft</h3>
-					</div>
-				</a>
 
-				<a>
-					<img src="./img/diszno.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Díszmalac</h1>
-						<h3>1200 Ft</h3>
-					</div>
-				</a>
-
-				<a>
-					<img src="./img/boci.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Törzskönyvezett tehén</h1>
-						<h3>3900 Ft</h3>
-					</div>
-				</a>
 
 				
 				<a>
