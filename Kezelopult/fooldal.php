@@ -143,9 +143,10 @@ $result = $conn->query($sql);
 
 
                                 $kepek = $row['kepek'];
+                                $ID = $row['ID'];
                                 $kep = explode(",", $kepek);
 
-                                echo "<a href='' class='hirdetesssss'>
+                                echo "<a href='../hirdetes?id=$ID' class='hirdetesssss'>
                         <div class='hirdetesKep' style='background-image: url(../files/" . $kep[0] . ");'></div>
                         <p>" . $row['cim'] . "</p>
                     </a>";

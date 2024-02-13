@@ -19,8 +19,20 @@
 	 			<div class="pc">
 	 			<a href="index" class="">Kezdőlap</a>
 	 			<a href="#" class="">Hirdetések</a>
-	 			<a href="bejelentkezes" class="">Bejelentkezés</a>
-	 			<a href="regisztracio" class="cta">+ HIRDETÉSFELADÁS</a>
+	 			<?php 
+
+	 			session_start();
+
+	 			if (isset($_SESSION['ID'])) {
+	 				echo "<a href='Kezelopult/fooldal' class='cta'>Kezelőpult</a>";
+	 			}
+	 			else
+	 			{
+	 				echo "<a href='bejelentkezes' class=''>Bejelentkezés</a>
+	 			<a href='regisztracio' class='cta'>+ HIRDETÉSFELADÁS</a>";
+	 			}
+
+	 			?>
 	 			</div>
 	 			<div class="mobile">
   <button class="hamburger-button" id="mobile"><i class="bi bi-list"></i></button>
@@ -35,8 +47,18 @@
 	 	
 	 			<a href="index" class="">Kezdőlap</a><br><br>
 	 			<a href="#" class="">Hirdetések</a><br><br>
-	 			<a href="#" class="">Bejelentkezés</a><br><br>
-	 			<a href="#" class="">+ HIRDETÉSFELADÁS</a><br><br>
+	 			<?php 
+
+	 			if (isset($_SESSION['ID'])) {
+	 				echo "<a href='Kezelopult/fooldal' class=''>Kezelőpult</a><br><br>";
+	 			}
+	 			else
+	 			{
+	 				echo "<a href='bejelentkezes' class=''>Bejelentkezés</a></a><br><br>
+	 			<a href='regisztracio' class=''>+ HIRDETÉSFELADÁS</a></a><br><br>";
+	 			}
+
+	 			?>
 	 			<a href="#" class="" id="close">Bezárás</a>
 
 	 </section>
@@ -58,7 +80,67 @@
 
 	 		<?php 
 
+	 	
+
 	 		require_once 'php/conn.php';
+
+	 		if (isset($_GET['s']) == 'true') {
+
+	 			$allat_kortol = 0;
+	 			$allat_korig = 20;
+	 			$sql = "SELECT * FROM posts WHERE";
+	 			$conditions = array();
+	 			$allat_artol = null;
+	 			$allat_arig = null;
+	 			$arvan = 0;
+	 			$korvan = 0;
+	 			$allat_neme = null;
+	 			$allat_szin = null;
+	 			$allat_fajta = null;
+	 			
+	 			if (isset($_GET['allatok']) AND $_GET['allatok'] != null) {
+	 				$allat_fele = $_GET['allatok'];
+	 				$conditions[] = "allat_fele = :allat_fele";
+	 			}
+	 			if (isset($_GET['faj']) AND $_GET['faj'] !== null AND $_GET['faj'] != 'Összes') {
+	 				$allat_fajta = $_GET['faj'];
+	 				$conditions[] = "allat_fajta = :allat_fajta";
+	 			}
+	 			if (isset($_GET['kortol']) AND $_GET['kortol'] != null) {
+	 				$allat_kortol = $_GET['kortol'];
+	 				$korvan = 1;
+	 			}
+	 			if (isset($_GET['korig']) AND $_GET['korig'] != null) {
+	 				$allat_korig = $_GET['korig'];
+	 				$korvan = 1;
+	 			}
+	 			if (isset($_GET['nem']) AND $_GET['nem'] != null) {
+	 				$allat_neme = $_GET['nem'];
+	 				$conditions[] = "allat_neme = :allat_neme";
+	 			}
+	 			if (isset($_GET['artol']) AND $_GET['artol'] != null) {
+	 				$allat_artol = $_GET['artol'];
+	 				$arvan = 1;
+	 			}
+	 			if (isset($_GET['arig']) AND $_GET['arig'] != null) {
+	 				$allat_arig = $_GET['arig'];
+	 				$arvan = 1;
+	 			}
+	 			if (isset($_GET['szin']) AND $_GET['szin'] != null) {
+	 				$allat_szin = $_GET['szin'];
+	 				$conditions[] = "allat_szine = :allat_szine";
+	 			}
+
+	 			$allat_alsokor = null;
+	 			$allat_felsokor = null;
+	 			$allat_kortol = intval($allat_kortol);
+	 			$allat_korig = intval($allat_korig);
+	 			$allat_alsokor = $allat_kortol * 12;
+	 			$allat_felsokor = $allat_korig * 12;
+
+
+
+	 		}
 
 	 		?>
 
@@ -72,7 +154,7 @@
 	 				<button class="kat" name="" id="button_ornament">Díszállat</button>
 	 				<button class="kat" name="" id="button_other">Egyéb</button>
 
-	 				<form action="">
+	 				<form action="hirdetesek">
 	 					<select name="allatok" id="allatok" class="allatok">
 	 						<option value='' selected='selected' disabled='disabled'>Válassz állatot</option>
 						</select>
@@ -82,20 +164,21 @@
 						<br>
 						<label>Kor -tól:</label> <input type="number" name="kortol" class="kortol" placeholder="Kor -tól">
 						<label>Kor -ig:</label> <input type="number" name="korig" class="korig" placeholder="Kor -ig">
-						<select name="faj" id="faj" class="faj">
+						<select name="nem" id="faj" class="faj">
 	 						<option value='' selected='selected' disabled='disabled'>Válassz nemet</option>
-  						<option value="">Hím</option>
-  						<option value="">Nőstény</option>
+  						<option value="Hím">Hím</option>
+  						<option value="Nőstény">Nőstény</option>
 						</select>
 						<br>
 						<label> &nbsp;&nbsp;Ár -tól:</label> <input type="number" name="artol" class="kortol" placeholder="Ár -tól">
 						<label> &nbsp;&nbsp;Ár -ig:</label> <input type="number" name="arig" class="korig" placeholder="Ár -ig">
-						<select name="faj" id="faj" class="faj">
+						<select name="szin" id="faj" class="faj">
 	 						<option value='' selected='selected' disabled='disabled'>Válassz színt</option>
-  						<option value="">Fekete</option>
-  						<option value="">Fehér</option>
+  						<option value="Fekete">Fekete</option>
+  						<option value="Fehér">Fehér</option>
 						</select>
 						<br>
+						<input type="hidden" name="s" value="true">
 						<button class="szures_gomb" name="sub">Szűrők alkalmazása</button>
 	 				</form>
 	 			</div>
@@ -104,6 +187,158 @@
 	 		<div class="flex_kiemelt">
 
 	 			<?php 
+	 				if (isset($_GET['s']) == 'true') {
+	 					if (!empty($conditions)) {
+    					$sql .= " " . implode(" AND ", $conditions);
+						}
+
+						$statement = $pdo->prepare($sql);
+
+						if ($allat_fele !== null) {
+						    $statement->bindParam(':allat_fele', $allat_fele);
+						}
+						if ($allat_fajta !== null AND $allat_fajta != 'Összes') {
+						    $statement->bindParam(':allat_fajta', $allat_fajta);
+						}
+						if ($allat_neme !== null) {
+						    $statement->bindParam(':allat_neme', $allat_neme);
+						}
+						if ($allat_szin !== null) {
+						    $statement->bindParam(':allat_szine', $allat_szin);
+						}
+
+						$statement->execute();
+		    		while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+
+		        	$cim = $row['cim'];
+		        	$ar = $row['allat_ara'];
+		        	$kepek = $row['kepek'];
+		        	$postid = $row['ID'];
+		        	$allat_ara_p = $row['allat_ara'];
+		        	$allat_kora_p = $row['allat_kora'];
+		        	$kep = explode(",", $kepek);
+		        	$mehet = 0;
+
+		        	if ($arvan == 1) {
+
+
+				        	if ($allat_artol != null AND $allat_arig != null) {
+				        		if ($allat_artol < $allat_ara_p AND $allat_ara_p < $allat_arig) {
+				        			$mehet = $mehet + 1;
+				        		}
+				        	}
+
+				        	if ($allat_artol != null AND $allat_arig == null) {
+				        		if ($allat_artol < $allat_ara_p) {
+				        			$mehet = $mehet + 1;
+				        		}
+				        	}
+
+				        	if ($allat_artol == null AND $allat_arig != null) {
+				        		if ($allat_arig > $allat_ara_p) {
+				        			$mehet = $mehet + 1;
+				        		}
+				        	}
+
+		        	}
+
+
+		        	if ($korvan == 1) {
+
+
+					        	if ($allat_alsokor != null AND $allat_felsokor != null) {
+					        		if ($allat_alsokor < $allat_kora_p AND $allat_kora_p < $allat_felsokor) {
+					        			$mehet = $mehet + 1;
+					        		}
+					        	}
+
+					        	if ($allat_alsokor != null AND $allat_felsokor == null) {
+					        		if ($allat_alsokor < $allat_kora_p) {
+					        			$mehet = $mehet + 1;
+					        		}
+					        	}
+
+					        	if ($allat_alsokor == null AND $allat_felsokor != null) {
+					        		if ($allat_felsokor > $allat_kora_p) {
+					        			$mehet = $mehet + 1;
+					        		}
+					        	}
+
+		        }
+
+		        
+
+		        	if ($arvan == 1 AND $korvan == null) {
+		        		if ($mehet == 1) {
+		        		
+						        	echo "
+						        	<a href='./hirdetes?id=$postid'>
+									<img src='./files/$kep[0]'>
+									<div class='layer'></div>
+									<div class='details'>
+										<h1>$cim</h1>
+										<h3>$ar Ft</h3>
+									</div>
+								</a>
+		        		";
+
+		        	}
+		        	}
+		        	else if ($korvan == 1 AND $arvan == null) {
+		        		if ($mehet == 1) {
+		        		
+						        	echo "
+						        	<a href='./hirdetes?id=$postid'>
+									<img src='./files/$kep[0]'>
+									<div class='layer'></div>
+									<div class='details'>
+										<h1>$cim</h1>
+										<h3>$ar Ft</h3>
+									</div>
+								</a>
+		        		";
+
+		        	}
+		        	}
+		        	else if($arvan == 1 AND $korvan == 1){
+		        		 if($mehet == 2) {
+		        		
+						        	echo "
+						        	<a href='./hirdetes?id=$postid'>
+									<img src='./files/$kep[0]'>
+									<div class='layer'></div>
+									<div class='details'>
+										<h1>$cim</h1>
+										<h3>$ar Ft</h3>
+									</div>
+								</a>
+		        		";
+
+		        	}
+		        	}
+		        	else if($arvan == null AND $korvan == null){
+		        		 if($mehet == 0) {
+		        		
+						        	echo "
+						        	<a href='./hirdetes?id=$postid'>
+									<img src='./files/$kep[0]'>
+									<div class='layer'></div>
+									<div class='details'>
+										<h1>$cim</h1>
+										<h3>$ar Ft</h3>
+									</div>
+								</a>
+		        		";
+
+		        	}
+		        	}
+
+
+		        
+		    		}
+	 				}
+	 				else
+	 				{
 
 	 				mysqli_set_charset($conn, "utf8");
         $sql = "SELECT * FROM posts";
@@ -127,6 +362,8 @@
 				</a>
 		        	";
 		        
+		    		}
+
 		    		}
 
 	 			?>
