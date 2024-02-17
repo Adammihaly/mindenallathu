@@ -18,8 +18,8 @@
 
 <?php
 
-error_reporting(0);
-ini_set('display_errors', 0);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 session_start();
 require_once '../php/conn.php';
@@ -185,21 +185,26 @@ $result = $conn->query($sql);
                     <p class="balSzoveg">Legnépszerűbb hírdetések</p>
                     <p>x megtekintés</p>
                     <div class="megtekFelhasz">
-                        <div class="felhasznalo">
-                            <div class="felhasznaloKep"></div>
-                            <p>Felhasználó neve</p>
-                            <div class="dotsMenu"></div>
-                        </div>
-                        <div class="felhasznalo">
-                            <div class="felhasznaloKep"></div>
-                            <p>Felhasználó neve</p>
-                            <div class="dotsMenu"></div>
-                        </div>
-                        <div class="felhasznalo">
-                            <div class="felhasznaloKep"></div>
-                            <p>Felhasználó neve</p>
-                            <div class="dotsMenu"></div>
-                        </div>
+                        <?php 
+                    mysqli_set_charset($conn, "utf8");
+                    $sql = "SELECT * FROM posts WHERE torolve IS NULL AND profilID = $profilID ORDER BY megtekintes;";
+                        $result = $conn->query($sql);
+                            while ($row = $result->fetch_assoc()) {
+
+
+                                $kepek = $row['kepek'];
+                                $kep = explode(",", $kepek);
+
+                                echo "<div class='felhasznalo'>
+                            <div class='felhasznaloKep' style='background-image: url(../files/$kep[0]);'></div>
+                            <p>" . $row['cim'] . "</p>
+                            <div class='dotsMenu'></div>
+                        </div>";
+
+
+                            }
+
+                    ?>
                     </div>
 
                     <div class="csik">&nbsp</div>
@@ -223,19 +228,27 @@ $result = $conn->query($sql);
             </div>
             <p class="balSzoveg">Legnépszerűbb hírdetések</p>
             <p id="kontaktok2">x megtekintés</p>
-            <div class="megtekFelhasz">
-                <div class="felhasznalo">
-                    <div class="felhasznaloKep"></div>
-                    <p>Felhasználó neve</p>
-                </div>
-                <div class="felhasznalo">
-                    <div class="felhasznaloKep"></div>
-                    <p>Felhasználó neve</p>
-                </div>
-                <div class="felhasznalo">
-                    <div class="felhasznaloKep"></div>
-                    <p>Felhasználó neve</p>
-                </div>
+            <div class="megtekFelhasz" style="display: block;">
+                <?php 
+                    mysqli_set_charset($conn, "utf8");
+                    $sql = "SELECT * FROM posts WHERE torolve IS NULL AND profilID = $profilID ORDER BY megtekintes;";
+                        $result = $conn->query($sql);
+                            while ($row = $result->fetch_assoc()) {
+
+
+                                $kepek = $row['kepek'];
+                                $kep = explode(",", $kepek);
+
+                                echo "<div class='felhasznalo'>
+                            <div class='felhasznaloKep' style='background-image: url(../files/$kep[0]);'></div>
+                            <p>" . $row['cim'] . "</p>
+                            <div class='dotsMenu'></div>
+                        </div>";
+
+
+                            }
+
+                    ?>
             </div>
         </section>
     </div>

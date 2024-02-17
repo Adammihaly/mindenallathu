@@ -58,7 +58,13 @@
                             $teny_email = $row['teny_email'];
                             $teny_tel = $row['teny_tel'];
                             $teny_cim = $row['teny_cim'];
+                            $megtekintes = $row['megtekintes'];
+
+                            $megtekintes = $megtekintes + 1;
                         }
+
+                        $sql = "UPDATE posts SET megtekintes = '$megtekintes' WHERE ID = '$postID';";
+                            $result = $conn->query($sql);
 
 
     ?>
