@@ -65,7 +65,7 @@ amely még hatékonyabban segíti az eladásban!" />
             <a href="Kezelopult/fooldal" style="text-decoration: none; color: white;">Hirdetés feladása</a>
         </ul>
         <ol>
-            <a>Keresés</a>
+            <a href="hirdetesek" style="color: white; text-decoration: none;">Keresés</a>
             
         </ol>
     </header>
@@ -122,10 +122,10 @@ amely még hatékonyabban segíti az eladásban!" />
 
         <div id="popup">
             <div class="linkek">
-                <a>Kategóriák</a>
-                <a>Hirdetés feladása</a>
-                <a>Keresés</a>
-                <a>Bejelentkezés</a>
+                <a href="hirdetesek">Kategóriák</a>
+                <a href="Kezelopult/fooldal">Hirdetés feladása</a>
+                <a href="hirdetesek">Keresés</a>
+                <a href="bejelentkezes">Bejelentkezés</a>
             </div>
         </div>
 

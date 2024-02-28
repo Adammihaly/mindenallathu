@@ -264,8 +264,8 @@ A hirdetésfeladás ingyenesen elérhető a megfelelő keretek között, de van 
 	 		</div>
 	 		<div class="items">
 	 			<h3>Kapcsolat</h3><br>
-	 			<a href="">Email: minta@gmail.com</a><br>
-	 			<a href="">Tel: +381 69 17 60 672</a><br>
+	 			<a href="">Email: support@mindenallat.hu</a><br>
+	 			<a href="">Tel: +36704555274</a><br>
 	 		</div>
 	 	</div>
 	 	<p>MINDENALLAT.HU - 2023 | A weboldalt készítette Mihály Ádám</p>
