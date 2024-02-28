@@ -43,6 +43,18 @@ A gyorsabb és hatékonyabb eladás érdekében a kiemelt hirdetést is használ
 amely még hatékonyabban segíti az eladásban!" />
         <meta property="og:url" content="https://mindenallat.hu" />
         <meta property="og:image" content="../img/bg.webp" />
+
+        
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z39QDQJX2R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z39QDQJX2R');
+</script>
+
     
 </head>
 <body>
