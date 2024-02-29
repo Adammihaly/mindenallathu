@@ -8,6 +8,53 @@
     <script src="https://kit.fontawesome.com/20993e564e.js" crossorigin="anonymous"></script>
 
     <title>Hirdetés</title>
+
+    <link rel="icon" type="image/x-icon" href="img/logo2.webp">
+
+
+    <meta name="description" content="A oldalt azért hoztuk létre elsősorban, mint azt a szlogenünk is jelzi, hogy minden állat megtalálja a gazdáját!
+Az oldalunkon megtalálható szinte az összes állat listája,
+amelyet eladásra tudnak kínálni!
+Magánszemélyként és tenyésztőként is felteheti a hirdetését ezzel segítve azokat,
+akik éppen az Ön által keresett álla fajtát szeretnék megvásárolni!
+Célunk, hogy egy piacvezető állatokat hirdető oldal legyünk, ami nagyban hozzájárul
+az állatok adás-vételében!
+A gyorsabb és hatékonyabb eladás érdekében a kiemelt hirdetést is használhatja,
+amely még hatékonyabban segíti az eladásban!">
+
+
+        <meta name="keywords" content="lakasetterem, lakásétterem, étterem, étkezés loadeat, loadeatcom, kaja, ennivaló, menü, etterem, soklakasetterem, lakáséttermek, éttermek, kereső, hírdető, hirdetes, etkeztetes, etteremtulaj, vendég, vendeg, ügyfél, ugyfel, asztalfoglalas, asztalfoglalás">
+
+        <meta name="author" content="mindenallat.hu">
+        <link rel="canonical" href="https://mindenallat.com">
+
+
+        <meta property="og:title" content="mindenallat.hu" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="A oldalt azért hoztuk létre elsősorban, mint azt a szlogenünk is jelzi, hogy minden állat megtalálja a gazdáját!
+Az oldalunkon megtalálható szinte az összes állat listája,
+amelyet eladásra tudnak kínálni!
+Magánszemélyként és tenyésztőként is felteheti a hirdetését ezzel segítve azokat,
+akik éppen az Ön által keresett álla fajtát szeretnék megvásárolni!
+Célunk, hogy egy piacvezető állatokat hirdető oldal legyünk, ami nagyban hozzájárul
+az állatok adás-vételében!
+A gyorsabb és hatékonyabb eladás érdekében a kiemelt hirdetést is használhatja,
+amely még hatékonyabban segíti az eladásban!" />
+        <meta property="og:url" content="https://mindenallat.hu" />
+        <meta property="og:image" content="img/bg.webp" />
+  
+
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z39QDQJX2R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z39QDQJX2R');
+</script>
+  
 </head>
 <body>
 
@@ -18,7 +65,7 @@
             <a href="Kezelopult/fooldal" style="text-decoration: none; color: white;">Hirdetés feladása</a>
         </ul>
         <ol>
-            <a>Keresés</a>
+            <a href="hirdetesek" style="color: white; text-decoration: none;">Keresés</a>
             
         </ol>
     </header>
@@ -58,7 +105,13 @@
                             $teny_email = $row['teny_email'];
                             $teny_tel = $row['teny_tel'];
                             $teny_cim = $row['teny_cim'];
+                            $megtekintes = $row['megtekintes'];
+
+                            $megtekintes = $megtekintes + 1;
                         }
+
+                        $sql = "UPDATE posts SET megtekintes = '$megtekintes' WHERE ID = '$postID';";
+                            $result = $conn->query($sql);
 
 
     ?>
@@ -69,10 +122,10 @@
 
         <div id="popup">
             <div class="linkek">
-                <a>Kategóriák</a>
-                <a>Hirdetés feladása</a>
-                <a>Keresés</a>
-                <a>Bejelentkezés</a>
+                <a href="hirdetesek">Kategóriák</a>
+                <a href="Kezelopult/fooldal">Hirdetés feladása</a>
+                <a href="hirdetesek">Keresés</a>
+                <a href="bejelentkezes">Bejelentkezés</a>
             </div>
         </div>
 

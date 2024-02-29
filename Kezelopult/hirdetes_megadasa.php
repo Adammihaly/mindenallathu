@@ -8,6 +8,54 @@
     <script src="https://kit.fontawesome.com/20993e564e.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script type="text/javascript" src="../js/posztolas.js" defer></script>
+
+    <link rel="icon" type="image/x-icon" href="../img/logo2.webp">
+
+
+    <meta name="description" content="A oldalt azért hoztuk létre elsősorban, mint azt a szlogenünk is jelzi, hogy minden állat megtalálja a gazdáját!
+Az oldalunkon megtalálható szinte az összes állat listája,
+amelyet eladásra tudnak kínálni!
+Magánszemélyként és tenyésztőként is felteheti a hirdetését ezzel segítve azokat,
+akik éppen az Ön által keresett álla fajtát szeretnék megvásárolni!
+Célunk, hogy egy piacvezető állatokat hirdető oldal legyünk, ami nagyban hozzájárul
+az állatok adás-vételében!
+A gyorsabb és hatékonyabb eladás érdekében a kiemelt hirdetést is használhatja,
+amely még hatékonyabban segíti az eladásban!">
+
+
+        <meta name="keywords" content="lakasetterem, lakásétterem, étterem, étkezés loadeat, loadeatcom, kaja, ennivaló, menü, etterem, soklakasetterem, lakáséttermek, éttermek, kereső, hírdető, hirdetes, etkeztetes, etteremtulaj, vendég, vendeg, ügyfél, ugyfel, asztalfoglalas, asztalfoglalás">
+
+        <meta name="author" content="mindenallat.hu">
+        <link rel="canonical" href="https://mindenallat.com">
+
+
+        <meta property="og:title" content="mindenallat.hu" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="A oldalt azért hoztuk létre elsősorban, mint azt a szlogenünk is jelzi, hogy minden állat megtalálja a gazdáját!
+Az oldalunkon megtalálható szinte az összes állat listája,
+amelyet eladásra tudnak kínálni!
+Magánszemélyként és tenyésztőként is felteheti a hirdetését ezzel segítve azokat,
+akik éppen az Ön által keresett álla fajtát szeretnék megvásárolni!
+Célunk, hogy egy piacvezető állatokat hirdető oldal legyünk, ami nagyban hozzájárul
+az állatok adás-vételében!
+A gyorsabb és hatékonyabb eladás érdekében a kiemelt hirdetést is használhatja,
+amely még hatékonyabban segíti az eladásban!" />
+        <meta property="og:url" content="https://mindenallat.hu" />
+        <meta property="og:image" content="../img/bg.webp" />
+
+        
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z39QDQJX2R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z39QDQJX2R');
+</script>
+
+    
 </head>
 <body>
 
@@ -137,11 +185,6 @@ $result = $conn->query($sql);
                                     <div class="input_wrapper">
                                         <select id="allat_fele" name="allat_fele" class="bevitel" required>
                                             <option value="" disabled selected hidden>Válasszon egy fajtát</option>
-                                            <option value="Kutya">Kutya</option>
-                                            <option value="Macska">Macska</option>
-                                            <option value="Csirke">Csirke</option>
-                                            <option value="Nyúl">Nyúl</option>
-                                            <option value="Kecske">Kecske</option>
                                         </select>
                                     </div>
                                 </div>
@@ -152,10 +195,6 @@ $result = $conn->query($sql);
                                     <div class="input_wrapper">
                                         <select id="allat_fajtaja" name="allat_fajtaja" class="bevitel" required>
                                             <option value="" disabled selected hidden>Válasszon egy fajtát</option>
-                                            <option value="Németjuhász">Németjuhász</option>
-                                            <option value="Puli">Puli</option>
-                                            <option value="Csivava">Csivava</option>
-                                            <option value="Terrier">Terrier</option>
                                         </select>
                                     </div>
                                 </div>

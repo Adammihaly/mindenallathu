@@ -10,3 +10,10 @@ $dBName = 'mindenallat';
 	if (!$conn) {
 		die("Conection failed: " . mysqli_connect_error());
 	}
+
+try {
+    $pdo = new PDO("mysql:host=$serverName;dbname=$dBName;charset=utf8", $dBUsername, $dBPassword);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Connection failed: " . $e->getMessage());
+}
