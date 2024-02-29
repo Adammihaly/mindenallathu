@@ -112,7 +112,7 @@ a
 {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.6)) , url(../img/bg.webp);
     background-size: cover;
-    height: 400px;
+    height: 200px;
     padding: 10% var(--site-margin) 12% var(--site-margin);
 }
 

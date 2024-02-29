@@ -70,15 +70,7 @@
 	 	<div class="fejlec_con">
 		 	<h1>MINDENÁLLAT.HU</h1>
 		 	<h2>Hogy minden állat gazdára találjon...</h2>
-		 	<p>A oldalt azért hoztuk létre elsősorban, mint azt a szlogenünk is jelzi, hogy minden állat megtalálja a gazdáját!
-Az oldalunkon megtalálható szinte az összes állat listája,
-amelyet eladásra tudnak kínálni!
-Magánszemélyként és tenyésztőként is felteheti a hirdetését ezzel segítve azokat,
-akik éppen az Ön által keresett álla fajtát szeretnék megvásárolni!
-Célunk, hogy egy piacvezető állatokat hirdető oldal legyünk, ami nagyban hozzájárul
-az állatok adás-vételében!
-A gyorsabb és hatékonyabb eladás érdekében a kiemelt hirdetést is használhatja,
-amely még hatékonyabban segíti az eladásban!</p>
+		
 		 	<div class="flex">
 		 	<a href="regisztracio" class="cta2">+ HIRDETÉSFELADÁS</a>
 		 	<a href="hirdetesek" class="">HIRDETÉSEK MEGTEKINTÉSE</a>
