@@ -205,7 +205,7 @@ $result = $conn->query($sql);
 
                 </section>
 
-                <div class="csik">&nbsp</div>
+                <div class="csik">&nbsp;</div>
 
                <!-- <div class="balSzoveg">
                     <p>Utoljára megtekintett</p>
@@ -225,7 +225,7 @@ $result = $conn->query($sql);
                     </div>
                 </section> -->
 
-                <div class="csik">&nbsp</div>
+                <div class="csik">&nbsp;</div>
 
                 <section class="mobilLent">
                     <p class="balSzoveg">Legnépszerűbb hírdetések</p>
@@ -253,7 +253,7 @@ $result = $conn->query($sql);
                     ?>
                     </div>
 
-                    <div class="csik">&nbsp</div>
+                    <div class="csik">&nbsp;</div>
 
                     <p class="balSzoveg">Jelenlegi csomag</p>
                     <div class="csomag">
