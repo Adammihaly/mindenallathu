@@ -261,6 +261,7 @@ amely még hatékonyabban segíti az eladásban!" />
 		        	$ar = $row['allat_ara'];
 		        	$kepek = $row['kepek'];
 		        	$postid = $row['ID'];
+		        	$torolve = $row['torolve'];
 		        	$allat_ara_p = $row['allat_ara'];
 		        	$allat_kora_p = $row['allat_kora'];
 		        	$kep = explode(",", $kepek);
@@ -318,64 +319,72 @@ amely még hatékonyabban segíti az eladásban!" />
 		        	if ($arvan == 1 AND $korvan == null) {
 		        		if ($mehet == 1) {
 		        		
-						        	echo "
-						        	<a href='./hirdetes?id=$postid'>
-									<img src='./files/$kep[0]'>
-									<div class='layer'></div>
-									<div class='details'>
-										<h1>$cim</h1>
-										<h3>$ar Ft</h3>
-									</div>
-								</a>
-		        		";
+						        	if ($torolve != 1) {
+		        		echo "
+		        	<a href='./hirdetes?id=$postid'>
+					<img src='./files/$kep[0]'>
+					<div class='layer'></div>
+					<div class='details'>
+						<h1>$cim</h1>
+						<h3>$ar Ft</h3>
+					</div>
+				</a>
+		        	";
+		        	}
 
 		        	}
 		        	}
 		        	else if ($korvan == 1 AND $arvan == null) {
 		        		if ($mehet == 1) {
 		        		
-						        	echo "
-						        	<a href='./hirdetes?id=$postid'>
-									<img src='./files/$kep[0]'>
-									<div class='layer'></div>
-									<div class='details'>
-										<h1>$cim</h1>
-										<h3>$ar Ft</h3>
-									</div>
-								</a>
-		        		";
+						        	if ($torolve != 1) {
+		        		echo "
+		        	<a href='./hirdetes?id=$postid'>
+					<img src='./files/$kep[0]'>
+					<div class='layer'></div>
+					<div class='details'>
+						<h1>$cim</h1>
+						<h3>$ar Ft</h3>
+					</div>
+				</a>
+		        	";
+		        	}
 
 		        	}
 		        	}
 		        	else if($arvan == 1 AND $korvan == 1){
 		        		 if($mehet == 2) {
 		        		
-						        	echo "
-						        	<a href='./hirdetes?id=$postid'>
-									<img src='./files/$kep[0]'>
-									<div class='layer'></div>
-									<div class='details'>
-										<h1>$cim</h1>
-										<h3>$ar Ft</h3>
-									</div>
-								</a>
-		        		";
+						        	if ($torolve != 1) {
+		        		echo "
+		        	<a href='./hirdetes?id=$postid'>
+					<img src='./files/$kep[0]'>
+					<div class='layer'></div>
+					<div class='details'>
+						<h1>$cim</h1>
+						<h3>$ar Ft</h3>
+					</div>
+				</a>
+		        	";
+		        	}
 
 		        	}
 		        	}
 		        	else if($arvan == null AND $korvan == null){
 		        		 if($mehet == 0) {
 		        		
-						        	echo "
-						        	<a href='./hirdetes?id=$postid'>
-									<img src='./files/$kep[0]'>
-									<div class='layer'></div>
-									<div class='details'>
-										<h1>$cim</h1>
-										<h3>$ar Ft</h3>
-									</div>
-								</a>
-		        		";
+						        	if ($torolve != 1) {
+		        		echo "
+		        	<a href='./hirdetes?id=$postid'>
+					<img src='./files/$kep[0]'>
+					<div class='layer'></div>
+					<div class='details'>
+						<h1>$cim</h1>
+						<h3>$ar Ft</h3>
+					</div>
+				</a>
+		        	";
+		        	}
 
 		        	}
 		        	}
@@ -396,9 +405,11 @@ amely még hatékonyabban segíti az eladásban!" />
 		        	$ar = $row['allat_ara'];
 		        	$kepek = $row['kepek'];
 		        	$postid = $row['ID'];
+		        	$torolve = $row['torolve'];
 		        	$kep = explode(",", $kepek);
 
-		        	echo "
+		        	if ($torolve != 1) {
+		        		echo "
 		        	<a href='./hirdetes?id=$postid'>
 					<img src='./files/$kep[0]'>
 					<div class='layer'></div>
@@ -408,6 +419,9 @@ amely még hatékonyabban segíti az eladásban!" />
 					</div>
 				</a>
 		        	";
+		        	}
+
+		        	
 		        
 		    		}
 
