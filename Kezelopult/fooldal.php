@@ -272,8 +272,19 @@ $result = $conn->query($sql);
                     <p><?php echo $csomag_szoveg; ?></p>
                 </div>
             </div>
+            <?php
+
+                $osszmegtekintes = 0;
+                mysqli_set_charset($conn, "utf8");
+                    $sql = "SELECT * FROM posts WHERE torolve IS NULL AND profilID = $profilID";
+                        $result = $conn->query($sql);
+                            while ($row = $result->fetch_assoc()) {
+                                $osszmegtekintes = $osszmegtekintes + $row['megtekintes'];
+                            }
+
+             ?>
             <p class="balSzoveg">Legnépszerűbb hírdetések</p>
-            <p id="kontaktok2">x megtekintés</p>
+            <p id="kontaktok2"><?php echo $osszmegtekintes ?> megtekintés</p>
             <div class="megtekFelhasz" style="display: block;">
                 <?php 
                     mysqli_set_charset($conn, "utf8");
