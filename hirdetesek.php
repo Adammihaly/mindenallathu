@@ -115,8 +115,8 @@ amely még hatékonyabban segíti az eladásban!" />
 		 	<h1>HIRDETÉSEK</h1>
 		 	<h2>Keresgélj állatok között kedved szerint</h2>
 		 	<div class="flex">
-		 	<a href="#" class="cta2">+ HIRDETÉSFELADÁS</a>
-		 	<a href="#" class="">REGISZTRÁCIÓ</a>
+		 	<a href="Kezelopult/fooldal" class="cta2">+ HIRDETÉSFELADÁS</a>
+		 	<a href="regisztracio" class="">REGISZTRÁCIÓ</a>
 		 	</div>
 	 	</div>
 	 </section>

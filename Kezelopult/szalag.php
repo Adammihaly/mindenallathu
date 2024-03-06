@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/csomagvaltasStyle.css">
+    <link rel="stylesheet" href="../css/szalagStyle.css">
     <script src="https://kit.fontawesome.com/20993e564e.js" crossorigin="anonymous"></script>
-    <script defer src="../js/csomagvaltasScript.js"></script>
+    <script defer src="../js/szalagScript.js"></script>
     <script defer src="../js/navbar.js"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<?php
+    <?php
 
 error_reporting(0);
 ini_set('display_errors', 0);
@@ -106,42 +106,26 @@ $result = $conn->query($sql);
                 <div class="notif"><i class="fa-solid fa-bell"></i></div>
             </header>
             <section class="main_content">
-                <div class="container">
+                <div class="kep">
+                    <img src="../img/martin-schmidli-qg8ihPPQkKo-unsplash.png" alt="">
+                    <p id="szalagszoveg" class="szalag">KÜLÖNLEGES ÁR</p>
+                </div>
+                <div class="content">
                     <div class="cim">
-                        <h1>Csomagválasztás</h1>
-                        <p>Legyen hirdetésed szembetűnő mások számára. Vedd meg a felkínált csomagok egyikét, vagy akár többet is és növeld meg a népszerűséged oldalunkon. Legyen figyelemfelkeltő és kiemelkedő a hirdetésed.</p>
+                        <h1>Szalag</h1>
+                        <div><b>2890 Ft / </b><span>hónap</span></div>
                     </div>
-                    <div class="csomagContainer">
-                        <div class="csomag">
-                            <h1>Kiemelés</h1>
-                            <div class="content">
-                                <img src="../img/jean-carlo-emer-G_oWb_hcfx8-unsplash.png" alt="">
-                                <div>
-                                    <section><b>2590 Ft / </b><span>hónap</span></section>
-                                    <button class="gomb">Kiválasztom</button>
-                                </div>
-                            </div>
-                            <div class="wrapperxd" id="kiemeles">
-                            <p>További információ</p> 
-                            <i class="fa-solid fa-arrow-right"></i>
-                            </div>
-                        </div>
-                        <div class="csomag">
-                            <h1>Szalag</h1>
-                            <div class="content">
-                                    <img src="../img/martin-schmidli-qg8ihPPQkKo-unsplash.png" alt="">
-                                    <p class="szalag">KÜLÖNLEGES ÁR</p>
-                                <div>
-                                    <section><b>2890 Ft / </b><span>hónap</span></section>
-                                    <button class="gomb">Kiválasztom</button>
-                                </div>
-                            </div>
-                            <div class="wrapperxd" id="szalag">       
-                                <p>További információ</p> 
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </div>
-                        </div>
+                    <div class="leiras">
+                        <h2>Leírás</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus earum est voluptatibus eum quisquam vitae velit eligendi ad! Iusto iure quos nam repellat, sunt velit quis deserunt debitis consectetur perspiciatis.</p>
                     </div>
+                    <select name="szalag" id="szalagddlist">
+                        <option value="" disabled selected>Válassza ki mit írjon a szalagon</option>
+                        <option value="kulonleg">KÜLÖNLEGES ÁR</option>
+                        <option value="fajtiszta">FAJTISZTA</option>
+                        <option value="ritka">RITKA</option>
+                    </select>
+                    <button class="gomb">Ezt választom</button>
                 </div>
             </section>
         </main>
