@@ -444,7 +444,7 @@ amely még hatékonyabban segíti az eladásban!" />
 	 		</div>
 	 		<div class="items">
 	 			<h3>Népszerű oldalak</h3><br>
-	 			<a href="">Kezdőlap</a><br>
+	 			<a href="https://mindenallat.hu">Kezdőlap</a><br>
 	 			<a href="bejelentkezes">Bejelentkezés</a><br>
 	 			<a href="regisztracio">Regisztráció</a><br>
 	 			<a href="">Hirdetések</a><br>

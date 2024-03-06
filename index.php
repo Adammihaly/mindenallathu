@@ -325,7 +325,7 @@ A hirdetésfeladás ingyenesen elérhető a megfelelő keretek között, de van 
 	 			<a href="">Kezdőlap</a><br>
 	 			<a href="bejelentkezes">Bejelentkezés</a><br>
 	 			<a href="regisztracio">Regisztráció</a><br>
-	 			<a href="">Hirdetések</a><br>
+	 			<a href="hirdetesek">Hirdetések</a><br>
 	 		</div>
 	 		<div class="items">
 	 			<h3>Kapcsolat</h3><br>

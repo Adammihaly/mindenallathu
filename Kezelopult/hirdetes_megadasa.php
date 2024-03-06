@@ -89,6 +89,17 @@ $result = $conn->query($sql);
         $fnev = $row['username'];
     }
 
+    if (isset($_GET['error'])) {
+            if ($_GET['error']  == 'maxp') {
+                echo "           
+                    <script type='text/javascript'>
+                        if(confirm('A hirdetés közzététele sikertelen volt, mivel elérted a maximális hirdetés számot, mely 5!')) document.location = 'hirdetes_megadasa';
+                        else(document.location = 'hirdetes_megadasa')
+                    </script> 
+                ";
+            }
+        }
+
 ?>
 
 

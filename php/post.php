@@ -17,6 +17,18 @@ if (isset($_POST['submit_gomb'])) {
 		exit();
 	}
 
+	$sql = "SELECT * FROM users WHERE ID = $profilID;";
+$result = $conn->query($sql);
+	while ($row = $result->fetch_assoc()) {
+
+		$posts_f = $row['posts'];
+	}
+
+	if ($posts_f == 5) {
+		header("Location: " . $_SERVER['HTTP_REFERER'] ."?error=maxp");
+		exit();
+	}
+
 
 	$postID = rand(10000, 100000);
 	$cim = $_POST['hirdetes_cime'];
