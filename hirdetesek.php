@@ -61,7 +61,7 @@ amely még hatékonyabban segíti az eladásban!" />
 
 	<section class="menu">
 	 	<div class="con">
-	 		<div class="left_menu"><a href="#" title="mindenallat.hu"><img src="img/logo2.webp" alt="website_logo"></a></div>
+	 		<div class="left_menu"><a href="https://mindenallat.hu" title="mindenallat.hu"><img src="img/logo2.webp" alt="website_logo"></a></div>
 	 		<div class="right_menu">
 	 			<div class="pc">
 	 			<a href="index" class="">Kezdőlap</a>
@@ -445,17 +445,17 @@ amely még hatékonyabban segíti az eladásban!" />
 	 		<div class="items">
 	 			<h3>Népszerű oldalak</h3><br>
 	 			<a href="">Kezdőlap</a><br>
-	 			<a href="">Bejelentkezés</a><br>
-	 			<a href="">Regisztráció</a><br>
+	 			<a href="bejelentkezes">Bejelentkezés</a><br>
+	 			<a href="regisztracio">Regisztráció</a><br>
 	 			<a href="">Hirdetések</a><br>
 	 		</div>
 	 		<div class="items">
 	 			<h3>Kapcsolat</h3><br>
-	 			<a href="">Email: minta@gmail.com</a><br>
-	 			<a href="">Tel: +381 69 17 60 672</a><br>
+	 			<a href="">Email: support@mindenallat.hu</a><br>
+	 			<a href="">Tel: +36704555274</a><br>
 	 		</div>
 	 	</div>
-	 	<p>MINDENALLAT.HU - 2023 | A weboldalt készítette Mihály Ádám</p>
+	 	<p>MINDENALLAT.HU - 2024 | <a href="https://codeefyit.com" style="color: black;">A weboldalt készítette és forgalmazza a Codeefy</a></p>
 	 </section>
 
 

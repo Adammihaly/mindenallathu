@@ -388,7 +388,7 @@ A hirdetésfeladás ingyenesen elérhető a megfelelő keretek között, de van 
 	 			<a href="">Tel: +36704555274</a><br>
 	 		</div>
 	 	</div>
-	 	<p>MINDENALLAT.HU - 2023 | A weboldalt készítette Mihály Ádám</p>
+	 	<p>MINDENALLAT.HU - 2024 | <a href="https://codeefyit.com" style="color: black;">A weboldalt készítette és forgalmazza a Codeefy</a></p>
 	 </section>
 
 

@@ -216,7 +216,7 @@ $result = $conn->query($sql);
                                                     <li class='torles' onClick='torles$postID()'><i class='fa-solid fa-trash'></i>Törlés</li>
                                                 </ul>
                                             </div>
-                                            <div id='kiemelve_block'>Kiemelve</div>
+                                            <div id='kiemelve_block'>Hamarosan</div>
                                         </div>
                                     </article>  
                         <script type='text/javascript'>

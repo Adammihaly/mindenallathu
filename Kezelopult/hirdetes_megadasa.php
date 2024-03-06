@@ -313,7 +313,7 @@ $result = $conn->query($sql);
                                     <div class="input_wrapper">
                                         <label>Ön rendelkezik prémium csomaggal így lehetősége van kiemelni a hídetését, mellyel több emberhez juthat el. Állata hamarabb találhat gazdára, hiszen többen fogják megnézni az ön hírdetését. Emelje ki a hírdetését, hogy kitünjön a többi közül.</label>
                                         <button type="button" id="kiemeles">Hírdetés kiemelése</button>
-                                        <label id="info">Sikeresen kiemelted</label>
+                                        <label id="info">Hamarosan...</label>
                                     </div>
                                 </div>
                             </div>

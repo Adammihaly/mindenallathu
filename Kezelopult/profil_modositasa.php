@@ -207,7 +207,7 @@ $result = $conn->query($sql);
                             <!-- <fieldset>
                                 <legend>Új email cím</legend>
                                 <input id="email_input" type="email" placeholder="PL: <?php //echo $email; ?>" value="<?php //echo $email; ?>">
-                            </fieldset> -->
+                            </fieldset> 
                             <fieldset>
                                 <legend>Csomagok</legend>
                                 <input id="csomagok_input" type="text" readonly placeholder="<?php echo $csomag_szoveg; ?>">
@@ -217,7 +217,7 @@ $result = $conn->query($sql);
                                    echo "<button id='csomagvaltas_gomb'>+</button>";
                                 }
 
-                                ?>
+                                ?> -->
                                 
                             </fieldset>
                         </div>
