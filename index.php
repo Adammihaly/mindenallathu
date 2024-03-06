@@ -74,7 +74,7 @@ ini_set('display_errors', 0);
 	require_once 'php/conn.php';
 
 	mysqli_set_charset($conn, "utf8");
-        $sql = "SELECT * FROM posts";
+        $sql = "SELECT * FROM posts WHERE torolve IS NULL";
 $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
 
