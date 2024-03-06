@@ -156,7 +156,7 @@ $result = $conn->query($sqlp);
             
 
             $mail->Subject = 'Hirdetes torles';
-            $mail->Body    = '<p style="font-size: 26px;">Kedves ' . $username . '!</p><br><br> <p style="font-size: 20px;"> A mindenallat.hu oldalon a következő hirdetésed öt nap múlva tölésre kerül:</p><br><br><br><br>
+            $mail->Body    = '<p style="font-size: 26px;">Kedves ' . $username . '!</p><br><br> <p style="font-size: 20px;"> A mindenallat.hu oldalon a következő hirdetésed öt nap múlva törlésre kerül:</p><br><br><br><br>
  <b style="font-size: 40px;">Hirdetés címe: ' . $hirdetescime . '</b> <br><br><br><br><br><br> 
 
 <i style="font-size: 18px;">Miért törlődik a hirdetés?<br>Minden hirdetés 30 napig lehet kint, ezt követően rendszerünk autómatikusan törli, annak érdekében, hogy az ne legyen elavult. Ezt az email-t követő hatodik napon belül törlődni fog rendszerünkből. Természetesen új hirdetést lehet kitenni a meglévő helyére. Amennyiben kérdésed van keresd fel ügyfélszolgálatunk.</i>
