@@ -113,7 +113,7 @@ $result = $conn->query($sqlp);
     while ($rowp = $result->fetch_assoc()) {
 
     				$email = $rowp['email'];
-    				$username = $row['username'];
+    				$username = $rowp['username'];
 
     				
 
