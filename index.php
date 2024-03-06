@@ -68,8 +68,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 				    require './vendor/autoload1.php';
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+error_reporting(0);
+ini_set('display_errors', 0);
 
 	require_once 'php/conn.php';
 
@@ -248,96 +248,41 @@ catch (Exception $e) {
 	 	<div class="con">
 	 		<h3>Kiemelt hirdetések</h3>
 	 		<div class="flex_kiemelt">
-	 			<!-- <a href="#">
-	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a>
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/ketto.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a>
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a> -->
+	 	<?php		
 
+	 			mysqli_set_charset($conn, "utf8");
+        $sql = "SELECT * FROM posts WHERE torolve IS NULL LIMIT 6";
+					$result = $conn->query($sql);
+					if ($result->num_rows < 1) {
+						echo "<br><br><p style='margin-bottom: 5%; font-size: 130%;'>Nincs jelenleg egy kiemelt hirdetés se...</p><br><br>";
+					}
+		    		while ($row = $result->fetch_assoc()) {
 
+		        	$cim = $row['cim'];
+		        	$ar = $row['allat_ara'];
+		        	$kepek = $row['kepek'];
+		        	$postid = $row['ID'];
+		        	$torolve = $row['torolve'];
+		        	$kep = explode(",", $kepek);
 
-				
-				<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúl</h1>
-						<h3>14000 Ft</h3>
+		        	if ($torolve != 1) {
+		        		echo "
+		        	<a href='./hirdetes?id=$postid'>
+					<img src='./files/$kep[0]'>
+					<div class='layer'></div>
+					<div class='details'>
+						<h1>$cim</h1>
+						<h3>$ar Ft</h3>
 					</div>
 				</a>
+		        	";
+		        	}
 
-				<a>
-					<img src="./img/diszno.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Díszmalac</h1>
-						<h3>1200 Ft</h3>
-					</div>
-				</a>
+		        	
+		        
+		    		}
 
-				<a>
-					<img src="./img/boci.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Törzskönyvezett tehén</h1>
-						<h3>3900 Ft</h3>
-					</div>
-				</a>
-
-				
-				<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúl</h1>
-						<h3>14000 Ft</h3>
-					</div>
-				</a>
-
-				<a>
-					<img src="./img/diszno.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Díszmalac </h1>
-						<h3>1200 Ft</h3>
-					</div>
-				</a>
-
-				<a>
-					<img src="./img/boci.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Törzskönyvezett tehén</h1>
-						<h3>3900 Ft</h3>
-					</div>
-				</a>
-
-
+		    		?>
 
 	 		</div>
 	 	</div>
