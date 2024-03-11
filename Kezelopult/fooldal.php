@@ -68,14 +68,32 @@ error_reporting(0);
 ini_set('display_errors', 0);
 
 session_start();
-require_once '../php/conn.php';
+
+require_once '../config.php';
+require_once '../php/functions.inc.php';
+require_once '../auth.php';
+
+authenticateUser($client, $conn);
 
     if (isset($_SESSION['ID'])) {
             $profilID = $_SESSION['ID'];
         }
+        else if(isset($_SESSION['user_token']))
+        {
+            $token = $_SESSION['user_token'];
+            $sql = "SELECT * FROM users WHERE token = $token;";
+$result = $conn->query($sql);
+    while ($row = $result->fetch_assoc()) {
+
+        $profilID = $row['ID'];
+
+    }
+    $_SESSION['ID'] =  $profilID;
+
+        }
         else
         {
-            header("Location: ../bejelentkezes");
+           header("Location: ../bejelentkezes");
             exit();
         }
 
