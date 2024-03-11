@@ -23,10 +23,10 @@ A gyorsabb és hatékonyabb eladás érdekében a kiemelt hirdetést is használ
 amely még hatékonyabban segíti az eladásban!">
 
 
-        <meta name="keywords" content="lakasetterem, lakásétterem, étterem, étkezés loadeat, loadeatcom, kaja, ennivaló, menü, etterem, soklakasetterem, lakáséttermek, éttermek, kereső, hírdető, hirdetes, etkeztetes, etteremtulaj, vendég, vendeg, ügyfél, ugyfel, asztalfoglalas, asztalfoglalás">
+        <meta name="keywords" content="elado allat, állatok, állat, piac, elahely, vétel, vásárlás, háziállat, haszonállat, kutya, macska, eladó, mindenallat.hu">
 
         <meta name="author" content="mindenallat.hu">
-        <link rel="canonical" href="https://mindenallat.com">
+        <link rel="canonical" href="https://mindenallat.hu">
 
 
         <meta property="og:title" content="mindenallat.hu" />
@@ -207,7 +207,7 @@ $result = $conn->query($sql);
                             <!-- <fieldset>
                                 <legend>Új email cím</legend>
                                 <input id="email_input" type="email" placeholder="PL: <?php //echo $email; ?>" value="<?php //echo $email; ?>">
-                            </fieldset> -->
+                            </fieldset> 
                             <fieldset>
                                 <legend>Csomagok</legend>
                                 <input id="csomagok_input" type="text" readonly placeholder="<?php echo $csomag_szoveg; ?>">
@@ -217,7 +217,7 @@ $result = $conn->query($sql);
                                    echo "<button id='csomagvaltas_gomb'>+</button>";
                                 }
 
-                                ?>
+                                ?> -->
                                 
                             </fieldset>
                         </div>

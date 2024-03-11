@@ -24,10 +24,10 @@ A gyorsabb és hatékonyabb eladás érdekében a kiemelt hirdetést is használ
 amely még hatékonyabban segíti az eladásban!">
 
 
-        <meta name="keywords" content="lakasetterem, lakásétterem, étterem, étkezés loadeat, loadeatcom, kaja, ennivaló, menü, etterem, soklakasetterem, lakáséttermek, éttermek, kereső, hírdető, hirdetes, etkeztetes, etteremtulaj, vendég, vendeg, ügyfél, ugyfel, asztalfoglalas, asztalfoglalás">
+        <meta name="keywords" content="elado allat, állatok, állat, piac, elahely, vétel, vásárlás, háziállat, haszonállat, kutya, macska, eladó, mindenallat.hu">
 
         <meta name="author" content="mindenallat.hu">
-        <link rel="canonical" href="https://mindenallat.com">
+        <link rel="canonical" href="https://mindenallat.hu">
 
 
         <meta property="og:title" content="mindenallat.hu" />
@@ -354,7 +354,7 @@ $result = $conn->query($sql);
                                     <div class="input_wrapper">
                                         <label>Ön rendelkezik prémium csomaggal így lehetősége van kiemelni a hídetését, mellyel több emberhez juthat el. Állata hamarabb találhat gazdára, hiszen többen fogják megnézni az ön hírdetését. Emelje ki a hírdetését, hogy kitünjön a többi közül.</label>
                                         <button type="button" id="kiemeles">Hírdetés kiemelése</button>
-                                        <label id="info">Sikeresen kiemelted</label>
+                                        <label id="info">Hamarosan...</label>
                                     </div>
                                 </div>
                             </div>

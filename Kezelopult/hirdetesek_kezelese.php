@@ -23,11 +23,10 @@ az állatok adás-vételében!
 A gyorsabb és hatékonyabb eladás érdekében a kiemelt hirdetést is használhatja,
 amely még hatékonyabban segíti az eladásban!">
 
-
-        <meta name="keywords" content="lakasetterem, lakásétterem, étterem, étkezés loadeat, loadeatcom, kaja, ennivaló, menü, etterem, soklakasetterem, lakáséttermek, éttermek, kereső, hírdető, hirdetes, etkeztetes, etteremtulaj, vendég, vendeg, ügyfél, ugyfel, asztalfoglalas, asztalfoglalás">
+<meta name="keywords" content="elado allat, állatok, állat, piac, elahely, vétel, vásárlás, háziállat, haszonállat, kutya, macska, eladó, mindenallat.hu">
 
         <meta name="author" content="mindenallat.hu">
-        <link rel="canonical" href="https://mindenallat.com">
+        <link rel="canonical" href="https://mindenallat.hu">
 
 
         <meta property="og:title" content="mindenallat.hu" />
@@ -216,7 +215,7 @@ $result = $conn->query($sql);
                                                     <li class='torles' onClick='torles$postID()'><i class='fa-solid fa-trash'></i>Törlés</li>
                                                 </ul>
                                             </div>
-                                            <div id='kiemelve_block'>Kiemelve</div>
+                                            <div id='kiemelve_block'>Hamarosan</div>
                                         </div>
                                     </article>  
                         <script type='text/javascript'>

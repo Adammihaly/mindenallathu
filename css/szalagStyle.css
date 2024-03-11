@@ -207,130 +207,99 @@ main
 
     .main_content
     {
-        width: 100%;
+        width: 90%;
         height: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
 
-        & .container {
+        .kep {
+            margin-top: 3vh;
+            height: 80vh;
+            width: 45%;
+            position: relative;
+
+            & img {
+                width: 100%;
+                height: 100%;
+                border: 5px #0F9638 solid;
+                border-radius: 1.25vw;
+                background-color: #0F9638;
+            }
+        }
+
+        .szalag {
+            position: absolute;
+            top: 75%;
+            text-align: center;
+            font-size: 1.125vw;
+            color: white;
+            width: 100%;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            background: linear-gradient(to right, #1EA948, #04511B);
+            font-weight: 700;
+        }
+
+        .content {
             display: flex;
             flex-direction: column;
-            gap: 2vh;
-            width: 80%;
-            margin: 0 auto;
+            justify-content: space-evenly;
+            height: 80vh;
+            width: 50%;
+            margin-top: 3vh;
 
-
-            & .cim {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                gap: 1vh;
-
+            .cim {
                 & h1 {
-                    font-size: 2.75vw;
-                    font-weight: bold;
-                    color: #0F9638;
+                    color: #464747;
+                    font-size: 3.75vw;
                 }
 
-                & p {
-                    font-weight: 200;
-                    font-size: 1.125vw;
+                & div {
+                    color: #0F9638;
+                    font-size: 2.25vw;
                 }
             }
 
-            & .csomagContainer {
-                display: flex;
-                justify-content: space-evenly;
-                flex-direction: row;
-
-                & .csomag {
-                    margin-bottom: 3vh;
-
-                    & h1 {
-                        text-align: center;
-                        font-size: 2vw;
-                        margin: 1vw;
-                    }
-
-                    & .wrapperxd {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        justify-content: center;
-                        gap: 1vw;
-                        margin: 1vw;
-                        font-weight: 500;
-                        color: #464747;
-                        cursor: pointer;
-                        transition: transform 0.2s ease;
-
-                        & i, p {
-                            font-size: 1vw;
-                        }
-                    }
-
-                    & .wrapperxd:hover {
-                        transform: scale(1.1);
-                    }
-
-                    & .content {
-                        border: 5px solid #0F9638;
-                        border-radius: 0.75vw;
-                        background-color: white;
-                        position: relative;
-
-                        & img {
-                            width: 25vw;
-                            border-bottom: 5px solid #0F9638;
-                            border-radius: 0.35vw;
-                            background-color: #0F9638;
-                        }
-
-                        & div {
-                            display: flex;
-                            flex-direction: column;
-                            margin: 1vw;
-                            gap: 2vh;
-                            font-size: 1.75vw;
-                            color: #464747;
-
-                            & button {
-                                width: 40%;
-                                align-self: center;
-                                height: 6vh;
-                                background-color: #0F9638;
-                                border: 0;
-                                color: white;
-                                font-size: 1vw;
-                                font-weight: 500;
-                                font-family: 'Montserrat';
-                                border-radius: 0.25vw;
-                                cursor: pointer;
-                                transition: transform 0.3s ease;
-                            }
-
-                            & button:hover {
-                                transform: scale(1.1);
-                            }
-
-                            & section {
-                                text-align: center;
-                            }
-                        }
-
-                        .szalag {
-                            position: absolute;
-                            top: 65%;
-                            text-align: center;
-                            font-size: 1.125vw;
-                            color: white;
-                            width: 100%;
-                            padding-top: 1vh;
-                            padding-bottom: 1vh;
-                            background: linear-gradient(to right, #1EA948, #04511B);
-                            font-weight: 700;
-                        }
-                    }
-
+            .leiras {
+                & h2 {
+                    color: #464747;
+                    font-size: 2vw;
                 }
+
+                & p {
+                    font-size: 1.125vw;
+                    font-weight: 400;
+                    color: #46474799;
+                }
+            }
+
+            #szalagddlist {
+                font-size: 1.33vw;
+                color: #464747;
+                border-radius: 0.5vw;
+                height: 6.5vh;
+                padding-left: 1vw;
+            }
+
+            .gomb {
+                background-color: #0F9638;
+                border: 0;
+                width: 40%;
+                color: white;
+                height: 8vh;
+                font-family: 'Montserrat';
+                font-size: 1.5vw;
+                font-weight: 500;
+                border-radius: 0.5vw;
+                cursor: pointer;
+                transition: transform 0.2s ease;
+            }
+
+            .gomb:hover {
+                transform: scale(1.1);
             }
         }
     }
@@ -362,12 +331,34 @@ main
         .main_content
         {
             margin-top: 25%;
-            
-            & .container {
+            flex-direction: column;
 
-                & .cim {
+            .szalag {
+                font-size: 3.5vw;
+            }
+
+            .kep {
+                width: 100%;
+            }
+
+            .content {
+                width: 100%;
+                gap: 4vh;
+                padding-bottom: 5vh;
+
+                .cim {
                     & h1 {
                         font-size: 8vw;
+                    }
+
+                    & div {
+                        font-size: 5vw;
+                    }
+                }
+
+                .leiras {
+                    & h2 {
+                        font-size: 6vw;
                     }
 
                     & p {
@@ -375,45 +366,15 @@ main
                     }
                 }
 
-                & .csomagContainer {
-                    flex-direction: column;
+                #szalagddlist {
+                    font-size: 3vw;
+                    padding-left: 2vw;
+                }
 
-                    & .csomag {
-                        & h1 {
-                            font-size: 5vw;
-                        }
-
-                        & .content {
-                            border-radius: 2vw;
-
-                            & img {
-                                width: 100%;
-                            }
-
-                            & div {
-                                margin: 3vw;
-                                font-size: 5vw;
-
-                                & button {
-                                    width: 50%;
-                                    height: 7vh;
-                                    font-size: 3.5vw;
-                                    border-radius: 1.25vw;
-                                }
-                            }
-                            
-                            .szalag {
-                                top: 60%;
-                                font-size: 3vw;
-                            }
-                        }
-
-                        & .wrapperxd {
-                            & i, p {
-                                font-size: 3vw;
-                            }
-                        }
-                    }
+                .gomb {
+                    border-radius: 4vw;
+                    font-size: 4vw;
+                    height: 8vh;
                 }
             }
         }

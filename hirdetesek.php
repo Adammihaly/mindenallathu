@@ -24,10 +24,10 @@ A gyorsabb és hatékonyabb eladás érdekében a kiemelt hirdetést is használ
 amely még hatékonyabban segíti az eladásban!">
 
 
-	    <meta name="keywords" content="lakasetterem, lakásétterem, étterem, étkezés loadeat, loadeatcom, kaja, ennivaló, menü, etterem, soklakasetterem, lakáséttermek, éttermek, kereső, hírdető, hirdetes, etkeztetes, etteremtulaj, vendég, vendeg, ügyfél, ugyfel, asztalfoglalas, asztalfoglalás">
+	    <meta name="keywords" content="elado allat, állatok, állat, piac, elahely, vétel, vásárlás, háziállat, haszonállat, kutya, macska, eladó, mindenallat.hu">
 
 	    <meta name="author" content="mindenallat.hu">
-	    <link rel="canonical" href="https://mindenallat.com">
+	    <link rel="canonical" href="https://mindenallat.hu">
 
 
 	    <meta property="og:title" content="mindenallat.hu" />
@@ -61,7 +61,7 @@ amely még hatékonyabban segíti az eladásban!" />
 
 	<section class="menu">
 	 	<div class="con">
-	 		<div class="left_menu"><a href="#" title="mindenallat.hu"><img src="img/logo2.webp" alt="website_logo"></a></div>
+	 		<div class="left_menu"><a href="https://mindenallat.hu" title="mindenallat.hu"><img src="img/logo2.webp" alt="website_logo"></a></div>
 	 		<div class="right_menu">
 	 			<div class="pc">
 	 			<a href="index" class="">Kezdőlap</a>
@@ -115,8 +115,8 @@ amely még hatékonyabban segíti az eladásban!" />
 		 	<h1>HIRDETÉSEK</h1>
 		 	<h2>Keresgélj állatok között kedved szerint</h2>
 		 	<div class="flex">
-		 	<a href="#" class="cta2">+ HIRDETÉSFELADÁS</a>
-		 	<a href="#" class="">REGISZTRÁCIÓ</a>
+		 	<a href="Kezelopult/fooldal" class="cta2">+ HIRDETÉSFELADÁS</a>
+		 	<a href="regisztracio" class="">REGISZTRÁCIÓ</a>
 		 	</div>
 	 	</div>
 	 </section>
@@ -444,18 +444,18 @@ amely még hatékonyabban segíti az eladásban!" />
 	 		</div>
 	 		<div class="items">
 	 			<h3>Népszerű oldalak</h3><br>
-	 			<a href="">Kezdőlap</a><br>
-	 			<a href="">Bejelentkezés</a><br>
-	 			<a href="">Regisztráció</a><br>
+	 			<a href="https://mindenallat.hu">Kezdőlap</a><br>
+	 			<a href="bejelentkezes">Bejelentkezés</a><br>
+	 			<a href="regisztracio">Regisztráció</a><br>
 	 			<a href="">Hirdetések</a><br>
 	 		</div>
 	 		<div class="items">
 	 			<h3>Kapcsolat</h3><br>
-	 			<a href="">Email: minta@gmail.com</a><br>
-	 			<a href="">Tel: +381 69 17 60 672</a><br>
+	 			<a href="">Email: support@mindenallat.hu</a><br>
+	 			<a href="">Tel: +36704555274</a><br>
 	 		</div>
 	 	</div>
-	 	<p>MINDENALLAT.HU - 2023 | A weboldalt készítette Mihály Ádám</p>
+	 	<p>MINDENALLAT.HU - 2024 | <a href="https://codeefyit.com" style="color: black;">A weboldalt készítette és forgalmazza a Codeefy</a></p>
 	 </section>
 
 

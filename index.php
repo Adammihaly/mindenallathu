@@ -22,10 +22,10 @@ A gyorsabb és hatékonyabb eladás érdekében a kiemelt hirdetést is használ
 amely még hatékonyabban segíti az eladásban!">
 
 
-	    <meta name="keywords" content="lakasetterem, lakásétterem, étterem, étkezés loadeat, loadeatcom, kaja, ennivaló, menü, etterem, soklakasetterem, lakáséttermek, éttermek, kereső, hírdető, hirdetes, etkeztetes, etteremtulaj, vendég, vendeg, ügyfél, ugyfel, asztalfoglalas, asztalfoglalás">
+	    <meta name="keywords" content="elado allat, állatok, állat, piac, elahely, vétel, vásárlás, háziállat, haszonállat, kutya, macska, eladó, mindenallat.hu">
 
 	    <meta name="author" content="mindenallat.hu">
-	    <link rel="canonical" href="https://mindenallat.com">
+	    <link rel="canonical" href="https://mindenallat.hu">
 
 
 	    <meta property="og:title" content="mindenallat.hu" />
@@ -68,13 +68,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 				    require './vendor/autoload1.php';
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+error_reporting(0);
+ini_set('display_errors', 0);
 
 	require_once 'php/conn.php';
 
 	mysqli_set_charset($conn, "utf8");
-        $sql = "SELECT * FROM posts";
+        $sql = "SELECT * FROM posts WHERE torolve IS NULL";
 $result = $conn->query($sql);
     while ($row = $result->fetch_assoc()) {
 
@@ -113,7 +113,7 @@ $result = $conn->query($sqlp);
     while ($rowp = $result->fetch_assoc()) {
 
     				$email = $rowp['email'];
-    				$username = $row['username'];
+    				$username = $rowp['username'];
 
     				
 
@@ -156,7 +156,7 @@ $result = $conn->query($sqlp);
             
 
             $mail->Subject = 'Hirdetes torles';
-            $mail->Body    = '<p style="font-size: 26px;">Kedves ' . $username . '!</p><br><br> <p style="font-size: 20px;"> A mindenallat.hu oldalon a következő hirdetésed öt nap múlva tölésre kerül:</p><br><br><br><br>
+            $mail->Body    = '<p style="font-size: 26px;">Kedves ' . $username . '!</p><br><br> <p style="font-size: 20px;"> A mindenallat.hu oldalon a következő hirdetésed öt nap múlva törlésre kerül:</p><br><br><br><br>
  <b style="font-size: 40px;">Hirdetés címe: ' . $hirdetescime . '</b> <br><br><br><br><br><br> 
 
 <i style="font-size: 18px;">Miért törlődik a hirdetés?<br>Minden hirdetés 30 napig lehet kint, ezt követően rendszerünk autómatikusan törli, annak érdekében, hogy az ne legyen elavult. Ezt az email-t követő hatodik napon belül törlődni fog rendszerünkből. Természetesen új hirdetést lehet kitenni a meglévő helyére. Amennyiben kérdésed van keresd fel ügyfélszolgálatunk.</i>
@@ -248,96 +248,41 @@ catch (Exception $e) {
 	 	<div class="con">
 	 		<h3>Kiemelt hirdetések</h3>
 	 		<div class="flex_kiemelt">
-	 			<!-- <a href="#">
-	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a>
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/ketto.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a>
-	 			<a href="#">
-	 				<div class="kepkeret"><img src="img/test.jpg" alt="allat_kep"></div>
-	 				<p>Állat: Kutya<br>
-	 				   Fajta: Németjuhász<br>
-	 				   Kora: 1 éves<br>
-	 				   Neme: Kan<br>
-	 				   Színe: Fekete és Krém<br>
-	 				   Ár: 50 000 Ft
-	 				</p>
-	 			</a> -->
+	 	<?php		
 
+	 			mysqli_set_charset($conn, "utf8");
+        $sql = "SELECT * FROM posts WHERE torolve IS NULL LIMIT 6";
+					$result = $conn->query($sql);
+					if ($result->num_rows < 1) {
+						echo "<br><br><p style='margin-bottom: 5%; font-size: 130%;'>Nincs jelenleg egy kiemelt hirdetés se...</p><br><br>";
+					}
+		    		while ($row = $result->fetch_assoc()) {
 
+		        	$cim = $row['cim'];
+		        	$ar = $row['allat_ara'];
+		        	$kepek = $row['kepek'];
+		        	$postid = $row['ID'];
+		        	$torolve = $row['torolve'];
+		        	$kep = explode(",", $kepek);
 
-				
-				<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúl</h1>
-						<h3>14000 Ft</h3>
+		        	if ($torolve != 1) {
+		        		echo "
+		        	<a href='./hirdetes?id=$postid'>
+					<img src='./files/$kep[0]'>
+					<div class='layer'></div>
+					<div class='details'>
+						<h1>$cim</h1>
+						<h3>$ar Ft</h3>
 					</div>
 				</a>
+		        	";
+		        	}
 
-				<a>
-					<img src="./img/diszno.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Díszmalac</h1>
-						<h3>1200 Ft</h3>
-					</div>
-				</a>
+		        	
+		        
+		    		}
 
-				<a>
-					<img src="./img/boci.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Törzskönyvezett tehén</h1>
-						<h3>3900 Ft</h3>
-					</div>
-				</a>
-
-				
-				<a>
-					<img src="./img/nyul.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Sárhegyi nyúl</h1>
-						<h3>14000 Ft</h3>
-					</div>
-				</a>
-
-				<a>
-					<img src="./img/diszno.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Díszmalac </h1>
-						<h3>1200 Ft</h3>
-					</div>
-				</a>
-
-				<a>
-					<img src="./img/boci.png">
-					<div class="layer"></div>
-					<div class="details">
-						<h1>Törzskönyvezett tehén</h1>
-						<h3>3900 Ft</h3>
-					</div>
-				</a>
-
-
+		    		?>
 
 	 		</div>
 	 	</div>
@@ -380,7 +325,7 @@ A hirdetésfeladás ingyenesen elérhető a megfelelő keretek között, de van 
 	 			<a href="">Kezdőlap</a><br>
 	 			<a href="bejelentkezes">Bejelentkezés</a><br>
 	 			<a href="regisztracio">Regisztráció</a><br>
-	 			<a href="">Hirdetések</a><br>
+	 			<a href="hirdetesek">Hirdetések</a><br>
 	 		</div>
 	 		<div class="items">
 	 			<h3>Kapcsolat</h3><br>
@@ -388,7 +333,7 @@ A hirdetésfeladás ingyenesen elérhető a megfelelő keretek között, de van 
 	 			<a href="">Tel: +36704555274</a><br>
 	 		</div>
 	 	</div>
-	 	<p>MINDENALLAT.HU - 2023 | A weboldalt készítette Mihály Ádám</p>
+	 	<p>MINDENALLAT.HU - 2024 | <a href="https://codeefyit.com" style="color: black;">A weboldalt készítette és forgalmazza a Codeefy</a></p>
 	 </section>
 
 
