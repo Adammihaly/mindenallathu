@@ -61,25 +61,25 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $mail->isSMTP();
  
             //Set the SMTP server to send through
-            $mail->Host = 'smtp.gmail.com';
+            $mail->Host = 'mail.nethely.hu';
  
             //Enable SMTP authentication
             $mail->SMTPAuth = true;
  
             //SMTP username
-            $mail->Username = 'mindenallathu@gmail.com';
+            $mail->Username = 'system@codeefyit.com';
  
             //SMTP password
-            $mail->Password = 'poqnskooqroptxnr';
+            $mail->Password = 'CodITfee0025';
  
             //Enable TLS encryption;
             $mail->SMTPSecure = "tls";
  
             //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
-            $mail->Port = 587;
+            $mail->Port = 1025;
  
             //Recipients
-            $mail->setFrom('mindenallathu@gmail.com', 'mindenallat.hu');
+            $mail->setFrom('system@codeefyit.com', 'mindenallat.hu');
  
             //Add a recipient
             $mail->addAddress($email, $name);
