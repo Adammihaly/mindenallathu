@@ -172,7 +172,7 @@ amely még hatékonyabban segíti az eladásban!" />
 
     <footer>
         <section>
-            <h1>Tenyésztő adatai</h1>
+            <h1>Hirdető adatai</h1>
             <p>Név: <strong><?php echo $teny_nev; ?></strong></p>
             <p>Email cím: <strong><?php echo $teny_email; ?></strong></p>
             <p>Telefonszám: <strong><?php echo $teny_tel; ?></strong></p>
